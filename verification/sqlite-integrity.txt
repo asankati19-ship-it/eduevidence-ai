@@ -1,0 +1,18 @@
+eduevidence_sample.sqlite3 integrity= ok foreign_key_violations= 0
+  courses 3
+  documents 3
+  document_chunks 10
+  questions 0
+  answers 0
+  answer_citations 0
+  feedback 0
+  audit_events 6
+eduevidence.sqlite3 integrity= ok foreign_key_violations= 0
+  courses 3
+  documents 3
+  document_chunks 10
+  questions 1
+  answers 1
+  answer_citations 1
+  feedback 1
+  audit_events 10

@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "integrity": "ok",
+  "trace": {
+    "question": {
+      "id": 4,
+      "learner_id": 1,
+      "course_id": 1,
+      "document_id": 4,
+      "conversation_id": "0d3ec1b8-afac-40a5-8045-701c4a5d7fc2",
+      "question_text": "For this uploaded Python Programming handbook, what are the course completion requirements?",
+      "status": "answered",
+      "request_id": "e8a7c4c3-b6b2-44d2-b287-796c40efe12d",
+      "created_at": "2026-11-18T21:25:48.410Z",
+      "completed_at": "2026-11-18T21:25:51.715Z"
+    },
+    "answer": {
+      "id": 4,
+      "question_id": 4,
+      "status": "answered",
+      "body": "To complete the Python Programming course, learners must submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after verification by the course coordinator.",
+      "reason": null,
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "provider_response_id": "resp_0793580b77a03acf016afe17d9f75887d099d2b650a726a2b2",
+      "prompt_version": "2.4.0",
+      "api_outcome": "completed",
+      "error_code": null,
+      "retryable": 0,
+      "input_tokens": 971,
+      "output_tokens": 189,
+      "latency_ms": 1858,
+      "created_at": "2026-11-18T21:25:51.715Z"
+    },
+    "ranked_sources": [
+      {
+        "question_id": 4,
+        "chunk_id": 14,
+        "rank": 1,
+        "score": 0.45655892,
+        "document_id": 4,
+        "page_number": 4,
+        "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+      },
+      {
+        "question_id": 4,
+        "chunk_id": 11,
+        "rank": 2,
+        "score": 0.18118934,
+        "document_id": 4,
+        "page_number": 1,
+        "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+      },
+      {
+        "question_id": 4,
+        "chunk_id": 13,
+        "rank": 3,
+        "score": 0.14409312,
+        "document_id": 4,
+        "page_number": 3,
+        "content_hash": "f6950a9bb9e6ae6ffe88fc7871ab518b4c6e94696170a0faecfd87f5468b3e14"
+      }
+    ],
+    "citations": [
+      {
+        "answer_id": 4,
+        "question_id": 4,
+        "chunk_id": 14,
+        "document_id": 4,
+        "page_number": 4,
+        "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions.",
+        "position": 1,
+        "rank": 1,
+        "original_filename": "full-journey-course-handbook.pdf",
+        "sha256": "c091e70b31de5ff4b29f5563c587661e2a378ba95c0c3bed0e950866fbd5a778"
+      }
+    ],
+    "events": [
+      {
+        "id": 19,
+        "learner_id": 1,
+        "question_id": 4,
+        "document_id": 4,
+        "request_id": "e8a7c4c3-b6b2-44d2-b287-796c40efe12d",
+        "event_type": "question.submit",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T21:25:48.410Z"
+      },
+      {
+        "id": 20,
+        "learner_id": 1,
+        "question_id": 4,
+        "document_id": null,
+        "request_id": "e8a7c4c3-b6b2-44d2-b287-796c40efe12d",
+        "event_type": "question.retrieve",
+        "outcome": "sufficient",
+        "detail": "3 passages",
+        "created_at": "2026-11-18T21:25:48.464Z"
+      },
+      {
+        "id": 21,
+        "learner_id": 1,
+        "question_id": 4,
+        "document_id": null,
+        "request_id": "e8a7c4c3-b6b2-44d2-b287-796c40efe12d",
+        "event_type": "question.verify",
+        "outcome": "supported",
+        "detail": "{\"outcome\":\"supported\",\"model\":\"gpt-4.1-mini-2025-04-14\",\"response_id\":\"resp_044f6da5223bf37f016afe17dbd4b487d08f696746cd6dd6fa\",\"input_tokens\":521,\"output_tokens\":78,\"latency_ms\":1382}",
+        "created_at": "2026-11-18T21:25:51.717Z"
+      },
+      {
+        "id": 22,
+        "learner_id": 1,
+        "question_id": 4,
+        "document_id": null,
+        "request_id": "e8a7c4c3-b6b2-44d2-b287-796c40efe12d",
+        "event_type": "question.complete",
+        "outcome": "answered",
+        "detail": "completed",
+        "created_at": "2026-11-18T21:25:51.717Z"
+      },
+      {
+        "id": 23,
+        "learner_id": 1,
+        "question_id": 4,
+        "document_id": null,
+        "request_id": "4f46eb97-e32b-4d41-8809-8c41806bdbaf",
+        "event_type": "answer.feedback",
+        "outcome": "helpful",
+        "detail": null,
+        "created_at": "2026-11-18T21:25:53.849Z"
+      }
+    ]
+  },
+  "document": {
+    "id": 4,
+    "title": "Full Journey Python Handbook",
+    "original_filename": "full-journey-course-handbook.pdf",
+    "sha256": "c091e70b31de5ff4b29f5563c587661e2a378ba95c0c3bed0e950866fbd5a778",
+    "status": "retired",
+    "page_count": 4,
+    "active_revision": 1
+  },
+  "feedback": {
+    "id": 1,
+    "answer_id": 4,
+    "learner_id": 1,
+    "rating": "helpful",
+    "comment": null,
+    "created_at": "2026-11-18T21:25:53.840Z",
+    "updated_at": "2026-11-18T21:25:53.840Z"
+  }
+}

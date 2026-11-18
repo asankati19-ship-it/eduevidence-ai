@@ -1,0 +1,13 @@
+npm notice run eduevidence-ai@1.0.0 build
+npm notice run tsc --noEmit && vite build
+vite v7.3.8 building client environment for production...
+transforming...
+✓ 1968 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                         0.64 kB │ gzip:   0.38 kB
+dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2   24.84 kB
+dist/assets/inter-latin-wght-normal-Dx4kXJAl.woff2     48.26 kB
+dist/assets/index-ShEPfr7u.css                         33.96 kB │ gzip:   8.66 kB
+dist/assets/index-Bu7Ytmkp.js                         486.68 kB │ gzip: 150.98 kB
+✓ built in 5.85s

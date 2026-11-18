@@ -1,0 +1,395 @@
+{
+  "provider": "offline_fixture",
+  "before": {
+    "documents": {
+      "total": 3,
+      "indexed": 3,
+      "errors": 0,
+      "processing": 0,
+      "chunks": 10
+    },
+    "questions": {
+      "total": 0,
+      "answered": 0,
+      "abstained": 0,
+      "provider_errors": 0,
+      "validation_errors": 0,
+      "processing_errors": 0,
+      "processing": 0
+    },
+    "feedback": {
+      "total": 0,
+      "helpful": 0,
+      "not_helpful": 0
+    },
+    "activity": [
+      {
+        "id": 6,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 3,
+        "request_id": "562975bd-5a3d-42c4-b0ae-9fe3a6a79fc2",
+        "event_type": "document.index",
+        "outcome": "indexed",
+        "detail": "3 chunks",
+        "created_at": "2026-11-18T20:06:47.738Z"
+      },
+      {
+        "id": 5,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 3,
+        "request_id": "562975bd-5a3d-42c4-b0ae-9fe3a6a79fc2",
+        "event_type": "document.upload",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T20:06:47.690Z"
+      },
+      {
+        "id": 4,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 2,
+        "request_id": "7a86d5f6-b60d-4280-b0c5-a4fb75b91453",
+        "event_type": "document.index",
+        "outcome": "indexed",
+        "detail": "3 chunks",
+        "created_at": "2026-11-18T20:06:47.648Z"
+      },
+      {
+        "id": 3,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 2,
+        "request_id": "7a86d5f6-b60d-4280-b0c5-a4fb75b91453",
+        "event_type": "document.upload",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T20:06:47.597Z"
+      },
+      {
+        "id": 2,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 1,
+        "request_id": "5161bffd-469c-4a8c-b282-6bfc6f1a81e5",
+        "event_type": "document.index",
+        "outcome": "indexed",
+        "detail": "4 chunks",
+        "created_at": "2026-11-18T20:06:47.567Z"
+      },
+      {
+        "id": 1,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 1,
+        "request_id": "5161bffd-469c-4a8c-b282-6bfc6f1a81e5",
+        "event_type": "document.upload",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T20:06:47.504Z"
+      }
+    ],
+    "trend": [
+      {
+        "day": "2026-11-12",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-13",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-14",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-15",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-16",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-17",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-18",
+        "total": 0,
+        "answered": 0
+      }
+    ]
+  },
+  "after": {
+    "documents": {
+      "total": 4,
+      "indexed": 4,
+      "errors": 0,
+      "processing": 0,
+      "chunks": 14
+    },
+    "questions": {
+      "total": 1,
+      "answered": 1,
+      "abstained": 0,
+      "provider_errors": 0,
+      "validation_errors": 0,
+      "processing_errors": 0,
+      "processing": 0
+    },
+    "feedback": {
+      "total": 1,
+      "helpful": 1,
+      "not_helpful": 0
+    },
+    "activity": [
+      {
+        "id": 12,
+        "learner_id": 1,
+        "question_id": 1,
+        "document_id": null,
+        "request_id": "cb67d368-b31d-414c-bed0-5fcab3e1c5ea",
+        "event_type": "answer.feedback",
+        "outcome": "helpful",
+        "detail": null,
+        "created_at": "2026-11-18T20:06:56.504Z"
+      },
+      {
+        "id": 11,
+        "learner_id": 1,
+        "question_id": 1,
+        "document_id": null,
+        "request_id": "7a900bf9-a835-47d1-8b94-61899e7549ab",
+        "event_type": "question.complete",
+        "outcome": "answered",
+        "detail": "completed",
+        "created_at": "2026-11-18T20:06:54.666Z"
+      },
+      {
+        "id": 10,
+        "learner_id": 1,
+        "question_id": 1,
+        "document_id": null,
+        "request_id": "7a900bf9-a835-47d1-8b94-61899e7549ab",
+        "event_type": "question.retrieve",
+        "outcome": "sufficient",
+        "detail": "4 passages",
+        "created_at": "2026-11-18T20:06:54.651Z"
+      },
+      {
+        "id": 9,
+        "learner_id": 1,
+        "question_id": 1,
+        "document_id": 4,
+        "request_id": "7a900bf9-a835-47d1-8b94-61899e7549ab",
+        "event_type": "question.submit",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T20:06:54.627Z"
+      },
+      {
+        "id": 8,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 4,
+        "request_id": "e8b2979c-00a1-4ddd-a148-af3194d45f7a",
+        "event_type": "document.index",
+        "outcome": "indexed",
+        "detail": "4 chunks",
+        "created_at": "2026-11-18T20:06:53.161Z"
+      },
+      {
+        "id": 7,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 4,
+        "request_id": "e8b2979c-00a1-4ddd-a148-af3194d45f7a",
+        "event_type": "document.upload",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T20:06:53.089Z"
+      },
+      {
+        "id": 6,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 3,
+        "request_id": "562975bd-5a3d-42c4-b0ae-9fe3a6a79fc2",
+        "event_type": "document.index",
+        "outcome": "indexed",
+        "detail": "3 chunks",
+        "created_at": "2026-11-18T20:06:47.738Z"
+      },
+      {
+        "id": 5,
+        "learner_id": 1,
+        "question_id": null,
+        "document_id": 3,
+        "request_id": "562975bd-5a3d-42c4-b0ae-9fe3a6a79fc2",
+        "event_type": "document.upload",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T20:06:47.690Z"
+      }
+    ],
+    "trend": [
+      {
+        "day": "2026-11-12",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-13",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-14",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-15",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-16",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-17",
+        "total": 0,
+        "answered": 0
+      },
+      {
+        "day": "2026-11-18",
+        "total": 1,
+        "answered": 1
+      }
+    ]
+  },
+  "uploadedDocument": {
+    "id": 4,
+    "course_id": 1,
+    "course_code": "PY-101",
+    "course_title": "Python Programming",
+    "title": "Full Journey Python Handbook",
+    "original_filename": "full-journey-course-handbook.pdf",
+    "sha256": "c091e70b31de5ff4b29f5563c587661e2a378ba95c0c3bed0e950866fbd5a778",
+    "size_bytes": 7039,
+    "page_count": 4,
+    "text_pages": null,
+    "status": "processing",
+    "active_revision": 0,
+    "chunk_count": 0,
+    "error_code": null,
+    "error_message": null,
+    "created_at": "2026-11-18T20:06:53.086Z",
+    "updated_at": "2026-11-18T20:06:53.086Z"
+  },
+  "persisted": {
+    "id": 1,
+    "question_text": "For this uploaded Python Programming handbook, what are the course completion requirements?",
+    "course_id": 1,
+    "document_id": 4,
+    "document_title": "Full Journey Python Handbook",
+    "conversation_id": "4fa718b3-f9ac-475a-8a3f-7c77f8561271",
+    "status": "answered",
+    "request_id": "7a900bf9-a835-47d1-8b94-61899e7549ab",
+    "created_at": "2026-11-18T20:06:54.627Z",
+    "completed_at": "2026-11-18T20:06:54.660Z",
+    "answer": {
+      "id": 1,
+      "status": "answered",
+      "body": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.",
+      "reason": null,
+      "provider": "offline_fixture",
+      "model": "offline-citation-fixture-v1",
+      "prompt_version": "1.0.0",
+      "api_outcome": "completed",
+      "error_code": null,
+      "retryable": false,
+      "input_tokens": 33,
+      "output_tokens": 14,
+      "latency_ms": 1,
+      "provider_response_id": "offline-fixture-response",
+      "rating": "helpful"
+    },
+    "sources": [
+      {
+        "chunk_id": 14,
+        "document_id": 4,
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "page_number": 4,
+        "chunk_number": 4,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Completion requirements The conditions for course completion To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions. EduEvidence AI / Synthetic demonstration material Page 4 of 4",
+        "score": 0.44078499,
+        "rank": 1
+      },
+      {
+        "chunk_id": 11,
+        "document_id": 4,
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "page_number": 1,
+        "chunk_number": 1,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Course overview Purpose and learning outcomes Python Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files. By the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review. The course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises. EduEvidence AI / Synthetic demonstration material Page 1 of 4",
+        "score": 0.17796026,
+        "rank": 2
+      },
+      {
+        "chunk_id": 13,
+        "document_id": 4,
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "page_number": 3,
+        "chunk_number": 3,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Assessment and submission What to upload and where Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark. Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt. Upload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project. EduEvidence AI / Synthetic demonstration material Page 3 of 4",
+        "score": 0.1445187,
+        "rank": 3
+      },
+      {
+        "chunk_id": 12,
+        "document_id": 4,
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Modules and weekly practice A six-week learning sequence Weeks 1 and 2 cover variables, control flow, strings, lists, dictionaries, and the interactive Python shell. Weeks 3 and 4 cover functions, modules, files, exceptions, and debugging. Week 5 introduces unit tests and code review. Week 6 is the capstone workshop. Learners bring a working prototype and receive feedback on testing and readability. EduEvidence AI / Synthetic demonstration material Page 2 of 4",
+        "score": 0.11810472,
+        "rank": 4
+      }
+    ],
+    "citations": [
+      {
+        "chunk_id": 14,
+        "document_id": 4,
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "page_number": 4,
+        "chunk_number": 4,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Completion requirements The conditions for course completion To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions. EduEvidence AI / Synthetic demonstration material Page 4 of 4",
+        "score": 0.44078499,
+        "rank": 1,
+        "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.",
+        "position": 1
+      }
+    ]
+  }
+}

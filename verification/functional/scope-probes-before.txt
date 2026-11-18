@@ -1,0 +1,122 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+_________ test_no_unsupported_claim_can_be_persisted_as_answered[R06] _________
+
+seeded = <starlette.testclient.TestClient object at 0x0000020E5ABBE4E0>
+provider = FixtureProvider(name='offline_fixture', model='offline-citation-fixture-v1', configured=True, calls=[('Who may submit ...ion, a learner may submit up to 48 hours after the deadline.')], abstention_reason=None))], verification_override=None)
+test_id = 'R06'
+question = 'Who may submit after the deadline, and how late may they submit?'
+document = 3, page = 1
+quote = 'For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline.'
+body = 'A learner may submit any assignment up to 48 hours after the deadline.'
+error = 'unsupported_answer'
+
+    @pytest.mark.parametrize(("test_id", "question", "document", "page", "quote", "body", "error"), PROBES,
+                             ids=[probe[0] for probe in PROBES])
+    def test_no_unsupported_claim_can_be_persisted_as_answered(seeded, provider, test_id, question, document, page, quote, body, error):
+        def candidate(_, passages):
+            source = next(row for row in passages if row["document_id"] == document and row["page_number"] == page)
+            return answer_with(source, quote, body)
+    
+        provider.override = candidate
+        response = seeded.post("/questions", json={"question": question, "document_id": document})
+        assert response.status_code == 201
+        trace = response.json()
+>       assert trace["status"] == "validation_error", (test_id, trace["status"], trace["answer"])
+E       AssertionError: ('R06', 'answered', {'id': 1, 'status': 'answered', 'body': 'A learner may submit any assignment up to 48 hours after the deadline.', 'reason': None, ...})
+E       assert 'answered' == 'validation_error'
+E         
+E         - validation_error
+E         + answered
+
+backend\tests\test_accuracy_regressions.py:58: AssertionError
+_________ test_no_unsupported_claim_can_be_persisted_as_answered[R11] _________
+
+seeded = <starlette.testclient.TestClient object at 0x0000020E5AC40B60>
+provider = FixtureProvider(name='offline_fixture', model='offline-citation-fixture-v1', configured=True, calls=[('What are the Py... least 70% overall, and earn a Pass on the capstone project.')], abstention_reason=None))], verification_override=None)
+test_id = 'R11'
+question = 'What are the Python Programming course completion requirements?'
+document = 1, page = 4
+quote = 'To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.'
+body = 'No. Submit all four graded labs, achieve at least 70% overall (which includes the labs and capstone combined), and earn a Pass on the capstone.'
+error = 'unsupported_answer'
+
+    @pytest.mark.parametrize(("test_id", "question", "document", "page", "quote", "body", "error"), PROBES,
+                             ids=[probe[0] for probe in PROBES])
+    def test_no_unsupported_claim_can_be_persisted_as_answered(seeded, provider, test_id, question, document, page, quote, body, error):
+        def candidate(_, passages):
+            source = next(row for row in passages if row["document_id"] == document and row["page_number"] == page)
+            return answer_with(source, quote, body)
+    
+        provider.override = candidate
+        response = seeded.post("/questions", json={"question": question, "document_id": document})
+        assert response.status_code == 201
+        trace = response.json()
+>       assert trace["status"] == "validation_error", (test_id, trace["status"], trace["answer"])
+E       AssertionError: ('R11', 'answered', {'id': 1, 'status': 'answered', 'body': 'No. Submit all four graded labs, achieve at least 70% overall (which includes the labs and capstone combined), and earn a Pass on the capstone.', 'reason': None, ...})
+E       assert 'answered' == 'validation_error'
+E         
+E         - validation_error
+E         + answered
+
+backend\tests\test_accuracy_regressions.py:58: AssertionError
+_ test_unsupported_policy_abstains_even_if_a_candidate_misquotes_the_procedure _
+
+seeded = <starlette.testclient.TestClient object at 0x0000020E5ADCF1D0>
+provider = FixtureProvider(name='offline_fixture', model='offline-citation-fixture-v1', configured=True, calls=[('Do the assessme...ndidate_misquotes_the_procedure.<locals>.<lambda> at 0x0000020E5ABD7D80>, verifications=[], verification_override=None)
+
+    def test_unsupported_policy_abstains_even_if_a_candidate_misquotes_the_procedure(seeded, provider):
+        question, body = POLAR_ABSENCE_CASES[1]
+        quote = "The policy describes how to request a review within five working days of receiving a grade."
+        provider.override = lambda _, passages: answer_with(passages[0], quote, body)
+        trace = seeded.post("/questions", json={"question": question, "document_id": 3}).json()
+>       assert trace["status"] == "abstained" and not trace["citations"]
+E       AssertionError: assert ('validation_error' == 'abstained'
+E         
+E         - abstained
+E         + validation_error)
+
+backend\tests\test_accuracy_regressions.py:92: AssertionError
+____ test_each_capstone_mark_is_matched_despite_course_names_in_the_answer ____
+
+seeded = <starlette.testclient.TestClient object at 0x0000020E5ADCE300>
+provider = FixtureProvider(name='offline_fixture', model='offline-citation-fixture-v1', configured=True, calls=[('Compare capston...ite_course_names_in_the_answer.<locals>.candidate at 0x0000020E5ADD2980>, verifications=[], verification_override=None)
+
+    def test_each_capstone_mark_is_matched_despite_course_names_in_the_answer(seeded, provider):
+        question = "Compare capstone weighting for Python Programming and AI and Machine Learning."
+        body = ("The capstone project weighting in the Python Programming course is 40% of the course mark, "
+                "while in the AI and Machine Learning course, the capstone report accounts for 45% of the final mark.")
+        quotes = {
+            1: "Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.",
+            2: ("The AI and Machine Learning final mark consists of two quizzes worth 20% combined, "
+                "a modeling notebook worth 35%, and a capstone report worth 45%."),
+        }
+    
+        def candidate(_, passages):
+            sources = [c for c in passages if c["page_number"] == 3 and c["document_id"] in quotes]
+            response = answer_with(sources[0], quotes[sources[0]["document_id"]], body)
+            response["citations"] = [answer_with(c, quotes[c["document_id"]])["citations"][0] for c in sources]
+            return response
+    
+        provider.override = candidate
+        trace = seeded.post("/questions", json={"question": question}).json()
+>       assert trace["status"] == "answered", trace["answer"]
+E       AssertionError: {'id': 1, 'status': 'validation_error', 'body': None, 'reason': 'The cited excerpts did not sufficiently support the proposed answer.', ...}
+E       assert 'validation_error' == 'answered'
+E         
+E         - answered
+E         + validation_error
+
+backend\tests\test_accuracy_regressions.py:114: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  <local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\eduevidence-ai\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend/tests/test_accuracy_regressions.py::test_no_unsupported_claim_can_be_persisted_as_answered[R06]
+FAILED backend/tests/test_accuracy_regressions.py::test_no_unsupported_claim_can_be_persisted_as_answered[R11]
+FAILED backend/tests/test_accuracy_regressions.py::test_unsupported_policy_abstains_even_if_a_candidate_misquotes_the_procedure
+FAILED backend/tests/test_accuracy_regressions.py::test_each_capstone_mark_is_matched_despite_course_names_in_the_answer
+4 failed, 23 deselected, 1 warning in 2.38s

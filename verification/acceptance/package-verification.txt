@@ -1,0 +1,6 @@
+ZIP CRC, exact file list, required files, UTF-8 evidence and local-path scan passed.
+Provider-token and private-key pattern scan passed for packaged text. Credential template is blank.
+No .env, private SQLite databases, cached dependencies, generated builds or raw runtime logs were packaged.
+Synthetic sample has 3 matching PDF hashes, 10 chunks, 1 demo learner, no question/answer/citation/feedback rows, SQLite integrity ok and zero foreign-key violations.
+Independent PDF verification is bound to the archived live sample by SHA-256.
+Local links in the reviewer documents resolved to files in the archive.

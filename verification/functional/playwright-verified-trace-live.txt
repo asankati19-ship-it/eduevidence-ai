@@ -1,0 +1,19 @@
+npm notice run eduevidence-ai@1.0.0 npx
+npm notice run playwright test --grep functional trace|full journey
+[WebServer] INFO:     Started server process [43804]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8045 (Press CTRL+C to quit)
+[WebServer] npm notice run eduevidence-ai@1.0.0 dev
+[WebServer] npm notice run vite --port 5211
+[WebServer] (node:46688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:39792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 e2e\accuracy-trace.spec.ts:26:1 › functional trace matches React, FastAPI, and one SQLite workspace for each outcome (12.7s)
+  ok 2 e2e\ui-journey.spec.ts:8:1 › full journey uploads a PDF, answers from its page, saves feedback and verifies SQLite metrics after refresh (8.0s)
+
+  2 passed (32.7s)

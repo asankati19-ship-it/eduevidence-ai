@@ -1,0 +1,4 @@
+Start: <local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\eduevidence-ai\.venv\Scripts\python.exe -m uvicorn backend.app.main:create_app --factory --host 127.0.0.1 --port 8072 --no-access-log
+Start: C:\Windows\system32\cmd.exe /d /c npm.cmd --prefix frontend run dev -- --port 5262
+{"backend_health": "ok", "indexed_documents": 3, "chunks": 10, "rendered_page": {"document_id": 1, "page": 4, "bytes": 70352}, "api_outcomes": {"known": {"id": 1, "status": "provider_error", "request_id": "a5acad49-89d8-43ec-ad60-a1611666ca44", "audit_count": 3}, "unknown": {"id": 2, "status": "abstained", "request_id": "3a28406e-62fa-4dad-831a-2deb7127744c", "audit_count": 3}}, "restored_documents": 3, "sqlite_integrity": "ok", "foreign_key_violations": 0}
+{"browser":"Chromium 159.0.8154.6","overview_status":200,"page_errors":0,"matching_dashboard_metrics":{"Documents":3,"Indexed chunks":10,"Questions asked":2,"Verified answers":0}}

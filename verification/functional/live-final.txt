@@ -1,0 +1,78 @@
+<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\eduevidence-ai\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+Q01 201 answered
+Q02 201 answered
+Q03 201 answered
+Q04 201 answered
+Q05 201 answered
+Q06 201 answered
+Q07 201 answered
+Q08 201 answered
+Q09 201 answered
+Q10 201 answered
+Q11 201 answered
+Q12 201 answered
+Q13 201 answered
+Q14 201 answered
+Q15 201 answered
+Q16 201 answered
+Q17 201 answered
+Q18 201 answered
+Q19 201 answered
+Q20 201 answered
+Q21 201 answered
+Q22 201 answered
+Q23 201 answered
+Q24 201 answered
+Q25 201 answered
+Q26 201 answered
+Q27 201 answered
+Q28 201 answered
+Q29 201 answered
+Q30 201 answered
+Q31 201 answered
+Q32 201 answered
+Q33 201 abstained
+Q34 201 abstained
+Q35 201 abstained
+Q36 201 abstained
+Q37 201 answered
+Q38 422 invalid_input
+Q39 422 invalid_input
+Q40 404 document_not_found
+Q41 422 scope_mismatch
+Q42 201 answered
+Q43 201 answered
+{
+  "judged_questions": 34,
+  "unit": "distinct original PDF page",
+  "cutoffs": {
+    "1": {
+      "precision": 1.0,
+      "recall": 0.9411764705882353,
+      "mrr": 1.0,
+      "queries_with_full_recall": 30,
+      "returned_pages": 34,
+      "relevant_returned_pages": 34,
+      "precision_among_returned": 1.0
+    },
+    "3": {
+      "precision": 0.3725490196078431,
+      "recall": 1.0,
+      "mrr": 1.0,
+      "queries_with_full_recall": 34,
+      "returned_pages": 66,
+      "relevant_returned_pages": 38,
+      "precision_among_returned": 0.5757575757575758
+    },
+    "5": {
+      "precision": 0.2235294117647059,
+      "recall": 1.0,
+      "mrr": 1.0,
+      "queries_with_full_recall": 34,
+      "returned_pages": 70,
+      "relevant_returned_pages": 38,
+      "precision_among_returned": 0.5428571428571428
+    }
+  }
+}

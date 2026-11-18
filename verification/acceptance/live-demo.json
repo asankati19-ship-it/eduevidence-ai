@@ -1,0 +1,674 @@
+{
+  "mode": "live_openai",
+  "history_count": 8,
+  "cases": [
+    {
+      "expectation": {
+        "course_id": 1,
+        "question": "What are the Python Programming course completion requirements?",
+        "document": "Python Programming Course Handbook",
+        "page": 4,
+        "required_facts": [
+          "submit all four graded labs",
+          "at least 70% overall",
+          "Pass on the capstone project"
+        ]
+      },
+      "trace": {
+        "id": 1,
+        "question_text": "What are the Python Programming course completion requirements?",
+        "course_id": 1,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "b94d038b-cf4a-4e0f-b8ab-447924c06698",
+        "status": "answered",
+        "request_id": "782f7a2e-dfa9-4810-bc63-ca20c5abd0c8",
+        "created_at": "2026-11-18T21:25:25.581Z",
+        "completed_at": "2026-11-18T21:25:33.853Z",
+        "answer": {
+          "id": 1,
+          "status": "answered",
+          "body": "To complete the Python Programming course, students must submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. Completion is recorded in the LMS Results area after verification by the course coordinator.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 797,
+          "output_tokens": 188,
+          "latency_ms": 6935,
+          "provider_response_id": "resp_031572950e95abca016afe17c6ebcc87d099563974bf025e6d",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.43715836,
+            "rank": 1
+          },
+          {
+            "chunk_id": 1,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+            "score": 0.18254963,
+            "rank": 2
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.43715836,
+            "rank": 1,
+            "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions.",
+            "position": 1
+          }
+        ]
+      },
+      "checks": {
+        "status_matches": true,
+        "expected_content_matches": true,
+        "page_matches": true,
+        "trace_audited": true,
+        "real_api_completed": true,
+        "page_rendered": true,
+        "feedback_persisted": true
+      },
+      "matched_facts": [
+        "submit all four graded labs",
+        "at least 70% overall",
+        "Pass on the capstone project"
+      ]
+    },
+    {
+      "expectation": {
+        "course_id": 1,
+        "question": "Where do I submit a graded Python lab, and what should it include?",
+        "document": "Python Programming Course Handbook",
+        "page": 3,
+        "required_facts": [
+          "LMS Assessments area",
+          "ZIP archive",
+          "Python source files",
+          "README"
+        ]
+      },
+      "trace": {
+        "id": 2,
+        "question_text": "Where do I submit a graded Python lab, and what should it include?",
+        "course_id": 1,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "b94d038b-cf4a-4e0f-b8ab-447924c06698",
+        "status": "answered",
+        "request_id": "8389139d-6fc2-4692-ade9-f16295319ab9",
+        "created_at": "2026-11-18T21:25:34.173Z",
+        "completed_at": "2026-11-18T21:25:36.475Z",
+        "answer": {
+          "id": 2,
+          "status": "answered",
+          "body": "You submit a graded Python lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 808,
+          "output_tokens": 95,
+          "latency_ms": 1097,
+          "provider_response_id": "resp_010366ec7fd7d96a016afe17cbb8c887d0b618a504d80f40a2",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+            "score": 0.29986422,
+            "rank": 1
+          },
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.1324422,
+            "rank": 2
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+            "score": 0.29986422,
+            "rank": 1,
+            "evidence_quote": "Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.",
+            "position": 1
+          }
+        ]
+      },
+      "checks": {
+        "status_matches": true,
+        "expected_content_matches": true,
+        "page_matches": true,
+        "trace_audited": true,
+        "real_api_completed": true,
+        "page_rendered": true,
+        "feedback_persisted": true
+      },
+      "matched_facts": [
+        "LMS Assessments area",
+        "ZIP archive",
+        "Python source files",
+        "README"
+      ]
+    },
+    {
+      "expectation": {
+        "course_id": 2,
+        "question": "What must the AI and Machine Learning capstone report include?",
+        "document": "AI and Machine Learning Course Guide",
+        "page": 3,
+        "required_facts": [
+          "dataset description",
+          "baseline model",
+          "validation results",
+          "discussion of limitations"
+        ]
+      },
+      "trace": {
+        "id": 3,
+        "question_text": "What must the AI and Machine Learning capstone report include?",
+        "course_id": 2,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "b94d038b-cf4a-4e0f-b8ab-447924c06698",
+        "status": "answered",
+        "request_id": "7fd4a576-34cc-4c35-8a3d-7a790b087958",
+        "created_at": "2026-11-18T21:25:36.707Z",
+        "completed_at": "2026-11-18T21:25:39.332Z",
+        "answer": {
+          "id": 3,
+          "status": "answered",
+          "body": "The AI and Machine Learning capstone report must include the dataset description, a baseline model, validation results, and a discussion of limitations.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 956,
+          "output_tokens": 90,
+          "latency_ms": 1706,
+          "provider_response_id": "resp_09cd4bef396b327d016afe17ce47ec87d095f872e8871b9b9e",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 7,
+            "document_id": 2,
+            "document_title": "AI and Machine Learning Course Guide",
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "AI-201 / SYNTHETIC COURSE LIBRARY\n\nAI and Machine Learning Course Guide\n\nAssessment and capstone\n\nGrading and report contents\n\nThe AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%.\n\nThe capstone report must include the dataset description, a baseline model, validation results, and a discussion of limitations.\n\nSubmit the modeling notebook as an IPYNB file and the capstone report as a PDF in separate LMS Assessments slots.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+            "score": 0.4587882,
+            "rank": 1
+          },
+          {
+            "chunk_id": 5,
+            "document_id": 2,
+            "document_title": "AI and Machine Learning Course Guide",
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "AI-201 / SYNTHETIC COURSE LIBRARY\n\nAI and Machine Learning Course Guide\n\nCourse overview\n\nLearning objectives and prerequisites\n\nAI and Machine Learning is an eight-week applied course. Learners prepare a small dataset, train baseline models, evaluate results, and explain limitations.\n\nBefore starting, learners should understand Python functions and basic descriptive statistics. The course provides starter notebooks and synthetic datasets.\n\nThe learning resources include a glossary, weekly notebook walkthroughs, and an evaluation checklist.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+            "score": 0.18178506,
+            "rank": 2
+          },
+          {
+            "chunk_id": 6,
+            "document_id": 2,
+            "document_title": "AI and Machine Learning Course Guide",
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "page_number": 2,
+            "chunk_number": 2,
+            "revision": 1,
+            "content": "AI-201 / SYNTHETIC COURSE LIBRARY\n\nAI and Machine Learning Course Guide\n\nModules and workshops\n\nThe applied machine learning sequence\n\nModules cover dataset preparation, classification, regression, validation, and responsible model reporting.\n\nFor classification workshops, compare a logistic regression baseline with a decision tree. Report precision, recall, and the confusion matrix.\n\nUse the LMS workshop notebooks. Each notebook includes a runnable starter and a short reflection prompt.\n\nEduEvidence AI / Synthetic demonstration material Page 2 of 3",
+            "score": 0.14927452,
+            "rank": 3
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 7,
+            "document_id": 2,
+            "document_title": "AI and Machine Learning Course Guide",
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "AI-201 / SYNTHETIC COURSE LIBRARY\n\nAI and Machine Learning Course Guide\n\nAssessment and capstone\n\nGrading and report contents\n\nThe AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%.\n\nThe capstone report must include the dataset description, a baseline model, validation results, and a discussion of limitations.\n\nSubmit the modeling notebook as an IPYNB file and the capstone report as a PDF in separate LMS Assessments slots.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+            "score": 0.4587882,
+            "rank": 1,
+            "evidence_quote": "The capstone report must include the dataset description, a baseline model, validation results, and a discussion of limitations.",
+            "position": 1
+          }
+        ]
+      },
+      "checks": {
+        "status_matches": true,
+        "expected_content_matches": true,
+        "page_matches": true,
+        "trace_audited": true,
+        "real_api_completed": true,
+        "page_rendered": true,
+        "feedback_persisted": true
+      },
+      "matched_facts": [
+        "dataset description",
+        "baseline model",
+        "validation results",
+        "discussion of limitations"
+      ]
+    },
+    {
+      "expectation": {
+        "course_id": 3,
+        "question": "What is the minimum live-session attendance requirement?",
+        "document": "LMS Assessment and Attendance Policy",
+        "page": 2,
+        "required_facts": [
+          "at least 75% of scheduled live sessions"
+        ]
+      },
+      "trace": {
+        "id": 4,
+        "question_text": "What is the minimum live-session attendance requirement?",
+        "course_id": 3,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "b94d038b-cf4a-4e0f-b8ab-447924c06698",
+        "status": "answered",
+        "request_id": "ddc1290e-5694-4978-9aa6-3e5c3dc1e2fd",
+        "created_at": "2026-11-18T21:25:39.519Z",
+        "completed_at": "2026-11-18T21:25:42.473Z",
+        "answer": {
+          "id": 4,
+          "status": "answered",
+          "body": "The minimum live-session attendance requirement is that learners must attend at least 75% of scheduled live sessions, and a live session counts when the learner is present for at least half of its scheduled duration.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 635,
+          "output_tokens": 112,
+          "latency_ms": 1498,
+          "provider_response_id": "resp_0851cf9456dc43d9016afe17d10e0087d0967a123b6d3c994a",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 9,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 2,
+            "chunk_number": 2,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAttendance requirements\n\nLive sessions and recorded participation\n\nLearners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration.\n\nWatching a recording does not count toward live attendance. A learner may request a documented accommodation from course support.\n\nAttendance records appear in the LMS Attendance area within two working days of a session.\n\nEduEvidence AI / Synthetic demonstration material Page 2 of 3",
+            "score": 0.3621171,
+            "rank": 1
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 9,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 2,
+            "chunk_number": 2,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAttendance requirements\n\nLive sessions and recorded participation\n\nLearners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration.\n\nWatching a recording does not count toward live attendance. A learner may request a documented accommodation from course support.\n\nAttendance records appear in the LMS Attendance area within two working days of a session.\n\nEduEvidence AI / Synthetic demonstration material Page 2 of 3",
+            "score": 0.3621171,
+            "rank": 1,
+            "evidence_quote": "Learners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration.",
+            "position": 1
+          }
+        ]
+      },
+      "checks": {
+        "status_matches": true,
+        "expected_content_matches": true,
+        "page_matches": true,
+        "trace_audited": true,
+        "real_api_completed": true,
+        "page_rendered": true,
+        "feedback_persisted": true
+      },
+      "matched_facts": [
+        "at least 75% of scheduled live sessions"
+      ]
+    },
+    {
+      "expectation": {
+        "course_id": 3,
+        "question": "How late can I submit eligible work and what is the penalty?",
+        "document": "LMS Assessment and Attendance Policy",
+        "page": 1,
+        "required_facts": [
+          "48 hours after the deadline",
+          "10 percentage points per 24-hour period"
+        ]
+      },
+      "trace": {
+        "id": 5,
+        "question_text": "How late can I submit eligible work and what is the penalty?",
+        "course_id": 3,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "b94d038b-cf4a-4e0f-b8ab-447924c06698",
+        "status": "answered",
+        "request_id": "caf46842-dcc8-4e90-9b19-15c521471d30",
+        "created_at": "2026-11-18T21:25:42.644Z",
+        "completed_at": "2026-11-18T21:25:44.687Z",
+        "answer": {
+          "id": 5,
+          "status": "answered",
+          "body": "Eligible work can be submitted up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 650,
+          "output_tokens": 107,
+          "latency_ms": 1194,
+          "provider_response_id": "resp_00fb1a1c074cc8bd016afe17d42e2487d0a8cddbb4716b3a56",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 8,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+            "score": 0.46553875,
+            "rank": 1
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 8,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+            "score": 0.46553875,
+            "rank": 1,
+            "evidence_quote": "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.",
+            "position": 1
+          }
+        ]
+      },
+      "checks": {
+        "status_matches": true,
+        "expected_content_matches": true,
+        "page_matches": true,
+        "trace_audited": true,
+        "real_api_completed": true,
+        "page_rendered": true,
+        "feedback_persisted": true
+      },
+      "matched_facts": [
+        "48 hours after the deadline",
+        "10 percentage points per 24-hour period"
+      ]
+    },
+    {
+      "expectation": {
+        "course_id": 3,
+        "question": "What is the assessment review deadline?",
+        "document": "LMS Assessment and Attendance Policy",
+        "page": 3,
+        "required_facts": [
+          "within five working days"
+        ]
+      },
+      "trace": {
+        "id": 6,
+        "question_text": "What is the assessment review deadline?",
+        "course_id": 3,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "b94d038b-cf4a-4e0f-b8ab-447924c06698",
+        "status": "answered",
+        "request_id": "7c86f6de-1729-4897-8205-e6cdb0d62032",
+        "created_at": "2026-11-18T21:25:44.922Z",
+        "completed_at": "2026-11-18T21:25:47.091Z",
+        "answer": {
+          "id": 6,
+          "status": "answered",
+          "body": "The assessment review deadline is within five working days after the grade is released.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 800,
+          "output_tokens": 74,
+          "latency_ms": 1392,
+          "provider_response_id": "resp_0f6310fc9e0e1705016afe17d678e487d090a32659e854db9f",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 10,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+            "score": 0.36835646,
+            "rank": 1
+          },
+          {
+            "chunk_id": 8,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+            "score": 0.24472502,
+            "rank": 2
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 10,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+            "score": 0.36835646,
+            "rank": 1,
+            "evidence_quote": "Request an assessment review in the LMS Support area within five working days after the grade is released.",
+            "position": 1
+          }
+        ]
+      },
+      "checks": {
+        "status_matches": true,
+        "expected_content_matches": true,
+        "page_matches": true,
+        "trace_audited": true,
+        "real_api_completed": true,
+        "page_rendered": true,
+        "feedback_persisted": true
+      },
+      "matched_facts": [
+        "within five working days"
+      ]
+    },
+    {
+      "expectation": {
+        "course_id": 1,
+        "question": "What is the cafeteria menu on Tuesday?",
+        "status": "abstained"
+      },
+      "trace": {
+        "id": 7,
+        "question_text": "What is the cafeteria menu on Tuesday?",
+        "course_id": 1,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "b94d038b-cf4a-4e0f-b8ab-447924c06698",
+        "status": "abstained",
+        "request_id": "9d5c5b70-ec1a-4035-aaa8-40f438d38ae3",
+        "created_at": "2026-11-18T21:25:47.284Z",
+        "completed_at": "2026-11-18T21:25:47.322Z",
+        "answer": {
+          "id": 7,
+          "status": "abstained",
+          "body": null,
+          "reason": "The selected documents do not contain enough matching evidence for this question.",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "2.4.0",
+          "api_outcome": "skipped",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": false,
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_ms": null,
+          "provider_response_id": null,
+          "rating": null
+        },
+        "sources": [],
+        "citations": []
+      },
+      "checks": {
+        "status_matches": true,
+        "expected_content_matches": true,
+        "page_matches": true,
+        "trace_audited": true
+      },
+      "matched_facts": []
+    },
+    {
+      "expectation": {
+        "course_id": 2,
+        "question": "Requirements?",
+        "status": "abstained"
+      },
+      "trace": {
+        "id": 8,
+        "question_text": "Requirements?",
+        "course_id": 2,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "b94d038b-cf4a-4e0f-b8ab-447924c06698",
+        "status": "abstained",
+        "request_id": "18d0f8e6-4c28-479a-ad9d-f15bd64adac6",
+        "created_at": "2026-11-18T21:25:47.387Z",
+        "completed_at": "2026-11-18T21:25:47.414Z",
+        "answer": {
+          "id": 8,
+          "status": "abstained",
+          "body": null,
+          "reason": "Ask a more specific question about the selected course materials.",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "2.4.0",
+          "api_outcome": "skipped",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": false,
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_ms": null,
+          "provider_response_id": null,
+          "rating": null
+        },
+        "sources": [],
+        "citations": []
+      },
+      "checks": {
+        "status_matches": true,
+        "expected_content_matches": true,
+        "page_matches": true,
+        "trace_audited": true
+      },
+      "matched_facts": []
+    }
+  ]
+}

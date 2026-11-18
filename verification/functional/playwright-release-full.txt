@@ -1,0 +1,38 @@
+npm notice run eduevidence-ai@1.0.0 npx
+npm notice run playwright test
+[WebServer] INFO:     Started server process [38360]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8036 (Press CTRL+C to quit)
+[WebServer] npm notice run eduevidence-ai@1.0.0 dev
+[WebServer] npm notice run vite --port 5200
+[WebServer] (node:16356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:23192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -   1 e2e\accuracy-trace.spec.ts:26:1 › functional trace matches React, FastAPI, and one SQLite workspace for each outcome
+  ok  2 e2e\ui-journey.spec.ts:8:1 › full journey uploads a PDF, answers from its page, saves feedback and verifies SQLite metrics after refresh (5.4s)
+  ok  3 e2e\ui-layout.spec.ts:16:3 › desktop screens have usable navigation, no horizontal overflow and no detected accessibility violations (4.4s)
+  ok  4 e2e\ui-layout.spec.ts:16:3 › tablet screens have usable navigation, no horizontal overflow and no detected accessibility violations (5.1s)
+  ok  5 e2e\ui-layout.spec.ts:16:3 › mobile screens have usable navigation, no horizontal overflow and no detected accessibility violations (4.6s)
+  ok  6 e2e\ui-layout.spec.ts:37:1 › keyboard skip, drawer tab order and Escape restore focus (1.5s)
+  -   7 e2e\ui-states.spec.ts:33:1 › empty library shows the first-upload path
+  -   8 e2e\ui-states.spec.ts:42:1 › missing credentials are displayed and a grounded lookup reports the backend outcome
+  -   9 e2e\ui-states.spec.ts:55:1 › SQLite failure shows the correlated API message and retry restores system health
+  ok 10 e2e\ui-states.spec.ts:72:1 › initial loading, upload, indexing and indexing failure are visible with delayed responses (2.3s)
+  ok 11 e2e\ui-states.spec.ts:113:1 › blank and duplicate asks are blocked, generation waits on backend, and scope and draft resume (3.4s)
+  ok 12 e2e\ui-states.spec.ts:150:1 › Markdown lists persist and the answer renderer ignores raw HTML, links and images (1.4s)
+  ok 13 e2e\ui-states.spec.ts:173:1 › a long answer with many real citations and long filenames stays inside the mobile viewport (1.6s)
+  ok 14 e2e\workspace.spec.ts:21:1 › overview reads database metrics and seven navigation destinations load (1.4s)
+  ok 15 e2e\workspace.spec.ts:37:1 › document filtering and keyboard modal controls render the correct PDF page (1.6s)
+  ok 16 e2e\workspace.spec.ts:60:1 › upload rejection, duplicate detection, indexing, reindex and confirmed removal (3.0s)
+  ok 17 e2e\workspace.spec.ts:97:1 › offline fixture answer opens a real citation and PDF, persists feedback and survives reload (2.2s)
+  ok 18 e2e\workspace.spec.ts:130:1 › unsupported question abstains and is filterable in persisted history (1.2s)
+  ok 19 e2e\workspace.spec.ts:142:1 › recoverable provider failure can be retried with the same scope and recorded as a new turn (1.1s)
+  ok 20 e2e\workspace.spec.ts:154:1 › mobile drawer and assistant fit a narrow viewport (789ms)
+
+  4 skipped
+  16 passed (52.0s)

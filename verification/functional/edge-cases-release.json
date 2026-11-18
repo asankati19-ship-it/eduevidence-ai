@@ -1,0 +1,3963 @@
+{
+  "cases": [
+    {
+      "id": "E12",
+      "mode": "offline",
+      "expected": "Conflicting workshop policies cause abstention before generation.",
+      "passed": true,
+      "checks": {
+        "conflict_abstained": true,
+        "both_policies_were_ranked": true,
+        "conflict_stopped_before_model": true,
+        "no_citations": true,
+        "selecting_one_policy_limits_source": true
+      },
+      "observation": {
+        "question": "What are the workshop attendance requirements?",
+        "scope": {
+          "course_id": 3
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the workshop attendance requirements?",
+          "course_id": 3,
+          "document_id": null,
+          "document_title": null,
+          "conversation_id": null,
+          "status": "abstained",
+          "request_id": "1570ad5c-7e6b-4f22-addb-f80a5a5cf256",
+          "created_at": "2026-11-18T20:51:15.693Z",
+          "completed_at": "2026-11-18T20:51:15.706Z",
+          "answer": {
+            "id": 1,
+            "status": "abstained",
+            "body": null,
+            "reason": "The selected materials give conflicting values for this policy. Select the document that applies.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "skipped",
+            "error_code": null,
+            "retryable": false,
+            "verification_passed": false,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": null,
+            "provider_response_id": null,
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Workshop attendance policy A.pdf",
+              "original_filename": "Workshop attendance policy A.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "The workshop attendance requirements mandate attendance of 75% of live workshops.",
+              "score": 0.77386677,
+              "rank": 1
+            },
+            {
+              "chunk_id": 2,
+              "document_id": 2,
+              "document_title": "Workshop attendance policy B.pdf",
+              "original_filename": "Workshop attendance policy B.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "The workshop attendance requirements mandate attendance of 100% of live workshops.",
+              "score": 0.77386677,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": 3,
+            "document_id": null,
+            "conversation_id": null,
+            "question_text": "What are the workshop attendance requirements?",
+            "status": "abstained",
+            "request_id": "1570ad5c-7e6b-4f22-addb-f80a5a5cf256",
+            "created_at": "2026-11-18T20:51:15.693Z",
+            "completed_at": "2026-11-18T20:51:15.706Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "abstained",
+            "body": null,
+            "reason": "The selected materials give conflicting values for this policy. Select the document that applies.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": null,
+            "prompt_version": "2.2.0",
+            "api_outcome": "skipped",
+            "error_code": null,
+            "retryable": 0,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": null,
+            "created_at": "2026-11-18T20:51:15.706Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 1,
+              "score": 0.77386677,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "3771a3b50f677fa11cac593246ef8d77d13e27e1d78645952b0a2efb2d409bd2"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 2,
+              "rank": 2,
+              "score": 0.77386677,
+              "document_id": 2,
+              "page_number": 1,
+              "content_hash": "35b1fc1c400c31da20017c2c042ebb0712efc7a870e5ac128e67afa9013a586a"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 5,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "1570ad5c-7e6b-4f22-addb-f80a5a5cf256",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:15.693Z"
+            },
+            {
+              "id": 6,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "1570ad5c-7e6b-4f22-addb-f80a5a5cf256",
+              "event_type": "question.retrieve",
+              "outcome": "insufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:15.702Z"
+            },
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "1570ad5c-7e6b-4f22-addb-f80a5a5cf256",
+              "event_type": "question.complete",
+              "outcome": "abstained",
+              "detail": "skipped",
+              "created_at": "2026-11-18T20:51:15.708Z"
+            }
+          ]
+        },
+        "explicit_document_control": {
+          "question": "What are the workshop attendance requirements?",
+          "scope": {
+            "course_id": 3,
+            "document_id": 1
+          },
+          "http_status": 201,
+          "response": {
+            "id": 2,
+            "question_text": "What are the workshop attendance requirements?",
+            "course_id": 3,
+            "document_id": 1,
+            "document_title": "Workshop attendance policy A.pdf",
+            "conversation_id": null,
+            "status": "abstained",
+            "request_id": "7ce5a0d6-9c2b-4d99-90f7-6a5064bd2e74",
+            "created_at": "2026-11-18T20:51:15.726Z",
+            "completed_at": "2026-11-18T20:51:15.738Z",
+            "answer": {
+              "id": 2,
+              "status": "abstained",
+              "body": null,
+              "reason": "The two retrieved workshop policies give conflicting attendance requirements.",
+              "provider": "offline_fixture",
+              "model": "offline-citation-fixture-v1",
+              "prompt_version": "2.2.0",
+              "api_outcome": "completed",
+              "error_code": null,
+              "retryable": false,
+              "verification_passed": false,
+              "input_tokens": 33,
+              "output_tokens": 14,
+              "latency_ms": 1,
+              "provider_response_id": "offline-fixture-response",
+              "rating": null
+            },
+            "sources": [
+              {
+                "chunk_id": 1,
+                "document_id": 1,
+                "document_title": "Workshop attendance policy A.pdf",
+                "original_filename": "Workshop attendance policy A.pdf",
+                "page_number": 1,
+                "chunk_number": 1,
+                "revision": 1,
+                "content": "The workshop attendance requirements mandate attendance of 75% of live workshops.",
+                "score": 0.81171346,
+                "rank": 1
+              }
+            ],
+            "citations": []
+          },
+          "sqlite": {
+            "question": {
+              "id": 2,
+              "learner_id": 1,
+              "course_id": 3,
+              "document_id": 1,
+              "conversation_id": null,
+              "question_text": "What are the workshop attendance requirements?",
+              "status": "abstained",
+              "request_id": "7ce5a0d6-9c2b-4d99-90f7-6a5064bd2e74",
+              "created_at": "2026-11-18T20:51:15.726Z",
+              "completed_at": "2026-11-18T20:51:15.738Z"
+            },
+            "answer": {
+              "id": 2,
+              "question_id": 2,
+              "status": "abstained",
+              "body": null,
+              "reason": "The two retrieved workshop policies give conflicting attendance requirements.",
+              "provider": "offline_fixture",
+              "model": "offline-citation-fixture-v1",
+              "provider_response_id": "offline-fixture-response",
+              "prompt_version": "2.2.0",
+              "api_outcome": "completed",
+              "error_code": null,
+              "retryable": 0,
+              "input_tokens": 33,
+              "output_tokens": 14,
+              "latency_ms": 1,
+              "created_at": "2026-11-18T20:51:15.738Z"
+            },
+            "ranked_sources": [
+              {
+                "question_id": 2,
+                "chunk_id": 1,
+                "rank": 1,
+                "score": 0.81171346,
+                "document_id": 1,
+                "page_number": 1,
+                "content_hash": "3771a3b50f677fa11cac593246ef8d77d13e27e1d78645952b0a2efb2d409bd2"
+              }
+            ],
+            "citations": [],
+            "events": [
+              {
+                "id": 8,
+                "learner_id": 1,
+                "question_id": 2,
+                "document_id": 1,
+                "request_id": "7ce5a0d6-9c2b-4d99-90f7-6a5064bd2e74",
+                "event_type": "question.submit",
+                "outcome": "accepted",
+                "detail": null,
+                "created_at": "2026-11-18T20:51:15.726Z"
+              },
+              {
+                "id": 9,
+                "learner_id": 1,
+                "question_id": 2,
+                "document_id": null,
+                "request_id": "7ce5a0d6-9c2b-4d99-90f7-6a5064bd2e74",
+                "event_type": "question.retrieve",
+                "outcome": "sufficient",
+                "detail": "1 passages",
+                "created_at": "2026-11-18T20:51:15.737Z"
+              },
+              {
+                "id": 10,
+                "learner_id": 1,
+                "question_id": 2,
+                "document_id": null,
+                "request_id": "7ce5a0d6-9c2b-4d99-90f7-6a5064bd2e74",
+                "event_type": "question.complete",
+                "outcome": "abstained",
+                "detail": "completed",
+                "created_at": "2026-11-18T20:51:15.744Z"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "E13",
+      "mode": "offline",
+      "expected": "Corrupted PDF is rejected with HTTP 422.",
+      "passed": true,
+      "checks": {
+        "rejected": true,
+        "no_document": true
+      },
+      "observation": {
+        "http_status": 422,
+        "response": {
+          "error": {
+            "code": "corrupt_pdf",
+            "message": "The PDF could not be read. Export a fresh copy and upload it again.",
+            "request_id": "7b57fdfb-6cc5-4d6d-89aa-39e102487705",
+            "issues": []
+          }
+        },
+        "filename": "Corrupt syllabus.pdf"
+      }
+    },
+    {
+      "id": "E14",
+      "mode": "offline",
+      "expected": "Image-only PDF reports no_text and indexes no chunks.",
+      "passed": true,
+      "checks": {
+        "classified_no_text": true,
+        "no_indexed_chunks": true
+      },
+      "observation": {
+        "filename": "Image-only.pdf",
+        "http_status": 202,
+        "response": {
+          "id": 1,
+          "course_id": 1,
+          "course_code": "PY-101",
+          "course_title": "Python Programming",
+          "title": "Image-only",
+          "original_filename": "Image-only.pdf",
+          "sha256": "923884c4f442048604c7b5992c947f6e53405bd0517f0566ebd515302bf1ff82",
+          "size_bytes": 18047,
+          "page_count": 1,
+          "text_pages": 0,
+          "status": "error",
+          "active_revision": 0,
+          "chunk_count": 0,
+          "error_code": "no_text",
+          "error_message": "No extractable text was found. Use a searchable PDF or run OCR first.",
+          "created_at": "2026-11-18T20:51:15.870Z",
+          "updated_at": "2026-11-18T20:51:15.912Z"
+        }
+      }
+    },
+    {
+      "id": "E15",
+      "mode": "offline",
+      "expected": "Duplicate PDF is rejected with HTTP 409.",
+      "passed": true,
+      "checks": {
+        "duplicate_rejected": true,
+        "document_total_unchanged": true
+      },
+      "observation": {
+        "filename": "Python Programming Course Handbook.pdf",
+        "http_status": 409,
+        "response": {
+          "error": {
+            "code": "duplicate_pdf",
+            "message": "This PDF is already in the library (document 1).",
+            "request_id": "828af56e-4ae2-4eb4-99fa-3bdf54ef20ee",
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "id": "E16",
+      "mode": "mocked_sdk_transport",
+      "expected": "Malformed generation JSON fails validation.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "retry_flag": true,
+        "structured_api_contract": true,
+        "requests_observed": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "bea47c76-f800-41e5-abb9-5d614af3e48c",
+          "created_at": "2026-11-18T20:51:16.330Z",
+          "completed_at": "2026-11-18T20:51:17.487Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The provider response did not match the answer schema.",
+            "provider": "openai_mock_transport",
+            "model": "mock-openai-transport",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "invalid_model_json",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 100,
+            "output_tokens": 31,
+            "latency_ms": 1142,
+            "provider_response_id": "resp_mock_malformed_answer",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "validation_error",
+            "request_id": "bea47c76-f800-41e5-abb9-5d614af3e48c",
+            "created_at": "2026-11-18T20:51:16.330Z",
+            "completed_at": "2026-11-18T20:51:17.487Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The provider response did not match the answer schema.",
+            "provider": "openai_mock_transport",
+            "model": "mock-openai-transport",
+            "provider_response_id": "resp_mock_malformed_answer",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "invalid_model_json",
+            "retryable": 1,
+            "input_tokens": 100,
+            "output_tokens": 31,
+            "latency_ms": 1142,
+            "created_at": "2026-11-18T20:51:17.487Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "bea47c76-f800-41e5-abb9-5d614af3e48c",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:16.330Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "bea47c76-f800-41e5-abb9-5d614af3e48c",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:16.336Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "bea47c76-f800-41e5-abb9-5d614af3e48c",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "invalid_model_json",
+              "created_at": "2026-11-18T20:51:17.491Z"
+            }
+          ]
+        },
+        "sdk_mock_requests": [
+          {
+            "endpoint": "/v1/responses",
+            "stage": "course_answer",
+            "strict": true,
+            "store": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "E17",
+      "mode": "mocked_model",
+      "expected": "Wrong page, wrong document, and unreturned real chunk all fail citation validation.",
+      "passed": true,
+      "checks": {
+        "wrong_page": true,
+        "wrong_document": true,
+        "unretrieved_chunk": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+          "created_at": "2026-11-18T20:51:17.685Z",
+          "completed_at": "2026-11-18T20:51:17.703Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "A citation could not be matched to the retrieved document and page.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "invalid_citation",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "validation_error",
+            "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+            "created_at": "2026-11-18T20:51:17.685Z",
+            "completed_at": "2026-11-18T20:51:17.703Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "A citation could not be matched to the retrieved document and page.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "invalid_citation",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:17.703Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:17.685Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:17.702Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "invalid_citation",
+              "created_at": "2026-11-18T20:51:17.706Z"
+            }
+          ]
+        },
+        "subcases": [
+          {
+            "question": "What are the Python Programming course completion requirements?",
+            "scope": {
+              "document_id": 1
+            },
+            "http_status": 201,
+            "response": {
+              "id": 1,
+              "question_text": "What are the Python Programming course completion requirements?",
+              "course_id": null,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "conversation_id": null,
+              "status": "validation_error",
+              "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+              "created_at": "2026-11-18T20:51:17.685Z",
+              "completed_at": "2026-11-18T20:51:17.703Z",
+              "answer": {
+                "id": 1,
+                "status": "validation_error",
+                "body": null,
+                "reason": "A citation could not be matched to the retrieved document and page.",
+                "provider": "offline_fixture",
+                "model": "offline-citation-fixture-v1",
+                "prompt_version": "2.2.0",
+                "api_outcome": "invalid_response",
+                "error_code": "invalid_citation",
+                "retryable": true,
+                "verification_passed": false,
+                "input_tokens": 33,
+                "output_tokens": 14,
+                "latency_ms": 1,
+                "provider_response_id": "offline-fixture-response",
+                "rating": null
+              },
+              "sources": [
+                {
+                  "chunk_id": 4,
+                  "document_id": 1,
+                  "document_title": "Python Programming Course Handbook",
+                  "original_filename": "Python Programming Course Handbook.pdf",
+                  "page_number": 4,
+                  "chunk_number": 4,
+                  "revision": 1,
+                  "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+                  "score": 0.43715836,
+                  "rank": 1
+                },
+                {
+                  "chunk_id": 1,
+                  "document_id": 1,
+                  "document_title": "Python Programming Course Handbook",
+                  "original_filename": "Python Programming Course Handbook.pdf",
+                  "page_number": 1,
+                  "chunk_number": 1,
+                  "revision": 1,
+                  "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+                  "score": 0.18254963,
+                  "rank": 2
+                }
+              ],
+              "citations": []
+            },
+            "sqlite": {
+              "question": {
+                "id": 1,
+                "learner_id": 1,
+                "course_id": null,
+                "document_id": 1,
+                "conversation_id": null,
+                "question_text": "What are the Python Programming course completion requirements?",
+                "status": "validation_error",
+                "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+                "created_at": "2026-11-18T20:51:17.685Z",
+                "completed_at": "2026-11-18T20:51:17.703Z"
+              },
+              "answer": {
+                "id": 1,
+                "question_id": 1,
+                "status": "validation_error",
+                "body": null,
+                "reason": "A citation could not be matched to the retrieved document and page.",
+                "provider": "offline_fixture",
+                "model": "offline-citation-fixture-v1",
+                "provider_response_id": "offline-fixture-response",
+                "prompt_version": "2.2.0",
+                "api_outcome": "invalid_response",
+                "error_code": "invalid_citation",
+                "retryable": 1,
+                "input_tokens": 33,
+                "output_tokens": 14,
+                "latency_ms": 1,
+                "created_at": "2026-11-18T20:51:17.703Z"
+              },
+              "ranked_sources": [
+                {
+                  "question_id": 1,
+                  "chunk_id": 4,
+                  "rank": 1,
+                  "score": 0.43715836,
+                  "document_id": 1,
+                  "page_number": 4,
+                  "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+                },
+                {
+                  "question_id": 1,
+                  "chunk_id": 1,
+                  "rank": 2,
+                  "score": 0.18254963,
+                  "document_id": 1,
+                  "page_number": 1,
+                  "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+                }
+              ],
+              "citations": [],
+              "events": [
+                {
+                  "id": 7,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": 1,
+                  "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+                  "event_type": "question.submit",
+                  "outcome": "accepted",
+                  "detail": null,
+                  "created_at": "2026-11-18T20:51:17.685Z"
+                },
+                {
+                  "id": 8,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": null,
+                  "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+                  "event_type": "question.retrieve",
+                  "outcome": "sufficient",
+                  "detail": "2 passages",
+                  "created_at": "2026-11-18T20:51:17.702Z"
+                },
+                {
+                  "id": 9,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": null,
+                  "request_id": "0b69f6e1-7e61-44eb-87d2-a3b79b4fdcae",
+                  "event_type": "question.complete",
+                  "outcome": "validation_error",
+                  "detail": "invalid_citation",
+                  "created_at": "2026-11-18T20:51:17.706Z"
+                }
+              ]
+            }
+          },
+          {
+            "question": "What are the Python Programming course completion requirements?",
+            "scope": {
+              "document_id": 1
+            },
+            "http_status": 201,
+            "response": {
+              "id": 1,
+              "question_text": "What are the Python Programming course completion requirements?",
+              "course_id": null,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "conversation_id": null,
+              "status": "validation_error",
+              "request_id": "14d68c2a-62a6-478a-ac07-bbfda7dfd73b",
+              "created_at": "2026-11-18T20:51:17.889Z",
+              "completed_at": "2026-11-18T20:51:17.900Z",
+              "answer": {
+                "id": 1,
+                "status": "validation_error",
+                "body": null,
+                "reason": "A citation could not be matched to the retrieved document and page.",
+                "provider": "offline_fixture",
+                "model": "offline-citation-fixture-v1",
+                "prompt_version": "2.2.0",
+                "api_outcome": "invalid_response",
+                "error_code": "invalid_citation",
+                "retryable": true,
+                "verification_passed": false,
+                "input_tokens": 33,
+                "output_tokens": 14,
+                "latency_ms": 1,
+                "provider_response_id": "offline-fixture-response",
+                "rating": null
+              },
+              "sources": [
+                {
+                  "chunk_id": 4,
+                  "document_id": 1,
+                  "document_title": "Python Programming Course Handbook",
+                  "original_filename": "Python Programming Course Handbook.pdf",
+                  "page_number": 4,
+                  "chunk_number": 4,
+                  "revision": 1,
+                  "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+                  "score": 0.43715836,
+                  "rank": 1
+                },
+                {
+                  "chunk_id": 1,
+                  "document_id": 1,
+                  "document_title": "Python Programming Course Handbook",
+                  "original_filename": "Python Programming Course Handbook.pdf",
+                  "page_number": 1,
+                  "chunk_number": 1,
+                  "revision": 1,
+                  "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+                  "score": 0.18254963,
+                  "rank": 2
+                }
+              ],
+              "citations": []
+            },
+            "sqlite": {
+              "question": {
+                "id": 1,
+                "learner_id": 1,
+                "course_id": null,
+                "document_id": 1,
+                "conversation_id": null,
+                "question_text": "What are the Python Programming course completion requirements?",
+                "status": "validation_error",
+                "request_id": "14d68c2a-62a6-478a-ac07-bbfda7dfd73b",
+                "created_at": "2026-11-18T20:51:17.889Z",
+                "completed_at": "2026-11-18T20:51:17.900Z"
+              },
+              "answer": {
+                "id": 1,
+                "question_id": 1,
+                "status": "validation_error",
+                "body": null,
+                "reason": "A citation could not be matched to the retrieved document and page.",
+                "provider": "offline_fixture",
+                "model": "offline-citation-fixture-v1",
+                "provider_response_id": "offline-fixture-response",
+                "prompt_version": "2.2.0",
+                "api_outcome": "invalid_response",
+                "error_code": "invalid_citation",
+                "retryable": 1,
+                "input_tokens": 33,
+                "output_tokens": 14,
+                "latency_ms": 1,
+                "created_at": "2026-11-18T20:51:17.900Z"
+              },
+              "ranked_sources": [
+                {
+                  "question_id": 1,
+                  "chunk_id": 4,
+                  "rank": 1,
+                  "score": 0.43715836,
+                  "document_id": 1,
+                  "page_number": 4,
+                  "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+                },
+                {
+                  "question_id": 1,
+                  "chunk_id": 1,
+                  "rank": 2,
+                  "score": 0.18254963,
+                  "document_id": 1,
+                  "page_number": 1,
+                  "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+                }
+              ],
+              "citations": [],
+              "events": [
+                {
+                  "id": 7,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": 1,
+                  "request_id": "14d68c2a-62a6-478a-ac07-bbfda7dfd73b",
+                  "event_type": "question.submit",
+                  "outcome": "accepted",
+                  "detail": null,
+                  "created_at": "2026-11-18T20:51:17.889Z"
+                },
+                {
+                  "id": 8,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": null,
+                  "request_id": "14d68c2a-62a6-478a-ac07-bbfda7dfd73b",
+                  "event_type": "question.retrieve",
+                  "outcome": "sufficient",
+                  "detail": "2 passages",
+                  "created_at": "2026-11-18T20:51:17.892Z"
+                },
+                {
+                  "id": 9,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": null,
+                  "request_id": "14d68c2a-62a6-478a-ac07-bbfda7dfd73b",
+                  "event_type": "question.complete",
+                  "outcome": "validation_error",
+                  "detail": "invalid_citation",
+                  "created_at": "2026-11-18T20:51:17.902Z"
+                }
+              ]
+            }
+          },
+          {
+            "question": "What are the Python Programming course completion requirements?",
+            "scope": {
+              "document_id": 1
+            },
+            "http_status": 201,
+            "response": {
+              "id": 1,
+              "question_text": "What are the Python Programming course completion requirements?",
+              "course_id": null,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "conversation_id": null,
+              "status": "validation_error",
+              "request_id": "a9dd1124-9cc8-425a-a183-fc82bed3782f",
+              "created_at": "2026-11-18T20:51:18.071Z",
+              "completed_at": "2026-11-18T20:51:18.074Z",
+              "answer": {
+                "id": 1,
+                "status": "validation_error",
+                "body": null,
+                "reason": "A citation could not be matched to the retrieved document and page.",
+                "provider": "offline_fixture",
+                "model": "offline-citation-fixture-v1",
+                "prompt_version": "2.2.0",
+                "api_outcome": "invalid_response",
+                "error_code": "invalid_citation",
+                "retryable": true,
+                "verification_passed": false,
+                "input_tokens": 33,
+                "output_tokens": 14,
+                "latency_ms": 1,
+                "provider_response_id": "offline-fixture-response",
+                "rating": null
+              },
+              "sources": [
+                {
+                  "chunk_id": 4,
+                  "document_id": 1,
+                  "document_title": "Python Programming Course Handbook",
+                  "original_filename": "Python Programming Course Handbook.pdf",
+                  "page_number": 4,
+                  "chunk_number": 4,
+                  "revision": 1,
+                  "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+                  "score": 0.43715836,
+                  "rank": 1
+                },
+                {
+                  "chunk_id": 1,
+                  "document_id": 1,
+                  "document_title": "Python Programming Course Handbook",
+                  "original_filename": "Python Programming Course Handbook.pdf",
+                  "page_number": 1,
+                  "chunk_number": 1,
+                  "revision": 1,
+                  "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+                  "score": 0.18254963,
+                  "rank": 2
+                }
+              ],
+              "citations": []
+            },
+            "sqlite": {
+              "question": {
+                "id": 1,
+                "learner_id": 1,
+                "course_id": null,
+                "document_id": 1,
+                "conversation_id": null,
+                "question_text": "What are the Python Programming course completion requirements?",
+                "status": "validation_error",
+                "request_id": "a9dd1124-9cc8-425a-a183-fc82bed3782f",
+                "created_at": "2026-11-18T20:51:18.071Z",
+                "completed_at": "2026-11-18T20:51:18.074Z"
+              },
+              "answer": {
+                "id": 1,
+                "question_id": 1,
+                "status": "validation_error",
+                "body": null,
+                "reason": "A citation could not be matched to the retrieved document and page.",
+                "provider": "offline_fixture",
+                "model": "offline-citation-fixture-v1",
+                "provider_response_id": "offline-fixture-response",
+                "prompt_version": "2.2.0",
+                "api_outcome": "invalid_response",
+                "error_code": "invalid_citation",
+                "retryable": 1,
+                "input_tokens": 33,
+                "output_tokens": 14,
+                "latency_ms": 1,
+                "created_at": "2026-11-18T20:51:18.074Z"
+              },
+              "ranked_sources": [
+                {
+                  "question_id": 1,
+                  "chunk_id": 4,
+                  "rank": 1,
+                  "score": 0.43715836,
+                  "document_id": 1,
+                  "page_number": 4,
+                  "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+                },
+                {
+                  "question_id": 1,
+                  "chunk_id": 1,
+                  "rank": 2,
+                  "score": 0.18254963,
+                  "document_id": 1,
+                  "page_number": 1,
+                  "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+                }
+              ],
+              "citations": [],
+              "events": [
+                {
+                  "id": 7,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": 1,
+                  "request_id": "a9dd1124-9cc8-425a-a183-fc82bed3782f",
+                  "event_type": "question.submit",
+                  "outcome": "accepted",
+                  "detail": null,
+                  "created_at": "2026-11-18T20:51:18.071Z"
+                },
+                {
+                  "id": 8,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": null,
+                  "request_id": "a9dd1124-9cc8-425a-a183-fc82bed3782f",
+                  "event_type": "question.retrieve",
+                  "outcome": "sufficient",
+                  "detail": "2 passages",
+                  "created_at": "2026-11-18T20:51:18.074Z"
+                },
+                {
+                  "id": 9,
+                  "learner_id": 1,
+                  "question_id": 1,
+                  "document_id": null,
+                  "request_id": "a9dd1124-9cc8-425a-a183-fc82bed3782f",
+                  "event_type": "question.complete",
+                  "outcome": "validation_error",
+                  "detail": "invalid_citation",
+                  "created_at": "2026-11-18T20:51:18.087Z"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "E19",
+      "mode": "mocked_sdk_transport",
+      "expected": "HTTP 401 is authentication_error and no successful answer.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "retry_flag": true,
+        "structured_api_contract": true,
+        "requests_observed": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "provider_error",
+          "request_id": "c3952d34-ab41-4ad0-abe3-28f0f680a922",
+          "created_at": "2026-11-18T20:51:18.236Z",
+          "completed_at": "2026-11-18T20:51:18.255Z",
+          "answer": {
+            "id": 1,
+            "status": "provider_error",
+            "body": null,
+            "reason": "OpenAI rejected the credentials. Check the API key in the backend environment.",
+            "provider": "openai_mock_transport",
+            "model": "gpt-4.1-mini",
+            "prompt_version": "2.2.0",
+            "api_outcome": "failed",
+            "error_code": "authentication_error",
+            "retryable": false,
+            "verification_passed": false,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": 1,
+            "provider_response_id": null,
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "provider_error",
+            "request_id": "c3952d34-ab41-4ad0-abe3-28f0f680a922",
+            "created_at": "2026-11-18T20:51:18.236Z",
+            "completed_at": "2026-11-18T20:51:18.255Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "provider_error",
+            "body": null,
+            "reason": "OpenAI rejected the credentials. Check the API key in the backend environment.",
+            "provider": "openai_mock_transport",
+            "model": "gpt-4.1-mini",
+            "provider_response_id": null,
+            "prompt_version": "2.2.0",
+            "api_outcome": "failed",
+            "error_code": "authentication_error",
+            "retryable": 0,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:18.255Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "c3952d34-ab41-4ad0-abe3-28f0f680a922",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:18.236Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "c3952d34-ab41-4ad0-abe3-28f0f680a922",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:18.246Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "c3952d34-ab41-4ad0-abe3-28f0f680a922",
+              "event_type": "question.complete",
+              "outcome": "provider_error",
+              "detail": "authentication_error",
+              "created_at": "2026-11-18T20:51:18.256Z"
+            }
+          ]
+        },
+        "sdk_mock_requests": [
+          {
+            "endpoint": "/v1/responses",
+            "stage": "course_answer",
+            "strict": true,
+            "store": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "E20",
+      "mode": "mocked_sdk_transport",
+      "expected": "SDK timeout is retryable with no successful answer.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "retry_flag": true,
+        "structured_api_contract": true,
+        "requests_observed": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "provider_error",
+          "request_id": "475fa68b-1e15-478c-b5fb-e05cf4a509e0",
+          "created_at": "2026-11-18T20:51:18.422Z",
+          "completed_at": "2026-11-18T20:51:18.447Z",
+          "answer": {
+            "id": 1,
+            "status": "provider_error",
+            "body": null,
+            "reason": "OpenAI took too long to respond. Try again.",
+            "provider": "openai_mock_transport",
+            "model": "gpt-4.1-mini",
+            "prompt_version": "2.2.0",
+            "api_outcome": "failed",
+            "error_code": "timeout",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": 1,
+            "provider_response_id": null,
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "provider_error",
+            "request_id": "475fa68b-1e15-478c-b5fb-e05cf4a509e0",
+            "created_at": "2026-11-18T20:51:18.422Z",
+            "completed_at": "2026-11-18T20:51:18.447Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "provider_error",
+            "body": null,
+            "reason": "OpenAI took too long to respond. Try again.",
+            "provider": "openai_mock_transport",
+            "model": "gpt-4.1-mini",
+            "provider_response_id": null,
+            "prompt_version": "2.2.0",
+            "api_outcome": "failed",
+            "error_code": "timeout",
+            "retryable": 1,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:18.447Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "475fa68b-1e15-478c-b5fb-e05cf4a509e0",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:18.422Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "475fa68b-1e15-478c-b5fb-e05cf4a509e0",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:18.436Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "475fa68b-1e15-478c-b5fb-e05cf4a509e0",
+              "event_type": "question.complete",
+              "outcome": "provider_error",
+              "detail": "timeout",
+              "created_at": "2026-11-18T20:51:18.447Z"
+            }
+          ]
+        },
+        "sdk_mock_requests": [
+          {
+            "endpoint": "/v1/responses",
+            "stage": "course_answer",
+            "strict": true,
+            "store": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "E21",
+      "mode": "mocked_sdk_transport",
+      "expected": "HTTP 429 is rate_limit and remains retryable.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "retry_flag": true,
+        "structured_api_contract": true,
+        "requests_observed": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "provider_error",
+          "request_id": "5ee68528-c0af-4d09-8aa0-a4dbe6e8fe89",
+          "created_at": "2026-11-18T20:51:18.613Z",
+          "completed_at": "2026-11-18T20:51:18.625Z",
+          "answer": {
+            "id": 1,
+            "status": "provider_error",
+            "body": null,
+            "reason": "OpenAI is rate limiting requests. Wait briefly and try again.",
+            "provider": "openai_mock_transport",
+            "model": "gpt-4.1-mini",
+            "prompt_version": "2.2.0",
+            "api_outcome": "failed",
+            "error_code": "rate_limit",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": 1,
+            "provider_response_id": null,
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "provider_error",
+            "request_id": "5ee68528-c0af-4d09-8aa0-a4dbe6e8fe89",
+            "created_at": "2026-11-18T20:51:18.613Z",
+            "completed_at": "2026-11-18T20:51:18.625Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "provider_error",
+            "body": null,
+            "reason": "OpenAI is rate limiting requests. Wait briefly and try again.",
+            "provider": "openai_mock_transport",
+            "model": "gpt-4.1-mini",
+            "provider_response_id": null,
+            "prompt_version": "2.2.0",
+            "api_outcome": "failed",
+            "error_code": "rate_limit",
+            "retryable": 1,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:18.625Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "5ee68528-c0af-4d09-8aa0-a4dbe6e8fe89",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:18.613Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "5ee68528-c0af-4d09-8aa0-a4dbe6e8fe89",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:18.620Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "5ee68528-c0af-4d09-8aa0-a4dbe6e8fe89",
+              "event_type": "question.complete",
+              "outcome": "provider_error",
+              "detail": "rate_limit",
+              "created_at": "2026-11-18T20:51:18.625Z"
+            }
+          ]
+        },
+        "sdk_mock_requests": [
+          {
+            "endpoint": "/v1/responses",
+            "stage": "course_answer",
+            "strict": true,
+            "store": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "E22",
+      "mode": "offline",
+      "expected": "Embedded assistant-directed command is excluded from retrieval and never sent to a provider.",
+      "passed": true,
+      "checks": {
+        "legitimate_upload_reached_index": true,
+        "directive_blocked_before_model": true,
+        "abstention_has_no_body_or_citations": true,
+        "excluded_passage_appears_in_audit": true
+      },
+      "observation": {
+        "question": "Where should students send project submissions under the studio policy?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "Where should students send project submissions under the studio policy?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Studio submission policy.pdf",
+          "conversation_id": null,
+          "status": "abstained",
+          "request_id": "7f06849c-d60a-4006-a3fd-0bfc9fcee978",
+          "created_at": "2026-11-18T20:51:18.706Z",
+          "completed_at": "2026-11-18T20:51:18.721Z",
+          "answer": {
+            "id": 1,
+            "status": "abstained",
+            "body": null,
+            "reason": "The selected material does not provide usable evidence. Text directed at the assistant was excluded.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "skipped",
+            "error_code": null,
+            "retryable": false,
+            "verification_passed": false,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": null,
+            "provider_response_id": null,
+            "rating": null
+          },
+          "sources": [],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "Where should students send project submissions under the studio policy?",
+            "status": "abstained",
+            "request_id": "7f06849c-d60a-4006-a3fd-0bfc9fcee978",
+            "created_at": "2026-11-18T20:51:18.706Z",
+            "completed_at": "2026-11-18T20:51:18.721Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "abstained",
+            "body": null,
+            "reason": "The selected material does not provide usable evidence. Text directed at the assistant was excluded.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": null,
+            "prompt_version": "2.2.0",
+            "api_outcome": "skipped",
+            "error_code": null,
+            "retryable": 0,
+            "input_tokens": null,
+            "output_tokens": null,
+            "latency_ms": null,
+            "created_at": "2026-11-18T20:51:18.721Z"
+          },
+          "ranked_sources": [],
+          "citations": [],
+          "events": [
+            {
+              "id": 3,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "7f06849c-d60a-4006-a3fd-0bfc9fcee978",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:18.706Z"
+            },
+            {
+              "id": 4,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "7f06849c-d60a-4006-a3fd-0bfc9fcee978",
+              "event_type": "question.retrieve",
+              "outcome": "insufficient",
+              "detail": "0 passages, 1 instruction-bearing passages excluded",
+              "created_at": "2026-11-18T20:51:18.713Z"
+            },
+            {
+              "id": 5,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "7f06849c-d60a-4006-a3fd-0bfc9fcee978",
+              "event_type": "question.complete",
+              "outcome": "abstained",
+              "detail": "skipped",
+              "created_at": "2026-11-18T20:51:18.721Z"
+            }
+          ]
+        },
+        "filename": "Studio submission policy.pdf"
+      }
+    },
+    {
+      "id": "E24",
+      "mode": "mocked_model_and_real_sqlite",
+      "expected": "Citation write failure rolls back without a partial success.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "transaction_did_not_leave_partial_answer": true,
+        "provider_metadata_preserved": true,
+        "integrity_maintained": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "processing_error",
+          "request_id": "0b164e66-eebb-4175-9e8e-453ef7291be5",
+          "created_at": "2026-11-18T20:51:18.887Z",
+          "completed_at": "2026-11-18T20:51:18.905Z",
+          "answer": {
+            "id": 1,
+            "status": "processing_error",
+            "body": null,
+            "reason": "The question could not be processed. Try again.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "interrupted",
+            "error_code": "internal_processing_error",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "processing_error",
+            "request_id": "0b164e66-eebb-4175-9e8e-453ef7291be5",
+            "created_at": "2026-11-18T20:51:18.887Z",
+            "completed_at": "2026-11-18T20:51:18.905Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "processing_error",
+            "body": null,
+            "reason": "The question could not be processed. Try again.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "interrupted",
+            "error_code": "internal_processing_error",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:18.905Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "0b164e66-eebb-4175-9e8e-453ef7291be5",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:18.888Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "0b164e66-eebb-4175-9e8e-453ef7291be5",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:18.897Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "0b164e66-eebb-4175-9e8e-453ef7291be5",
+              "event_type": "question.verify",
+              "outcome": "supported",
+              "detail": "{\"outcome\":\"supported\",\"model\":\"offline-citation-fixture-v1\",\"response_id\":\"offline-verification-fixture\",\"input_tokens\":27,\"output_tokens\":6,\"latency_ms\":1}",
+              "created_at": "2026-11-18T20:51:18.905Z"
+            },
+            {
+              "id": 10,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "0b164e66-eebb-4175-9e8e-453ef7291be5",
+              "event_type": "question.complete",
+              "outcome": "processing_error",
+              "detail": "internal_processing_error",
+              "created_at": "2026-11-18T20:51:18.905Z"
+            }
+          ]
+        },
+        "searchable_history_count": 1,
+        "database_integrity": "ok",
+        "foreign_keys": []
+      }
+    },
+    {
+      "id": "E26",
+      "mode": "mocked_sdk_transport",
+      "expected": "Verification timeout fails closed and preserves generation trace.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "retry_flag": true,
+        "structured_api_contract": true,
+        "requests_observed": true,
+        "generation_metadata_retained": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "provider_error",
+          "request_id": "b8e3aa13-b1f8-42c7-a833-85ffcc6be22d",
+          "created_at": "2026-11-18T20:51:19.090Z",
+          "completed_at": "2026-11-18T20:51:19.106Z",
+          "answer": {
+            "id": 1,
+            "status": "provider_error",
+            "body": null,
+            "reason": "OpenAI took too long to respond. Try again.",
+            "provider": "openai_mock_transport",
+            "model": "mock-openai-transport",
+            "prompt_version": "2.2.0",
+            "api_outcome": "failed",
+            "error_code": "timeout",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 100,
+            "output_tokens": 31,
+            "latency_ms": 2,
+            "provider_response_id": "resp_mock_generation",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "provider_error",
+            "request_id": "b8e3aa13-b1f8-42c7-a833-85ffcc6be22d",
+            "created_at": "2026-11-18T20:51:19.090Z",
+            "completed_at": "2026-11-18T20:51:19.106Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "provider_error",
+            "body": null,
+            "reason": "OpenAI took too long to respond. Try again.",
+            "provider": "openai_mock_transport",
+            "model": "mock-openai-transport",
+            "provider_response_id": "resp_mock_generation",
+            "prompt_version": "2.2.0",
+            "api_outcome": "failed",
+            "error_code": "timeout",
+            "retryable": 1,
+            "input_tokens": 100,
+            "output_tokens": 31,
+            "latency_ms": 2,
+            "created_at": "2026-11-18T20:51:19.106Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "b8e3aa13-b1f8-42c7-a833-85ffcc6be22d",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:19.090Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "b8e3aa13-b1f8-42c7-a833-85ffcc6be22d",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:19.102Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "b8e3aa13-b1f8-42c7-a833-85ffcc6be22d",
+              "event_type": "question.verify",
+              "outcome": "failed",
+              "detail": "{\"outcome\":\"failed\",\"error_code\":\"timeout\"}",
+              "created_at": "2026-11-18T20:51:19.106Z"
+            },
+            {
+              "id": 10,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "b8e3aa13-b1f8-42c7-a833-85ffcc6be22d",
+              "event_type": "question.complete",
+              "outcome": "provider_error",
+              "detail": "timeout",
+              "created_at": "2026-11-18T20:51:19.106Z"
+            }
+          ]
+        },
+        "sdk_mock_requests": [
+          {
+            "endpoint": "/v1/responses",
+            "stage": "course_answer",
+            "strict": true,
+            "store": false
+          },
+          {
+            "endpoint": "/v1/responses",
+            "stage": "grounding_verification",
+            "strict": true,
+            "store": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "E27",
+      "mode": "mocked_sdk_transport",
+      "expected": "Malformed verification JSON fails closed.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "retry_flag": true,
+        "structured_api_contract": true,
+        "requests_observed": true,
+        "generation_metadata_retained": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "f4723ecb-64fc-4980-b8bf-16e3569d0b79",
+          "created_at": "2026-11-18T20:51:19.262Z",
+          "completed_at": "2026-11-18T20:51:19.274Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The answer verification response did not match its schema.",
+            "provider": "openai_mock_transport",
+            "model": "mock-openai-transport",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "invalid_verification_json",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 100,
+            "output_tokens": 31,
+            "latency_ms": 1,
+            "provider_response_id": "resp_mock_generation",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "validation_error",
+            "request_id": "f4723ecb-64fc-4980-b8bf-16e3569d0b79",
+            "created_at": "2026-11-18T20:51:19.262Z",
+            "completed_at": "2026-11-18T20:51:19.274Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The answer verification response did not match its schema.",
+            "provider": "openai_mock_transport",
+            "model": "mock-openai-transport",
+            "provider_response_id": "resp_mock_generation",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "invalid_verification_json",
+            "retryable": 1,
+            "input_tokens": 100,
+            "output_tokens": 31,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:19.274Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "f4723ecb-64fc-4980-b8bf-16e3569d0b79",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:19.262Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "f4723ecb-64fc-4980-b8bf-16e3569d0b79",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:19.270Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "f4723ecb-64fc-4980-b8bf-16e3569d0b79",
+              "event_type": "question.verify",
+              "outcome": "failed",
+              "detail": "{\"outcome\":\"failed\",\"model\":\"mock-openai-transport\",\"response_id\":\"resp_mock_verification\",\"input_tokens\":100,\"output_tokens\":31,\"latency_ms\":1,\"error_code\":\"invalid_verification_json\"}",
+              "created_at": "2026-11-18T20:51:19.277Z"
+            },
+            {
+              "id": 10,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "f4723ecb-64fc-4980-b8bf-16e3569d0b79",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "invalid_verification_json",
+              "created_at": "2026-11-18T20:51:19.277Z"
+            }
+          ]
+        },
+        "sdk_mock_requests": [
+          {
+            "endpoint": "/v1/responses",
+            "stage": "course_answer",
+            "strict": true,
+            "store": false
+          },
+          {
+            "endpoint": "/v1/responses",
+            "stage": "grounding_verification",
+            "strict": true,
+            "store": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "R01",
+      "mode": "mocked_model",
+      "expected": "Unsupported candidate must fail without saving an answer or citations.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "correct_validation_stage": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "92c5fa53-f5b3-48f4-8d66-ec76de6ded24",
+          "created_at": "2026-11-18T20:51:19.426Z",
+          "completed_at": "2026-11-18T20:51:19.436Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not sufficiently support the proposed answer.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "validation_error",
+            "request_id": "92c5fa53-f5b3-48f4-8d66-ec76de6ded24",
+            "created_at": "2026-11-18T20:51:19.426Z",
+            "completed_at": "2026-11-18T20:51:19.436Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not sufficiently support the proposed answer.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:19.436Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "92c5fa53-f5b3-48f4-8d66-ec76de6ded24",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:19.426Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "92c5fa53-f5b3-48f4-8d66-ec76de6ded24",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:19.436Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "92c5fa53-f5b3-48f4-8d66-ec76de6ded24",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "unsupported_answer",
+              "created_at": "2026-11-18T20:51:19.443Z"
+            }
+          ]
+        },
+        "supplied_candidate": {
+          "body": "To complete the Python Programming course, submit all four graded labs, achieve at most 70% overall, and earn a Pass on the capstone project.",
+          "quoted_text": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project."
+        }
+      }
+    },
+    {
+      "id": "R02",
+      "mode": "mocked_model",
+      "expected": "Unsupported candidate must fail without saving an answer or citations.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "correct_validation_stage": true
+      },
+      "observation": {
+        "question": "Does watching a recording count toward live attendance?",
+        "scope": {
+          "document_id": 3
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "Does watching a recording count toward live attendance?",
+          "course_id": null,
+          "document_id": 3,
+          "document_title": "LMS Assessment and Attendance Policy",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "ad65afd0-be39-47bc-84a5-21d9264b25e5",
+          "created_at": "2026-11-18T20:51:19.587Z",
+          "completed_at": "2026-11-18T20:51:19.593Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not sufficiently support the proposed answer.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 9,
+              "document_id": 3,
+              "document_title": "LMS Assessment and Attendance Policy",
+              "original_filename": "LMS Assessment and Attendance Policy.pdf",
+              "page_number": 2,
+              "chunk_number": 2,
+              "revision": 1,
+              "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAttendance requirements\n\nLive sessions and recorded participation\n\nLearners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration.\n\nWatching a recording does not count toward live attendance. A learner may request a documented accommodation from course support.\n\nAttendance records appear in the LMS Attendance area within two working days of a session.\n\nEduEvidence AI / Synthetic demonstration material Page 2 of 3",
+              "score": 0.58441059,
+              "rank": 1
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 3,
+            "conversation_id": null,
+            "question_text": "Does watching a recording count toward live attendance?",
+            "status": "validation_error",
+            "request_id": "ad65afd0-be39-47bc-84a5-21d9264b25e5",
+            "created_at": "2026-11-18T20:51:19.587Z",
+            "completed_at": "2026-11-18T20:51:19.593Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not sufficiently support the proposed answer.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:19.593Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 9,
+              "rank": 1,
+              "score": 0.58441059,
+              "document_id": 3,
+              "page_number": 2,
+              "content_hash": "a2ebd65b815c62db3b43368f9056a99afa8b31655f86c77a76f7e92a35c8e39c"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 3,
+              "request_id": "ad65afd0-be39-47bc-84a5-21d9264b25e5",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:19.587Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "ad65afd0-be39-47bc-84a5-21d9264b25e5",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "1 passages",
+              "created_at": "2026-11-18T20:51:19.593Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "ad65afd0-be39-47bc-84a5-21d9264b25e5",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "unsupported_answer",
+              "created_at": "2026-11-18T20:51:19.593Z"
+            }
+          ]
+        },
+        "supplied_candidate": {
+          "body": "Watching a recording counts toward live attendance.",
+          "quoted_text": "Watching a recording does not count toward live attendance."
+        }
+      }
+    },
+    {
+      "id": "R03",
+      "mode": "mocked_model",
+      "expected": "Unsupported candidate must fail without saving an answer or citations.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "correct_validation_stage": true
+      },
+      "observation": {
+        "question": "Who may submit after the deadline, and how late may they submit?",
+        "scope": {
+          "document_id": 3
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "Who may submit after the deadline, and how late may they submit?",
+          "course_id": null,
+          "document_id": 3,
+          "document_title": "LMS Assessment and Attendance Policy",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "b2faa3a7-d736-4487-95a9-3ab99f3720ed",
+          "created_at": "2026-11-18T20:51:19.755Z",
+          "completed_at": "2026-11-18T20:51:19.770Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "A cited quotation omitted part of the source statement.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "incomplete_evidence_quote",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 8,
+              "document_id": 3,
+              "document_title": "LMS Assessment and Attendance Policy",
+              "original_filename": "LMS Assessment and Attendance Policy.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+              "score": 0.41678661,
+              "rank": 1
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 3,
+            "conversation_id": null,
+            "question_text": "Who may submit after the deadline, and how late may they submit?",
+            "status": "validation_error",
+            "request_id": "b2faa3a7-d736-4487-95a9-3ab99f3720ed",
+            "created_at": "2026-11-18T20:51:19.755Z",
+            "completed_at": "2026-11-18T20:51:19.770Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "A cited quotation omitted part of the source statement.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "incomplete_evidence_quote",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:19.770Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 8,
+              "rank": 1,
+              "score": 0.41678661,
+              "document_id": 3,
+              "page_number": 1,
+              "content_hash": "4e8d2531e78afcbddc7d7f1eb3f78e4793421b076d92eea4753e4b66927f0eba"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 3,
+              "request_id": "b2faa3a7-d736-4487-95a9-3ab99f3720ed",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:19.755Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "b2faa3a7-d736-4487-95a9-3ab99f3720ed",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "1 passages",
+              "created_at": "2026-11-18T20:51:19.763Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "b2faa3a7-d736-4487-95a9-3ab99f3720ed",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "incomplete_evidence_quote",
+              "created_at": "2026-11-18T20:51:19.772Z"
+            }
+          ]
+        },
+        "supplied_candidate": {
+          "body": "A learner may submit up to 48 hours after the deadline.",
+          "quoted_text": "a learner may submit up to 48 hours after the deadline."
+        }
+      }
+    },
+    {
+      "id": "R04",
+      "mode": "mocked_model",
+      "expected": "Unsupported candidate must fail without saving an answer or citations.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "correct_validation_stage": true
+      },
+      "observation": {
+        "question": "What percentage of the Python course mark comes from the labs and the capstone?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What percentage of the Python course mark comes from the labs and the capstone?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "162c6cb7-5808-4be8-94ff-ea3969eae826",
+          "created_at": "2026-11-18T20:51:19.924Z",
+          "completed_at": "2026-11-18T20:51:19.936Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not sufficiently support the proposed answer.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 3,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 3,
+              "chunk_number": 3,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+              "score": 0.36588687,
+              "rank": 1
+            },
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.34621947,
+              "rank": 2
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.15433692,
+              "rank": 3
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What percentage of the Python course mark comes from the labs and the capstone?",
+            "status": "validation_error",
+            "request_id": "162c6cb7-5808-4be8-94ff-ea3969eae826",
+            "created_at": "2026-11-18T20:51:19.924Z",
+            "completed_at": "2026-11-18T20:51:19.936Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not sufficiently support the proposed answer.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:19.936Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 3,
+              "rank": 1,
+              "score": 0.36588687,
+              "document_id": 1,
+              "page_number": 3,
+              "content_hash": "f6950a9bb9e6ae6ffe88fc7871ab518b4c6e94696170a0faecfd87f5468b3e14"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 2,
+              "score": 0.34621947,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 3,
+              "score": 0.15433692,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "162c6cb7-5808-4be8-94ff-ea3969eae826",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:19.924Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "162c6cb7-5808-4be8-94ff-ea3969eae826",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "3 passages",
+              "created_at": "2026-11-18T20:51:19.936Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "162c6cb7-5808-4be8-94ff-ea3969eae826",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "unsupported_answer",
+              "created_at": "2026-11-18T20:51:19.936Z"
+            }
+          ]
+        },
+        "supplied_candidate": {
+          "body": "Graded labs account for 40% of the course mark. The capstone project accounts for 60% of the course mark.",
+          "quoted_text": "Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark."
+        }
+      }
+    },
+    {
+      "id": "R05",
+      "mode": "mocked_model",
+      "expected": "Unsupported candidate must fail without saving an answer or citations.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "correct_validation_stage": true
+      },
+      "observation": {
+        "question": "What are the Python Programming course completion requirements?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "What are the Python Programming course completion requirements?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "777a2f52-cda9-404d-b10e-18378c2bb3fc",
+          "created_at": "2026-11-18T20:51:20.117Z",
+          "completed_at": "2026-11-18T20:51:20.136Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not address the question asked.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "question_mismatch",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.43715836,
+              "rank": 1
+            },
+            {
+              "chunk_id": 1,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+              "score": 0.18254963,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "What are the Python Programming course completion requirements?",
+            "status": "validation_error",
+            "request_id": "777a2f52-cda9-404d-b10e-18378c2bb3fc",
+            "created_at": "2026-11-18T20:51:20.117Z",
+            "completed_at": "2026-11-18T20:51:20.136Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not address the question asked.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "question_mismatch",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:20.136Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 1,
+              "score": 0.43715836,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 1,
+              "rank": 2,
+              "score": 0.18254963,
+              "document_id": 1,
+              "page_number": 1,
+              "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "777a2f52-cda9-404d-b10e-18378c2bb3fc",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:20.117Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "777a2f52-cda9-404d-b10e-18378c2bb3fc",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:20.125Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "777a2f52-cda9-404d-b10e-18378c2bb3fc",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "question_mismatch",
+              "created_at": "2026-11-18T20:51:20.138Z"
+            }
+          ]
+        },
+        "supplied_candidate": {
+          "body": "A capstone resubmission is available once after written feedback.",
+          "quoted_text": "A capstone resubmission is available once after written feedback."
+        }
+      }
+    },
+    {
+      "id": "R06",
+      "mode": "mocked_model",
+      "expected": "Unsupported candidate must fail without saving an answer or citations.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "correct_validation_stage": true
+      },
+      "observation": {
+        "question": "Who may submit after the deadline, and how late may they submit?",
+        "scope": {
+          "document_id": 3
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "Who may submit after the deadline, and how late may they submit?",
+          "course_id": null,
+          "document_id": 3,
+          "document_title": "LMS Assessment and Attendance Policy",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "364ae711-4c4b-4e10-95f6-cc592bba6f93",
+          "created_at": "2026-11-18T20:51:20.426Z",
+          "completed_at": "2026-11-18T20:51:20.436Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The proposed answer did not pass evidence verification.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 8,
+              "document_id": 3,
+              "document_title": "LMS Assessment and Attendance Policy",
+              "original_filename": "LMS Assessment and Attendance Policy.pdf",
+              "page_number": 1,
+              "chunk_number": 1,
+              "revision": 1,
+              "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+              "score": 0.41678661,
+              "rank": 1
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 3,
+            "conversation_id": null,
+            "question_text": "Who may submit after the deadline, and how late may they submit?",
+            "status": "validation_error",
+            "request_id": "364ae711-4c4b-4e10-95f6-cc592bba6f93",
+            "created_at": "2026-11-18T20:51:20.426Z",
+            "completed_at": "2026-11-18T20:51:20.436Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The proposed answer did not pass evidence verification.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:20.436Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 8,
+              "rank": 1,
+              "score": 0.41678661,
+              "document_id": 3,
+              "page_number": 1,
+              "content_hash": "4e8d2531e78afcbddc7d7f1eb3f78e4793421b076d92eea4753e4b66927f0eba"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 3,
+              "request_id": "364ae711-4c4b-4e10-95f6-cc592bba6f93",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:20.427Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "364ae711-4c4b-4e10-95f6-cc592bba6f93",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "1 passages",
+              "created_at": "2026-11-18T20:51:20.436Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "364ae711-4c4b-4e10-95f6-cc592bba6f93",
+              "event_type": "question.verify",
+              "outcome": "unsupported",
+              "detail": "{\"outcome\":\"unsupported\",\"model\":\"offline-citation-fixture-v1\",\"response_id\":\"offline-verification-fixture\",\"input_tokens\":27,\"output_tokens\":6,\"latency_ms\":1}",
+              "created_at": "2026-11-18T20:51:20.436Z"
+            },
+            {
+              "id": 10,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "364ae711-4c4b-4e10-95f6-cc592bba6f93",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "unsupported_answer",
+              "created_at": "2026-11-18T20:51:20.436Z"
+            }
+          ]
+        },
+        "supplied_candidate": {
+          "body": "A learner may submit any assignment up to 48 hours after the deadline.",
+          "quoted_text": "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline."
+        }
+      }
+    },
+    {
+      "id": "R08",
+      "mode": "mocked_model",
+      "expected": "Unsupported candidate must fail without saving an answer or citations.",
+      "passed": true,
+      "checks": {
+        "terminal_status": true,
+        "classified_error": true,
+        "no_successful_body_or_citations": true,
+        "correct_validation_stage": true
+      },
+      "observation": {
+        "question": "Where and how do I submit each graded Python lab, including the required files?",
+        "scope": {
+          "document_id": 1
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "question_text": "Where and how do I submit each graded Python lab, including the required files?",
+          "course_id": null,
+          "document_id": 1,
+          "document_title": "Python Programming Course Handbook",
+          "conversation_id": null,
+          "status": "validation_error",
+          "request_id": "34b58c5e-87ac-44f1-b869-d9ff0f61ad69",
+          "created_at": "2026-11-18T20:51:20.596Z",
+          "completed_at": "2026-11-18T20:51:20.603Z",
+          "answer": {
+            "id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not sufficiently support the proposed answer.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": true,
+            "verification_passed": false,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "provider_response_id": "offline-fixture-response",
+            "rating": null
+          },
+          "sources": [
+            {
+              "chunk_id": 3,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 3,
+              "chunk_number": 3,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+              "score": 0.30132085,
+              "rank": 1
+            },
+            {
+              "chunk_id": 4,
+              "document_id": 1,
+              "document_title": "Python Programming Course Handbook",
+              "original_filename": "Python Programming Course Handbook.pdf",
+              "page_number": 4,
+              "chunk_number": 4,
+              "revision": 1,
+              "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+              "score": 0.14524866,
+              "rank": 2
+            }
+          ],
+          "citations": []
+        },
+        "sqlite": {
+          "question": {
+            "id": 1,
+            "learner_id": 1,
+            "course_id": null,
+            "document_id": 1,
+            "conversation_id": null,
+            "question_text": "Where and how do I submit each graded Python lab, including the required files?",
+            "status": "validation_error",
+            "request_id": "34b58c5e-87ac-44f1-b869-d9ff0f61ad69",
+            "created_at": "2026-11-18T20:51:20.596Z",
+            "completed_at": "2026-11-18T20:51:20.603Z"
+          },
+          "answer": {
+            "id": 1,
+            "question_id": 1,
+            "status": "validation_error",
+            "body": null,
+            "reason": "The cited excerpts did not sufficiently support the proposed answer.",
+            "provider": "offline_fixture",
+            "model": "offline-citation-fixture-v1",
+            "provider_response_id": "offline-fixture-response",
+            "prompt_version": "2.2.0",
+            "api_outcome": "invalid_response",
+            "error_code": "unsupported_answer",
+            "retryable": 1,
+            "input_tokens": 33,
+            "output_tokens": 14,
+            "latency_ms": 1,
+            "created_at": "2026-11-18T20:51:20.603Z"
+          },
+          "ranked_sources": [
+            {
+              "question_id": 1,
+              "chunk_id": 3,
+              "rank": 1,
+              "score": 0.30132085,
+              "document_id": 1,
+              "page_number": 3,
+              "content_hash": "f6950a9bb9e6ae6ffe88fc7871ab518b4c6e94696170a0faecfd87f5468b3e14"
+            },
+            {
+              "question_id": 1,
+              "chunk_id": 4,
+              "rank": 2,
+              "score": 0.14524866,
+              "document_id": 1,
+              "page_number": 4,
+              "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+            }
+          ],
+          "citations": [],
+          "events": [
+            {
+              "id": 7,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": 1,
+              "request_id": "34b58c5e-87ac-44f1-b869-d9ff0f61ad69",
+              "event_type": "question.submit",
+              "outcome": "accepted",
+              "detail": null,
+              "created_at": "2026-11-18T20:51:20.596Z"
+            },
+            {
+              "id": 8,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "34b58c5e-87ac-44f1-b869-d9ff0f61ad69",
+              "event_type": "question.retrieve",
+              "outcome": "sufficient",
+              "detail": "2 passages",
+              "created_at": "2026-11-18T20:51:20.603Z"
+            },
+            {
+              "id": 9,
+              "learner_id": 1,
+              "question_id": 1,
+              "document_id": null,
+              "request_id": "34b58c5e-87ac-44f1-b869-d9ff0f61ad69",
+              "event_type": "question.complete",
+              "outcome": "validation_error",
+              "detail": "unsupported_answer",
+              "created_at": "2026-11-18T20:51:20.603Z"
+            }
+          ]
+        },
+        "supplied_candidate": {
+          "body": "Submit each graded Python lab through LMS Assessments as a ZIP with Python source and a short README. Include instructions for running the project.",
+          "quoted_text": "Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README."
+        }
+      }
+    },
+    {
+      "id": "R07",
+      "mode": "mocked_model",
+      "expected": "The application abstains when the policy does not address either proposed outcome.",
+      "passed": true,
+      "checks": {
+        "both_polarities_and_explicit_absence_abstained": true,
+        "no_candidate_reached_verification": true
+      },
+      "observation": [
+        {
+          "question": "Do the assessment review rules grant an automatic grade increase?",
+          "scope": {
+            "document_id": 3
+          },
+          "http_status": 201,
+          "response": {
+            "id": 1,
+            "question_text": "Do the assessment review rules grant an automatic grade increase?",
+            "course_id": null,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "conversation_id": null,
+            "status": "abstained",
+            "request_id": "766e1ae6-188a-47ee-8c7a-df1d54ca119b",
+            "created_at": "2026-11-18T20:51:20.764Z",
+            "completed_at": "2026-11-18T20:51:20.779Z",
+            "answer": {
+              "id": 1,
+              "status": "abstained",
+              "body": null,
+              "reason": "The retrieved materials do not establish an answer to that question.",
+              "provider": "offline_fixture",
+              "model": "offline-citation-fixture-v1",
+              "prompt_version": "2.2.0",
+              "api_outcome": "completed",
+              "error_code": null,
+              "retryable": false,
+              "verification_passed": false,
+              "input_tokens": 33,
+              "output_tokens": 14,
+              "latency_ms": 1,
+              "provider_response_id": "offline-fixture-response",
+              "rating": null
+            },
+            "sources": [
+              {
+                "chunk_id": 10,
+                "document_id": 3,
+                "document_title": "LMS Assessment and Attendance Policy",
+                "original_filename": "LMS Assessment and Attendance Policy.pdf",
+                "page_number": 3,
+                "chunk_number": 3,
+                "revision": 1,
+                "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+                "score": 0.47956014,
+                "rank": 1
+              }
+            ],
+            "citations": []
+          },
+          "sqlite": {
+            "question": {
+              "id": 1,
+              "learner_id": 1,
+              "course_id": null,
+              "document_id": 3,
+              "conversation_id": null,
+              "question_text": "Do the assessment review rules grant an automatic grade increase?",
+              "status": "abstained",
+              "request_id": "766e1ae6-188a-47ee-8c7a-df1d54ca119b",
+              "created_at": "2026-11-18T20:51:20.764Z",
+              "completed_at": "2026-11-18T20:51:20.779Z"
+            },
+            "answer": {
+              "id": 1,
+              "question_id": 1,
+              "status": "abstained",
+              "body": null,
+              "reason": "The retrieved materials do not establish an answer to that question.",
+              "provider": "offline_fixture",
+              "model": "offline-citation-fixture-v1",
+              "provider_response_id": "offline-fixture-response",
+              "prompt_version": "2.2.0",
+              "api_outcome": "completed",
+              "error_code": null,
+              "retryable": 0,
+              "input_tokens": 33,
+              "output_tokens": 14,
+              "latency_ms": 1,
+              "created_at": "2026-11-18T20:51:20.779Z"
+            },
+            "ranked_sources": [
+              {
+                "question_id": 1,
+                "chunk_id": 10,
+                "rank": 1,
+                "score": 0.47956014,
+                "document_id": 3,
+                "page_number": 3,
+                "content_hash": "6b6e6114a82b0504fd4bf49b3830ce2263c61ea3bb18f5a88e29837ae6b02dc4"
+              }
+            ],
+            "citations": [],
+            "events": [
+              {
+                "id": 7,
+                "learner_id": 1,
+                "question_id": 1,
+                "document_id": 3,
+                "request_id": "766e1ae6-188a-47ee-8c7a-df1d54ca119b",
+                "event_type": "question.submit",
+                "outcome": "accepted",
+                "detail": null,
+                "created_at": "2026-11-18T20:51:20.764Z"
+              },
+              {
+                "id": 8,
+                "learner_id": 1,
+                "question_id": 1,
+                "document_id": null,
+                "request_id": "766e1ae6-188a-47ee-8c7a-df1d54ca119b",
+                "event_type": "question.retrieve",
+                "outcome": "sufficient",
+                "detail": "1 passages",
+                "created_at": "2026-11-18T20:51:20.774Z"
+              },
+              {
+                "id": 9,
+                "learner_id": 1,
+                "question_id": 1,
+                "document_id": null,
+                "request_id": "766e1ae6-188a-47ee-8c7a-df1d54ca119b",
+                "event_type": "question.complete",
+                "outcome": "abstained",
+                "detail": "completed",
+                "created_at": "2026-11-18T20:51:20.780Z"
+              }
+            ]
+          },
+          "supplied_candidate": {
+            "body": "The assessment review rules do not grant an automatic grade increase. The source does not mention one.",
+            "quoted_text": "Request an assessment review in the LMS Support area within five working days after the grade is released."
+          }
+        },
+        {
+          "question": "Do the assessment review rules grant an automatic grade increase?",
+          "scope": {
+            "document_id": 3
+          },
+          "http_status": 201,
+          "response": {
+            "id": 2,
+            "question_text": "Do the assessment review rules grant an automatic grade increase?",
+            "course_id": null,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "conversation_id": null,
+            "status": "abstained",
+            "request_id": "4020f9be-4fa9-4d0e-aae5-eb37d31f6861",
+            "created_at": "2026-11-18T20:51:20.789Z",
+            "completed_at": "2026-11-18T20:51:20.805Z",
+            "answer": {
+              "id": 2,
+              "status": "abstained",
+              "body": null,
+              "reason": "The retrieved materials do not establish an answer to that question.",
+              "provider": "offline_fixture",
+              "model": "offline-citation-fixture-v1",
+              "prompt_version": "2.2.0",
+              "api_outcome": "completed",
+              "error_code": null,
+              "retryable": false,
+              "verification_passed": false,
+              "input_tokens": 33,
+              "output_tokens": 14,
+              "latency_ms": 1,
+              "provider_response_id": "offline-fixture-response",
+              "rating": null
+            },
+            "sources": [
+              {
+                "chunk_id": 10,
+                "document_id": 3,
+                "document_title": "LMS Assessment and Attendance Policy",
+                "original_filename": "LMS Assessment and Attendance Policy.pdf",
+                "page_number": 3,
+                "chunk_number": 3,
+                "revision": 1,
+                "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+                "score": 0.47956014,
+                "rank": 1
+              }
+            ],
+            "citations": []
+          },
+          "sqlite": {
+            "question": {
+              "id": 2,
+              "learner_id": 1,
+              "course_id": null,
+              "document_id": 3,
+              "conversation_id": null,
+              "question_text": "Do the assessment review rules grant an automatic grade increase?",
+              "status": "abstained",
+              "request_id": "4020f9be-4fa9-4d0e-aae5-eb37d31f6861",
+              "created_at": "2026-11-18T20:51:20.789Z",
+              "completed_at": "2026-11-18T20:51:20.805Z"
+            },
+            "answer": {
+              "id": 2,
+              "question_id": 2,
+              "status": "abstained",
+              "body": null,
+              "reason": "The retrieved materials do not establish an answer to that question.",
+              "provider": "offline_fixture",
+              "model": "offline-citation-fixture-v1",
+              "provider_response_id": "offline-fixture-response",
+              "prompt_version": "2.2.0",
+              "api_outcome": "completed",
+              "error_code": null,
+              "retryable": 0,
+              "input_tokens": 33,
+              "output_tokens": 14,
+              "latency_ms": 1,
+              "created_at": "2026-11-18T20:51:20.805Z"
+            },
+            "ranked_sources": [
+              {
+                "question_id": 2,
+                "chunk_id": 10,
+                "rank": 1,
+                "score": 0.47956014,
+                "document_id": 3,
+                "page_number": 3,
+                "content_hash": "6b6e6114a82b0504fd4bf49b3830ce2263c61ea3bb18f5a88e29837ae6b02dc4"
+              }
+            ],
+            "citations": [],
+            "events": [
+              {
+                "id": 10,
+                "learner_id": 1,
+                "question_id": 2,
+                "document_id": 3,
+                "request_id": "4020f9be-4fa9-4d0e-aae5-eb37d31f6861",
+                "event_type": "question.submit",
+                "outcome": "accepted",
+                "detail": null,
+                "created_at": "2026-11-18T20:51:20.789Z"
+              },
+              {
+                "id": 11,
+                "learner_id": 1,
+                "question_id": 2,
+                "document_id": null,
+                "request_id": "4020f9be-4fa9-4d0e-aae5-eb37d31f6861",
+                "event_type": "question.retrieve",
+                "outcome": "sufficient",
+                "detail": "1 passages",
+                "created_at": "2026-11-18T20:51:20.803Z"
+              },
+              {
+                "id": 12,
+                "learner_id": 1,
+                "question_id": 2,
+                "document_id": null,
+                "request_id": "4020f9be-4fa9-4d0e-aae5-eb37d31f6861",
+                "event_type": "question.complete",
+                "outcome": "abstained",
+                "detail": "completed",
+                "created_at": "2026-11-18T20:51:20.807Z"
+              }
+            ]
+          },
+          "supplied_candidate": {
+            "body": "No, the assessment review rules do not grant an automatic grade increase.",
+            "quoted_text": "Request an assessment review in the LMS Support area within five working days after the grade is released."
+          }
+        },
+        {
+          "question": "Does filing an assessment review guarantee a higher mark?",
+          "scope": {
+            "document_id": 3
+          },
+          "http_status": 201,
+          "response": {
+            "id": 3,
+            "question_text": "Does filing an assessment review guarantee a higher mark?",
+            "course_id": null,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "conversation_id": null,
+            "status": "abstained",
+            "request_id": "80ad15cb-2ac1-434b-b9a1-d4c70c0e31c9",
+            "created_at": "2026-11-18T20:51:20.820Z",
+            "completed_at": "2026-11-18T20:51:20.827Z",
+            "answer": {
+              "id": 3,
+              "status": "abstained",
+              "body": null,
+              "reason": "The retrieved materials do not establish an answer to that question.",
+              "provider": "offline_fixture",
+              "model": "offline-citation-fixture-v1",
+              "prompt_version": "2.2.0",
+              "api_outcome": "completed",
+              "error_code": null,
+              "retryable": false,
+              "verification_passed": false,
+              "input_tokens": 33,
+              "output_tokens": 14,
+              "latency_ms": 1,
+              "provider_response_id": "offline-fixture-response",
+              "rating": null
+            },
+            "sources": [
+              {
+                "chunk_id": 10,
+                "document_id": 3,
+                "document_title": "LMS Assessment and Attendance Policy",
+                "original_filename": "LMS Assessment and Attendance Policy.pdf",
+                "page_number": 3,
+                "chunk_number": 3,
+                "revision": 1,
+                "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+                "score": 0.36835646,
+                "rank": 1
+              },
+              {
+                "chunk_id": 9,
+                "document_id": 3,
+                "document_title": "LMS Assessment and Attendance Policy",
+                "original_filename": "LMS Assessment and Attendance Policy.pdf",
+                "page_number": 2,
+                "chunk_number": 2,
+                "revision": 1,
+                "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAttendance requirements\n\nLive sessions and recorded participation\n\nLearners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration.\n\nWatching a recording does not count toward live attendance. A learner may request a documented accommodation from course support.\n\nAttendance records appear in the LMS Attendance area within two working days of a session.\n\nEduEvidence AI / Synthetic demonstration material Page 2 of 3",
+                "score": 0.0941812,
+                "rank": 2
+              }
+            ],
+            "citations": []
+          },
+          "sqlite": {
+            "question": {
+              "id": 3,
+              "learner_id": 1,
+              "course_id": null,
+              "document_id": 3,
+              "conversation_id": null,
+              "question_text": "Does filing an assessment review guarantee a higher mark?",
+              "status": "abstained",
+              "request_id": "80ad15cb-2ac1-434b-b9a1-d4c70c0e31c9",
+              "created_at": "2026-11-18T20:51:20.820Z",
+              "completed_at": "2026-11-18T20:51:20.827Z"
+            },
+            "answer": {
+              "id": 3,
+              "question_id": 3,
+              "status": "abstained",
+              "body": null,
+              "reason": "The retrieved materials do not establish an answer to that question.",
+              "provider": "offline_fixture",
+              "model": "offline-citation-fixture-v1",
+              "provider_response_id": "offline-fixture-response",
+              "prompt_version": "2.2.0",
+              "api_outcome": "completed",
+              "error_code": null,
+              "retryable": 0,
+              "input_tokens": 33,
+              "output_tokens": 14,
+              "latency_ms": 1,
+              "created_at": "2026-11-18T20:51:20.827Z"
+            },
+            "ranked_sources": [
+              {
+                "question_id": 3,
+                "chunk_id": 10,
+                "rank": 1,
+                "score": 0.36835646,
+                "document_id": 3,
+                "page_number": 3,
+                "content_hash": "6b6e6114a82b0504fd4bf49b3830ce2263c61ea3bb18f5a88e29837ae6b02dc4"
+              },
+              {
+                "question_id": 3,
+                "chunk_id": 9,
+                "rank": 2,
+                "score": 0.0941812,
+                "document_id": 3,
+                "page_number": 2,
+                "content_hash": "a2ebd65b815c62db3b43368f9056a99afa8b31655f86c77a76f7e92a35c8e39c"
+              }
+            ],
+            "citations": [],
+            "events": [
+              {
+                "id": 13,
+                "learner_id": 1,
+                "question_id": 3,
+                "document_id": 3,
+                "request_id": "80ad15cb-2ac1-434b-b9a1-d4c70c0e31c9",
+                "event_type": "question.submit",
+                "outcome": "accepted",
+                "detail": null,
+                "created_at": "2026-11-18T20:51:20.820Z"
+              },
+              {
+                "id": 14,
+                "learner_id": 1,
+                "question_id": 3,
+                "document_id": null,
+                "request_id": "80ad15cb-2ac1-434b-b9a1-d4c70c0e31c9",
+                "event_type": "question.retrieve",
+                "outcome": "sufficient",
+                "detail": "2 passages",
+                "created_at": "2026-11-18T20:51:20.827Z"
+              },
+              {
+                "id": 15,
+                "learner_id": 1,
+                "question_id": 3,
+                "document_id": null,
+                "request_id": "80ad15cb-2ac1-434b-b9a1-d4c70c0e31c9",
+                "event_type": "question.complete",
+                "outcome": "abstained",
+                "detail": "completed",
+                "created_at": "2026-11-18T20:51:20.827Z"
+              }
+            ]
+          },
+          "supplied_candidate": {
+            "body": "Filing an assessment review guarantees a higher mark.",
+            "quoted_text": "Request an assessment review in the LMS Support area within five working days after the grade is released."
+          }
+        }
+      ]
+    }
+  ]
+}

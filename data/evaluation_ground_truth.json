@@ -1,0 +1,965 @@
+{
+  "protocol": "PDF-only questions, expected answers, exact source excerpts and exhaustive relevant document-page labels pre-registered before execution. Document keys identify original bundled bytes. Pages are 1-based.",
+  "documents": {
+    "PY": {
+      "filename": "Python Programming Course Handbook.pdf",
+      "course_id": 1,
+      "page_count": 4,
+      "sha256": "714d4f84f004df8073e084e99a62ebe003c1781e3444f73d3e6d3b6cf579f381"
+    },
+    "AI": {
+      "filename": "AI and Machine Learning Course Guide.pdf",
+      "course_id": 2,
+      "page_count": 3,
+      "sha256": "e45c699f48e06583bd5044d7f25748db74fc7da866e1d3f18623743c78f6a635"
+    },
+    "LMS": {
+      "filename": "LMS Assessment and Attendance Policy.pdf",
+      "course_id": 3,
+      "page_count": 3,
+      "sha256": "684df5b219e0214984e28de2bb19ca236066d8850e1e95ca22d6538188a58234"
+    }
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "category": "single-document",
+      "question": "What are the Python Programming course completion requirements?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 4,
+            "excerpts": [
+              "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q02",
+      "category": "similar-keywords",
+      "question": "What percentage of the Python Programming final mark comes from graded labs and from the capstone project?",
+      "scope": {
+        "course_id": 1
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Graded labs: 60%. Capstone project: 40%.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 3,
+            "excerpts": [
+              "Graded labs account for 60% of the course mark.",
+              "The capstone project accounts for 40% of the course mark."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q03",
+      "category": "single-document",
+      "question": "Where and how do I submit each graded Python lab, including the required files?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Submit in LMS Assessments as a ZIP containing Python source files and a short README.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 3,
+            "excerpts": [
+              "Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q04",
+      "category": "similar-keywords",
+      "question": "Which submission slot is for the Python capstone project, and what three things should I include?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Use the Capstone submission slot and include Python source, test files, and instructions for running the project.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 3,
+            "excerpts": [
+              "Upload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q05",
+      "category": "paraphrase",
+      "question": "How long does the introductory Python Programming course run?",
+      "scope": {
+        "course_id": 1
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Six weeks.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 1,
+            "excerpts": [
+              "Python Programming is a six-week foundation course for new programmers."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q06",
+      "category": "single-document",
+      "question": "What practical programming tasks do new Python learners perform?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Write and debug small command-line programs, organize code into reusable functions, and read structured files.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 1,
+            "excerpts": [
+              "Learners write and debug small command-line programs, organize code into reusable functions, and read structured files."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q07",
+      "category": "single-document",
+      "question": "What topics does Python Programming cover in weeks 3 and 4?",
+      "scope": {
+        "course_id": 1
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Functions, modules, files, exceptions, and debugging.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 2,
+            "excerpts": [
+              "Weeks 3 and 4 cover functions, modules, files, exceptions, and debugging."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q08",
+      "category": "single-document",
+      "question": "In which week of the Python course are unit tests and code review introduced?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Week 5.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 2,
+            "excerpts": [
+              "Week 5 introduces unit tests and code review."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q09",
+      "category": "qualification",
+      "question": "How many Python capstone resubmissions are available, and when?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "One resubmission, after written feedback.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 4,
+            "excerpts": [
+              "A capstone resubmission is available once after written feedback."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q10",
+      "category": "qualification",
+      "question": "Where and when will I see the Python course completion record?",
+      "scope": {
+        "course_id": 1
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "In LMS Results after the course coordinator verifies the completion conditions.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 4,
+            "excerpts": [
+              "The completion record appears in the LMS Results area after the course coordinator verifies the conditions."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q11",
+      "category": "qualification",
+      "question": "Does a Python capstone Pass by itself satisfy course completion requirements?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "A capstone Pass alone is insufficient. The requirements also include all four graded labs and at least 70% overall.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 4,
+            "excerpts": [
+              "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q12",
+      "category": "multi-passage",
+      "question": "What share of the overall mark is the Python capstone worth, and what separate capstone outcome is required for completion?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The capstone is worth 40% of the mark and must separately earn a Pass.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 3,
+            "excerpts": [
+              "The capstone project accounts for 40% of the course mark."
+            ]
+          },
+          {
+            "document": "PY",
+            "page": 4,
+            "excerpts": [
+              "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q13",
+      "category": "similar-keywords",
+      "question": "How is the AI and Machine Learning final grade split between quizzes, the notebook, and the capstone report?",
+      "scope": {
+        "document": "AI"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Two quizzes are worth 20% combined, the modeling notebook 35%, and the capstone report 45%.",
+        "evidence": [
+          {
+            "document": "AI",
+            "page": 3,
+            "excerpts": [
+              "The AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q14",
+      "category": "paraphrase",
+      "question": "What goes in the final capstone write-up for the AI course?",
+      "scope": {
+        "course_id": 2
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Dataset description, a baseline model, validation results, and a discussion of limitations.",
+        "evidence": [
+          {
+            "document": "AI",
+            "page": 3,
+            "excerpts": [
+              "The capstone report must include the dataset description, a baseline model, validation results, and a discussion of limitations."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q15",
+      "category": "qualification",
+      "question": "What file formats are required for the AI modeling notebook and capstone report, and can I submit them together in one slot?",
+      "scope": {
+        "document": "AI"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The notebook is IPYNB and the report is PDF. They go in separate LMS Assessments slots.",
+        "evidence": [
+          {
+            "document": "AI",
+            "page": 3,
+            "excerpts": [
+              "Submit the modeling notebook as an IPYNB file and the capstone report as a PDF in separate LMS Assessments slots."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q16",
+      "category": "single-document",
+      "question": "Which two prerequisites should I understand before starting AI and Machine Learning?",
+      "scope": {
+        "course_id": 2
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Python functions and basic descriptive statistics.",
+        "evidence": [
+          {
+            "document": "AI",
+            "page": 1,
+            "excerpts": [
+              "Before starting, learners should understand Python functions and basic descriptive statistics."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q17",
+      "category": "course-filter",
+      "question": "How many weeks is the AI and Machine Learning course?",
+      "scope": {
+        "course_id": 2
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Eight weeks.",
+        "evidence": [
+          {
+            "document": "AI",
+            "page": 1,
+            "excerpts": [
+              "AI and Machine Learning is an eight-week applied course."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q18",
+      "category": "multi-passage",
+      "question": "In the AI classification workshop, which models should I compare and which results should I report?",
+      "scope": {
+        "document": "AI"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Compare a logistic regression baseline with a decision tree. Report precision, recall, and a confusion matrix.",
+        "evidence": [
+          {
+            "document": "AI",
+            "page": 2,
+            "excerpts": [
+              "For classification workshops, compare a logistic regression baseline with a decision tree. Report precision, recall, and the confusion matrix."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q19",
+      "category": "single-document",
+      "question": "What five areas do the AI and Machine Learning modules cover?",
+      "scope": {
+        "course_id": 2
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Dataset preparation, classification, regression, validation, and responsible model reporting.",
+        "evidence": [
+          {
+            "document": "AI",
+            "page": 2,
+            "excerpts": [
+              "Modules cover dataset preparation, classification, regression, validation, and responsible model reporting."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q20",
+      "category": "single-document",
+      "question": "What three ongoing learning resources are listed in the AI guide?",
+      "scope": {
+        "document": "AI"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "A glossary, weekly notebook walkthroughs, and an evaluation checklist.",
+        "evidence": [
+          {
+            "document": "AI",
+            "page": 1,
+            "excerpts": [
+              "The learning resources include a glossary, weekly notebook walkthroughs, and an evaluation checklist."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q21",
+      "category": "qualification",
+      "question": "For eligible assignments, how late can I submit and what is the penalty, including partial periods?",
+      "scope": {
+        "document": "LMS"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "For assignments marked eligible, up to 48 hours after the deadline. Deduct 10 percentage points per 24-hour period or part thereof.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 1,
+            "excerpts": [
+              "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q22",
+      "category": "paraphrase",
+      "question": "If I catch up by replaying a session, does that count toward my live attendance?",
+      "scope": {
+        "course_id": 3
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Watching a recording does not count toward live attendance.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 2,
+            "excerpts": [
+              "Watching a recording does not count toward live attendance."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q23",
+      "category": "multi-passage",
+      "question": "What minimum percentage of scheduled live sessions must I attend, and how long must I stay for a session to count?",
+      "scope": {
+        "document": "LMS"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Attend at least 75% of scheduled live sessions. Be present for at least half of the scheduled duration for a session to count.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 2,
+            "excerpts": [
+              "Learners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q24",
+      "category": "single-document",
+      "question": "Where will live attendance records appear, and how soon after a session?",
+      "scope": {
+        "document": "LMS"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "In LMS Attendance within two working days of a session.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 2,
+            "excerpts": [
+              "Attendance records appear in the LMS Attendance area within two working days of a session."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q25",
+      "category": "similar-keywords",
+      "question": "What is the deadline and LMS location for requesting an assessment review after the grade is released?",
+      "scope": {
+        "course_id": 3
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Request in LMS Support within five working days after the grade is released.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 3,
+            "excerpts": [
+              "Request an assessment review in the LMS Support area within five working days after the grade is released."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q26",
+      "category": "single-document",
+      "question": "What information should I include in an assessment review request?",
+      "scope": {
+        "document": "LMS"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The assessment name, the rubric criterion, and a short explanation of the issue.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 3,
+            "excerpts": [
+              "Include the assessment name, the rubric criterion, and a short explanation of the issue."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q27",
+      "category": "qualification",
+      "question": "If the LMS is unavailable before an assignment deadline, whom should I contact and what should I send?",
+      "scope": {
+        "document": "LMS"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Contact course support and include the error details before the deadline where possible.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 1,
+            "excerpts": [
+              "If the LMS is unavailable, contact course support and include the error details before the deadline where possible."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q28",
+      "category": "single-document",
+      "question": "What proof of delivery should I keep after I submit graded work in the LMS?",
+      "scope": {
+        "course_id": 3
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Keep the timestamped submission receipt.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 1,
+            "excerpts": [
+              "Keep the timestamped submission receipt as proof of delivery."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q29",
+      "category": "paraphrase",
+      "question": "How do I ask for ordinary learning help instead of an assessment review?",
+      "scope": {
+        "document": "LMS"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Use the LMS Support area and select the Course Support category.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 3,
+            "excerpts": [
+              "Request an assessment review in the LMS Support area within five working days after the grade is released.",
+              "Requests for general learning support can be submitted in the same area using the Course Support category."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q30",
+      "category": "multi-document",
+      "question": "Compare capstone weighting for Python Programming and AI and Machine Learning.",
+      "scope": {},
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Python Programming capstone project: 40%. AI and Machine Learning capstone report: 45%.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 3,
+            "excerpts": [
+              "The capstone project accounts for 40% of the course mark."
+            ]
+          },
+          {
+            "document": "AI",
+            "page": 3,
+            "excerpts": [
+              "The AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q31",
+      "category": "multi-document",
+      "question": "How long are the Python Programming and AI and Machine Learning courses?",
+      "scope": {},
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Python Programming: six weeks. AI and Machine Learning: eight weeks.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 1,
+            "excerpts": [
+              "Python Programming is a six-week foundation course for new programmers."
+            ]
+          },
+          {
+            "document": "AI",
+            "page": 1,
+            "excerpts": [
+              "AI and Machine Learning is an eight-week applied course."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q32",
+      "category": "multi-document",
+      "question": "Where is a graded Python lab submitted, and how soon do live attendance records appear?",
+      "scope": {},
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Submit the Python lab in LMS Assessments. Attendance records appear in LMS Attendance within two working days of a session.",
+        "evidence": [
+          {
+            "document": "PY",
+            "page": 3,
+            "excerpts": [
+              "Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README."
+            ]
+          },
+          {
+            "document": "LMS",
+            "page": 2,
+            "excerpts": [
+              "Attendance records appear in the LMS Attendance area within two working days of a session."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q33",
+      "category": "unsupported-keywords",
+      "question": "What is the Python course refund amount if I resubmit my capstone?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "abstained",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The handbook gives a capstone resubmission rule and supplies no refund amount.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q34",
+      "category": "no-relevant-passages",
+      "question": "What is the cafeteria menu on Tuesday?",
+      "scope": {
+        "course_id": 1
+      },
+      "expected": {
+        "status": "abstained",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The selected course material supplies no cafeteria menu.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q35",
+      "category": "ambiguous",
+      "question": "What grade do I need?",
+      "scope": {},
+      "expected": {
+        "status": "abstained",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The required grade depends on the course and purpose. The question needs clarification.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q36",
+      "category": "document-filter",
+      "question": "What is the minimum attendance percentage for live sessions?",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "abstained",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The selected Python handbook supplies no attendance threshold.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q37",
+      "category": "unsupported-keywords",
+      "question": "Do the assessment review rules grant an automatic grade increase?",
+      "scope": {
+        "document": "LMS"
+      },
+      "expected": {
+        "status": "abstained",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The policy explains how to request a review and provides no automatic grade increase.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q38",
+      "category": "empty",
+      "question": "",
+      "scope": {
+        "document": "PY"
+      },
+      "expected": {
+        "status": "rejected",
+        "http_status": 422,
+        "error_code": "invalid_input",
+        "answer": "Reject the empty question before retrieval.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q39",
+      "category": "whitespace",
+      "question": "   \t  ",
+      "scope": {
+        "course_id": 1
+      },
+      "expected": {
+        "status": "rejected",
+        "http_status": 422,
+        "error_code": "invalid_input",
+        "answer": "Reject the whitespace-only question before retrieval.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q40",
+      "category": "missing-document",
+      "question": "What is the Python course duration?",
+      "scope": {
+        "document_id": 999999
+      },
+      "expected": {
+        "status": "rejected",
+        "http_status": 404,
+        "error_code": "document_not_found",
+        "answer": "Reject the nonexistent document scope.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q41",
+      "category": "incorrect-filter",
+      "question": "What are the Python course completion requirements?",
+      "scope": {
+        "course_id": 2,
+        "document": "PY"
+      },
+      "expected": {
+        "status": "rejected",
+        "http_status": 422,
+        "error_code": "scope_mismatch",
+        "answer": "Reject the document outside the selected course.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "Q42",
+      "category": "qualification",
+      "question": "Are all assignments eligible for the 48-hour late submission window?",
+      "scope": {
+        "document": "LMS"
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "The window applies only to assignments marked eligible for late submission.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 1,
+            "excerpts": [
+              "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q43",
+      "category": "paraphrase",
+      "question": "Once grades are posted, how much time do I have to dispute an assessment score?",
+      "scope": {
+        "course_id": 3
+      },
+      "expected": {
+        "status": "answered",
+        "http_status": 201,
+        "error_code": null,
+        "answer": "Within five working days after the grade is released.",
+        "evidence": [
+          {
+            "document": "LMS",
+            "page": 3,
+            "excerpts": [
+              "Request an assessment review in the LMS Support area within five working days after the grade is released."
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

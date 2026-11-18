@@ -1,0 +1,174 @@
+{
+  "cases": [
+    {
+      "id": "V01",
+      "ground_truth_id": "Q21",
+      "question": "For eligible assignments, how late can I submit and what is the penalty, including partial periods?",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "All assignments can be submitted up to 48 hours late with a 10 percentage point penalty per 24 hours.",
+        "citations": [
+          {
+            "chunk_id": 8,
+            "document_id": 3,
+            "page_number": 1,
+            "evidence_quote": "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 8,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+        "page_number": 1
+      },
+      "verification_reason": "The answer incorrectly generalizes to 'all assignments' when the passage specifies 'assignments marked eligible for late submission' only. The passage also states the penalty applies per 24-hour period or part thereof, which should be explicitly noted for partial periods. Therefore, the answer is incomplete and not fully accurate as given.",
+      "provider_response_id": "resp_0e4cbcb646340b7c016afe10b390f487d0926243ef7c6e2bb5",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 624,
+      "output_tokens": 73,
+      "latency_ms": 2869
+    },
+    {
+      "id": "V02",
+      "ground_truth_id": "Q22",
+      "question": "If I catch up by replaying a session, does that count toward my live attendance?",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "Watching a recording counts toward live attendance.",
+        "citations": [
+          {
+            "chunk_id": 9,
+            "document_id": 3,
+            "page_number": 2,
+            "evidence_quote": "Watching a recording does not count toward live attendance."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 9,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAttendance requirements\n\nLive sessions and recorded participation\n\nLearners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration.\n\nWatching a recording does not count toward live attendance. A learner may request a documented accommodation from course support.\n\nAttendance records appear in the LMS Attendance area within two working days of a session.\n\nEduEvidence AI / Synthetic demonstration material Page 2 of 3",
+        "page_number": 2
+      },
+      "verification_reason": "The candidate answer states that watching a recording counts toward live attendance, but the cited passage explicitly states that watching a recording does not count toward live attendance. Therefore, the answer contradicts the provided source and is unsupported.",
+      "provider_response_id": "resp_0a9a8db119c15721016afe10b4ae1487d0b43a013c0683c565",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 570,
+      "output_tokens": 53,
+      "latency_ms": 1196
+    },
+    {
+      "id": "V03",
+      "ground_truth_id": "Q25",
+      "question": "What is the deadline and LMS location for requesting an assessment review after the grade is released?",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "You have 48 hours to request an assessment review in LMS Support after the grade is released.",
+        "citations": [
+          {
+            "chunk_id": 10,
+            "document_id": 3,
+            "page_number": 3,
+            "evidence_quote": "Request an assessment review in the LMS Support area within five working days after the grade is released."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 10,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+        "page_number": 3
+      },
+      "verification_reason": "The candidate answer states a 48-hour deadline for requesting an assessment review, but the cited passage specifies a deadline of five working days after the grade is released. Therefore, the answer's stated deadline is inconsistent with the provided source, making the answer unsupported.",
+      "provider_response_id": "resp_0312bdcb34abc0a4016afe10b5dbf087d0825b1734f48a40d7",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 587,
+      "output_tokens": 61,
+      "latency_ms": 1141
+    },
+    {
+      "id": "V04",
+      "ground_truth_id": "Q21",
+      "question": "For eligible assignments, how late can I submit and what is the penalty, including partial periods?",
+      "expected": "supported",
+      "actual": "supported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "For assignments marked eligible, up to 48 hours after the deadline. Deduct 10 percentage points per 24-hour period or part thereof.",
+        "citations": [
+          {
+            "chunk_id": 8,
+            "document_id": 3,
+            "page_number": 1,
+            "evidence_quote": "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 8,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+        "page_number": 1
+      },
+      "verification_reason": "The answer correctly states that eligible assignments can be submitted up to 48 hours late and that the penalty is 10 percentage points per 24-hour period or part thereof, which is exactly supported by the quoted passage from the LMS Assessment and Attendance Policy.",
+      "provider_response_id": "resp_087bf384e05d8ef3016afe10b709c087d0af3033bdd3f0c530",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 630,
+      "output_tokens": 60,
+      "latency_ms": 1350
+    },
+    {
+      "id": "V05",
+      "ground_truth_id": "Q03",
+      "question": "Where and how do I submit each graded Python lab, including the required files?",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "Submit each lab in LMS Assessments as a ZIP containing the source, README, and mandatory instructions for running the project.",
+        "citations": [
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "page_number": 3,
+            "evidence_quote": "Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 3,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+        "page_number": 3
+      },
+      "verification_reason": "The passage specifies submitting each lab as a ZIP archive containing Python source files and a short README, but does not mention including mandatory instructions for running the project with each graded lab ZIP. The mention of instructions for running the project applies only to the capstone submission, not the graded labs. Therefore, the candidate's inclusion of mandatory instructions for running the project in each lab submission is not supported by the source.",
+      "provider_response_id": "resp_0fd7b09045cb4f02016afe10b85e8487d0bcda940060cf35ff",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 606,
+      "output_tokens": 91,
+      "latency_ms": 1186
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Use the asker's question and the retrieved passage objects in the following JSON data. Decide whether the passages directly and sufficiently answer the question. Apply the system rules to the entire response. Return the structured JSON response.
+

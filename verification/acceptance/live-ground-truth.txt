@@ -1,0 +1,38 @@
+<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\eduevidence-ai\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+Q12 201 answered
+Q30 201 answered
+Q37 201 abstained
+{
+  "judged_questions": 2,
+  "unit": "distinct original PDF page",
+  "cutoffs": {
+    "1": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "mrr": 1.0,
+      "queries_with_full_recall": 0,
+      "returned_pages": 2,
+      "relevant_returned_pages": 2,
+      "precision_among_returned": 1.0
+    },
+    "3": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "mrr": 1.0,
+      "queries_with_full_recall": 2,
+      "returned_pages": 5,
+      "relevant_returned_pages": 4,
+      "precision_among_returned": 0.8
+    },
+    "5": {
+      "precision": 0.4,
+      "recall": 1.0,
+      "mrr": 1.0,
+      "queries_with_full_recall": 2,
+      "returned_pages": 7,
+      "relevant_returned_pages": 4,
+      "precision_among_returned": 0.5714285714285714
+    }
+  }
+}

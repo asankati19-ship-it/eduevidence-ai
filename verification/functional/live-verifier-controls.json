@@ -1,0 +1,140 @@
+{
+  "cases": [
+    {
+      "id": "V01",
+      "ground_truth_id": "Q21",
+      "question": "For eligible assignments, how late can I submit and what is the penalty, including partial periods?",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "All assignments can be submitted up to 48 hours late with a 10 percentage point penalty per 24 hours.",
+        "citations": [
+          {
+            "chunk_id": 8,
+            "document_id": 3,
+            "page_number": 1,
+            "evidence_quote": "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 8,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+        "page_number": 1
+      },
+      "verification_reason": "The candidate's answer incorrectly states 'All assignments' can be submitted late, whereas the passage specifies only assignments 'marked eligible for late submission' may be submitted up to 48 hours late. The candidate also omits that the penalty applies per 24-hour period or part thereof, which includes partial periods; although this is partially mentioned, the universal applicability to all assignments is unsupported.",
+      "provider_response_id": "resp_02a081e4cf575b7f016afe0f3eed0087d090bbf582ab4cb55f",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 624,
+      "output_tokens": 86,
+      "latency_ms": 3970
+    },
+    {
+      "id": "V02",
+      "ground_truth_id": "Q22",
+      "question": "If I catch up by replaying a session, does that count toward my live attendance?",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "Watching a recording counts toward live attendance.",
+        "citations": [
+          {
+            "chunk_id": 9,
+            "document_id": 3,
+            "page_number": 2,
+            "evidence_quote": "Watching a recording does not count toward live attendance."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 9,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAttendance requirements\n\nLive sessions and recorded participation\n\nLearners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration.\n\nWatching a recording does not count toward live attendance. A learner may request a documented accommodation from course support.\n\nAttendance records appear in the LMS Attendance area within two working days of a session.\n\nEduEvidence AI / Synthetic demonstration material Page 2 of 3",
+        "page_number": 2
+      },
+      "verification_reason": "The cited passage explicitly states, 'Watching a recording does not count toward live attendance,' directly contradicting the candidate's answer that 'Watching a recording counts toward live attendance.' Thus, the answer is factually incorrect and not supported by the provided evidence.",
+      "provider_response_id": "resp_0c8e62419f9f375b016afe0f40af5087d095586f95f2540cd9",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 570,
+      "output_tokens": 60,
+      "latency_ms": 1158
+    },
+    {
+      "id": "V03",
+      "ground_truth_id": "Q25",
+      "question": "What is the deadline and LMS location for requesting an assessment review after the grade is released?",
+      "expected": "unsupported",
+      "actual": "unsupported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "You have 48 hours to request an assessment review in LMS Support after the grade is released.",
+        "citations": [
+          {
+            "chunk_id": 10,
+            "document_id": 3,
+            "page_number": 3,
+            "evidence_quote": "Request an assessment review in the LMS Support area within five working days after the grade is released."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 10,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+        "page_number": 3
+      },
+      "verification_reason": "The candidate answer states the deadline to request an assessment review is 48 hours after the grade is released, but the source passage specifies the deadline as within five working days after the grade release. Therefore, the stated deadline in the answer is incorrect. The correct LMS location, 'LMS Support area,' is accurately identified.",
+      "provider_response_id": "resp_0d7993967cb0f29f016afe0f41db0c87d0a15db27e785d6322",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 587,
+      "output_tokens": 74,
+      "latency_ms": 1269
+    },
+    {
+      "id": "V04",
+      "ground_truth_id": "Q21",
+      "question": "For eligible assignments, how late can I submit and what is the penalty, including partial periods?",
+      "expected": "supported",
+      "actual": "supported",
+      "passed": true,
+      "injected_candidate": {
+        "status": "answered",
+        "answer": "For assignments marked eligible, up to 48 hours after the deadline. Deduct 10 percentage points per 24-hour period or part thereof.",
+        "citations": [
+          {
+            "chunk_id": 8,
+            "document_id": 3,
+            "page_number": 1,
+            "evidence_quote": "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof."
+          }
+        ],
+        "abstention_reason": null
+      },
+      "source": {
+        "chunk_id": 8,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment submissions\n\nReceipts and late work\n\nSubmit graded work through the assessment slot listed in the LMS. Keep the timestamped submission receipt as proof of delivery.\n\nFor assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof.\n\nIf the LMS is unavailable, contact course support and include the error details before the deadline where possible.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+        "page_number": 1
+      },
+      "verification_reason": "The answer directly matches the passage which states that for assignments eligible for late submission, a learner may submit up to 48 hours after the deadline with a penalty of 10 percentage points per 24-hour period or part thereof. The answer correctly includes the timing limit and the penalty including partial periods.",
+      "provider_response_id": "resp_074418b6655fec51016afe0f431b6487d0a252c47ce49e4262",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_tokens": 630,
+      "output_tokens": 69,
+      "latency_ms": 1517
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+Start: <local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\eduevidence-ai\.venv\Scripts\python.exe -m uvicorn backend.app.main:create_app --factory --host 127.0.0.1 --port 8072 --no-access-log
+Start: C:\Windows\system32\cmd.exe /d /c npm.cmd --prefix frontend run dev -- --port 5262
+{"backend_health": "ok", "indexed_documents": 3, "chunks": 10, "rendered_page": {"document_id": 1, "page": 4, "bytes": 70352}, "api_outcomes": {"known": {"id": 1, "status": "provider_error", "request_id": "96a0a518-b9ba-43d9-b1d9-9fe204e144dc", "audit_count": 3}, "unknown": {"id": 2, "status": "abstained", "request_id": "0c2b9beb-2eb9-4e27-84ec-abe2e2441086", "audit_count": 3}}, "restored_documents": 3, "sqlite_integrity": "ok", "foreign_key_violations": 0}
+Traceback (most recent call last):
+  File "<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\startup-proof.py", line 128, in <module>
+    main()
+  File "<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\startup-proof.py", line 123, in main
+    subprocess.run(["node.exe", str(BASE / "browser-proof.mjs")], cwd=APP, env=ENVIRONMENT,
+  File "<local-profile>\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['node.exe', '<local-profile>\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-you\\work\\acceptance-clean-install\\browser-proof.mjs']' returned non-zero exit status 1.

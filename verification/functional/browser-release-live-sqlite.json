@@ -1,0 +1,446 @@
+{
+  "mode": "live",
+  "integrity": "ok",
+  "foreign_key_errors": [],
+  "cases": [
+    {
+      "browser_trace": {
+        "id": 1,
+        "question_text": "For the course audit, what are the Python Programming course completion requirements?",
+        "course_id": 1,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "conversation_id": "f87dd307-c2ae-4652-b58e-03843d8d9238",
+        "status": "answered",
+        "request_id": "7fb4440c-39a7-419f-836b-1e59ac05d773",
+        "created_at": "2026-11-18T20:49:44.152Z",
+        "completed_at": "2026-11-18T20:49:49.602Z",
+        "answer": {
+          "id": 1,
+          "status": "answered",
+          "body": "To complete the Python Programming course for the audit, you must submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately, and one capstone resubmission is allowed after feedback. Completion is recorded in the LMS Results area once verified by the course coordinator.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.2.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 948,
+          "output_tokens": 190,
+          "latency_ms": 4313,
+          "provider_response_id": "resp_01b537ac01350b13016afe0f67ca2887d09edd76e0d34a59ba",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.44229547,
+            "rank": 1
+          },
+          {
+            "chunk_id": 1,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+            "score": 0.22109195,
+            "rank": 2
+          },
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+            "score": 0.12268193,
+            "rank": 3
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.44229547,
+            "rank": 1,
+            "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions.",
+            "position": 1
+          }
+        ]
+      },
+      "sqlite_trace": {
+        "question": {
+          "id": 1,
+          "learner_id": 1,
+          "course_id": 1,
+          "document_id": 1,
+          "conversation_id": "f87dd307-c2ae-4652-b58e-03843d8d9238",
+          "question_text": "For the course audit, what are the Python Programming course completion requirements?",
+          "status": "answered",
+          "request_id": "7fb4440c-39a7-419f-836b-1e59ac05d773",
+          "created_at": "2026-11-18T20:49:44.152Z",
+          "completed_at": "2026-11-18T20:49:49.602Z"
+        },
+        "answer": {
+          "id": 1,
+          "question_id": 1,
+          "status": "answered",
+          "body": "To complete the Python Programming course for the audit, you must submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately, and one capstone resubmission is allowed after feedback. Completion is recorded in the LMS Results area once verified by the course coordinator.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "provider_response_id": "resp_01b537ac01350b13016afe0f67ca2887d09edd76e0d34a59ba",
+          "prompt_version": "2.2.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": 0,
+          "input_tokens": 948,
+          "output_tokens": 190,
+          "latency_ms": 4313,
+          "created_at": "2026-11-18T20:49:49.602Z"
+        },
+        "ranked_sources": [
+          {
+            "question_id": 1,
+            "chunk_id": 4,
+            "rank": 1,
+            "score": 0.44229547,
+            "document_id": 1,
+            "page_number": 4,
+            "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+          },
+          {
+            "question_id": 1,
+            "chunk_id": 1,
+            "rank": 2,
+            "score": 0.22109195,
+            "document_id": 1,
+            "page_number": 1,
+            "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+          },
+          {
+            "question_id": 1,
+            "chunk_id": 3,
+            "rank": 3,
+            "score": 0.12268193,
+            "document_id": 1,
+            "page_number": 3,
+            "content_hash": "f6950a9bb9e6ae6ffe88fc7871ab518b4c6e94696170a0faecfd87f5468b3e14"
+          }
+        ],
+        "citations": [
+          {
+            "answer_id": 1,
+            "question_id": 1,
+            "chunk_id": 4,
+            "document_id": 1,
+            "page_number": 4,
+            "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions.",
+            "position": 1,
+            "rank": 1,
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "sha256": "714d4f84f004df8073e084e99a62ebe003c1781e3444f73d3e6d3b6cf579f381"
+          }
+        ],
+        "events": [
+          {
+            "id": 7,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": 1,
+            "request_id": "7fb4440c-39a7-419f-836b-1e59ac05d773",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T20:49:44.152Z"
+          },
+          {
+            "id": 8,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "7fb4440c-39a7-419f-836b-1e59ac05d773",
+            "event_type": "question.retrieve",
+            "outcome": "sufficient",
+            "detail": "3 passages",
+            "created_at": "2026-11-18T20:49:44.173Z"
+          },
+          {
+            "id": 9,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "7fb4440c-39a7-419f-836b-1e59ac05d773",
+            "event_type": "question.verify",
+            "outcome": "supported",
+            "detail": "{\"outcome\":\"supported\",\"model\":\"gpt-4.1-mini-2025-04-14\",\"response_id\":\"resp_08972b5958372613016afe0f6a20c887d0ac2eafffaf92f92d\",\"input_tokens\":1025,\"output_tokens\":94,\"latency_ms\":1109}",
+            "created_at": "2026-11-18T20:49:49.602Z"
+          },
+          {
+            "id": 10,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "7fb4440c-39a7-419f-836b-1e59ac05d773",
+            "event_type": "question.complete",
+            "outcome": "answered",
+            "detail": "completed",
+            "created_at": "2026-11-18T20:49:49.602Z"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "browser_trace": {
+        "id": 2,
+        "question_text": "What is the cafeteria menu on Tuesday?",
+        "course_id": 1,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "conversation_id": "f87dd307-c2ae-4652-b58e-03843d8d9238",
+        "status": "abstained",
+        "request_id": "2af44cfc-f00a-4707-933a-163d05ac708e",
+        "created_at": "2026-11-18T20:49:50.120Z",
+        "completed_at": "2026-11-18T20:49:50.130Z",
+        "answer": {
+          "id": 2,
+          "status": "abstained",
+          "body": null,
+          "reason": "The selected documents do not contain enough matching evidence for this question.",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "prompt_version": "2.2.0",
+          "api_outcome": "skipped",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": false,
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_ms": null,
+          "provider_response_id": null,
+          "rating": null
+        },
+        "sources": [],
+        "citations": []
+      },
+      "sqlite_trace": {
+        "question": {
+          "id": 2,
+          "learner_id": 1,
+          "course_id": 1,
+          "document_id": 1,
+          "conversation_id": "f87dd307-c2ae-4652-b58e-03843d8d9238",
+          "question_text": "What is the cafeteria menu on Tuesday?",
+          "status": "abstained",
+          "request_id": "2af44cfc-f00a-4707-933a-163d05ac708e",
+          "created_at": "2026-11-18T20:49:50.120Z",
+          "completed_at": "2026-11-18T20:49:50.130Z"
+        },
+        "answer": {
+          "id": 2,
+          "question_id": 2,
+          "status": "abstained",
+          "body": null,
+          "reason": "The selected documents do not contain enough matching evidence for this question.",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "provider_response_id": null,
+          "prompt_version": "2.2.0",
+          "api_outcome": "skipped",
+          "error_code": null,
+          "retryable": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_ms": null,
+          "created_at": "2026-11-18T20:49:50.130Z"
+        },
+        "ranked_sources": [],
+        "citations": [],
+        "events": [
+          {
+            "id": 11,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": 1,
+            "request_id": "2af44cfc-f00a-4707-933a-163d05ac708e",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T20:49:50.120Z"
+          },
+          {
+            "id": 12,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": null,
+            "request_id": "2af44cfc-f00a-4707-933a-163d05ac708e",
+            "event_type": "question.retrieve",
+            "outcome": "insufficient",
+            "detail": "0 passages",
+            "created_at": "2026-11-18T20:49:50.130Z"
+          },
+          {
+            "id": 13,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": null,
+            "request_id": "2af44cfc-f00a-4707-933a-163d05ac708e",
+            "event_type": "question.complete",
+            "outcome": "abstained",
+            "detail": "skipped",
+            "created_at": "2026-11-18T20:49:50.137Z"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "browser_trace": {
+        "id": 3,
+        "question_text": "Do the assessment review rules grant an automatic grade increase?",
+        "course_id": 3,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "conversation_id": "f87dd307-c2ae-4652-b58e-03843d8d9238",
+        "status": "abstained",
+        "request_id": "94d80191-16e6-4ce4-8166-b1d0f60480fa",
+        "created_at": "2026-11-18T20:49:50.427Z",
+        "completed_at": "2026-11-18T20:49:52.135Z",
+        "answer": {
+          "id": 3,
+          "status": "abstained",
+          "body": null,
+          "reason": "The retrieved materials do not establish an answer to that question.",
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.2.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": false,
+          "input_tokens": 611,
+          "output_tokens": 115,
+          "latency_ms": 1680,
+          "provider_response_id": "resp_07967e889d59c4f1016afe0f6c1ea887d0b2b260b6a105a513",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 10,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+            "score": 0.47956014,
+            "rank": 1
+          }
+        ],
+        "citations": []
+      },
+      "sqlite_trace": {
+        "question": {
+          "id": 3,
+          "learner_id": 1,
+          "course_id": 3,
+          "document_id": 3,
+          "conversation_id": "f87dd307-c2ae-4652-b58e-03843d8d9238",
+          "question_text": "Do the assessment review rules grant an automatic grade increase?",
+          "status": "abstained",
+          "request_id": "94d80191-16e6-4ce4-8166-b1d0f60480fa",
+          "created_at": "2026-11-18T20:49:50.427Z",
+          "completed_at": "2026-11-18T20:49:52.135Z"
+        },
+        "answer": {
+          "id": 3,
+          "question_id": 3,
+          "status": "abstained",
+          "body": null,
+          "reason": "The retrieved materials do not establish an answer to that question.",
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "provider_response_id": "resp_07967e889d59c4f1016afe0f6c1ea887d0b2b260b6a105a513",
+          "prompt_version": "2.2.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": 0,
+          "input_tokens": 611,
+          "output_tokens": 115,
+          "latency_ms": 1680,
+          "created_at": "2026-11-18T20:49:52.135Z"
+        },
+        "ranked_sources": [
+          {
+            "question_id": 3,
+            "chunk_id": 10,
+            "rank": 1,
+            "score": 0.47956014,
+            "document_id": 3,
+            "page_number": 3,
+            "content_hash": "6b6e6114a82b0504fd4bf49b3830ce2263c61ea3bb18f5a88e29837ae6b02dc4"
+          }
+        ],
+        "citations": [],
+        "events": [
+          {
+            "id": 14,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": 3,
+            "request_id": "94d80191-16e6-4ce4-8166-b1d0f60480fa",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T20:49:50.427Z"
+          },
+          {
+            "id": 15,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": null,
+            "request_id": "94d80191-16e6-4ce4-8166-b1d0f60480fa",
+            "event_type": "question.retrieve",
+            "outcome": "sufficient",
+            "detail": "1 passages",
+            "created_at": "2026-11-18T20:49:50.449Z"
+          },
+          {
+            "id": 16,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": null,
+            "request_id": "94d80191-16e6-4ce4-8166-b1d0f60480fa",
+            "event_type": "question.complete",
+            "outcome": "abstained",
+            "detail": "completed",
+            "created_at": "2026-11-18T20:49:52.135Z"
+          }
+        ]
+      },
+      "passed": true
+    }
+  ]
+}

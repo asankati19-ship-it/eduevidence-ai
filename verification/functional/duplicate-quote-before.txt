@@ -1,0 +1,45 @@
+F.                                                                       [100%]
+================================== FAILURES ===================================
+___________ test_two_quotes_for_one_retrieved_chunk[joins-verbatim] ___________
+
+seeded = <starlette.testclient.TestClient object at 0x000002D77DFF7A70>
+provider = FixtureProvider(name='offline_fixture', model='offline-citation-fixture-v1', configured=True, calls=[('Does watching a...quotes_for_one_retrieved_chunk.<locals>.candidate at 0x000002D77DFE8E00>, verifications=[], verification_override=None)
+wrong_second_page = False
+
+    @pytest.mark.parametrize("wrong_second_page", [False, True], ids=["joins-verbatim", "rejects-wrong-page"])
+    def test_two_quotes_for_one_retrieved_chunk(seeded, provider, wrong_second_page):
+        attendance = "A live session counts when the learner is present for at least half of its scheduled duration."
+        body = "Watching a recording does not count toward live attendance. " + attendance
+    
+        def candidate(_, passages):
+            source = next(row for row in passages if RECORDING_QUOTE in row["content"])
+            response = answer_with(source, RECORDING_QUOTE, body)
+            response["citations"].append({
+                **response["citations"][0],
+                "page_number": 3 if wrong_second_page else 2,
+                "evidence_quote": attendance,
+            })
+            return response
+    
+        provider.override = candidate
+        trace = seeded.post("/questions", json={"question": RECORDING_QUESTION, "document_id": 3}).json()
+        if wrong_second_page:
+            assert trace["status"] == "validation_error" and trace["answer"]["error_code"] == "invalid_citation"
+            assert not trace["citations"] and not provider.verifications
+        else:
+>           assert trace["status"] == "answered" and trace["answer"]["verification_passed"]
+E           AssertionError: assert ('validation_error' == 'answered'
+E             
+E             - answered
+E             + validation_error)
+
+backend\tests\test_accuracy_regressions.py:125: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  <local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\eduevidence-ai\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend/tests/test_accuracy_regressions.py::test_two_quotes_for_one_retrieved_chunk[joins-verbatim]
+1 failed, 1 passed, 20 deselected, 1 warning in 1.53s

@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Illustrative response format only. IDs are placeholders, not runtime data.",
+    "status": "answered",
+    "answer": "The review has two stages.",
+    "citations": [
+      {
+        "chunk_id": 12,
+        "document_id": 3,
+        "page_number": 4,
+        "evidence_quote": "The review has two stages."
+      }
+    ],
+    "abstention_reason": null
+  },
+  {
+    "status": "abstained",
+    "answer": null,
+    "citations": [],
+    "abstention_reason": "The selected passages do not specify the review schedule."
+  }
+]

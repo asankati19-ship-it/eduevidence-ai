@@ -1,0 +1,10 @@
+streamlit==1.65.0
+fastapi==0.164.0
+httpx==0.28.1
+openai==2.54.0
+pydantic==2.14.3
+PyMuPDF==1.28.2
+python-dotenv==1.2.4
+python-multipart==0.0.34
+scikit-learn==1.9.1
+Pillow==12.3.0

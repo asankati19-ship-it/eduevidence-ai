@@ -1,0 +1,19 @@
+npm notice run eduevidence-ai@1.0.0 npx
+npm notice run playwright test --grep SQLite failure
+[WebServer] INFO:     Started server process [38812]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8059 (Press CTRL+C to quit)
+[WebServer] npm notice run eduevidence-ai@1.0.0 dev
+[WebServer] npm notice run vite --port 5235
+[WebServer] (node:23948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:38380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] database_failure request_id=ff330e3a-ea76-47b7-ad6a-91866b7751c9 type=OperationalError
+  ok 1 e2e\ui-states.spec.ts:55:1 › SQLite failure shows the correlated API message and retry restores system health (1.5s)
+
+  1 passed (12.4s)

@@ -1,0 +1,57 @@
+Start: <local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\eduevidence-ai\.venv\Scripts\python.exe -m uvicorn backend.app.main:create_app --factory --host 127.0.0.1 --port 8072 --no-access-log
+Start: C:\Windows\system32\cmd.exe /d /c npm.cmd --prefix frontend run dev -- --port 5262
+{"backend_health": "ok", "indexed_documents": 3, "chunks": 10, "rendered_page": {"document_id": 1, "page": 4, "bytes": 70352}, "api_outcomes": {"known": {"id": 1, "status": "provider_error", "request_id": "9684c8f9-8f09-44f5-9b36-d51e4544b8b0", "audit_count": 3}, "unknown": {"id": 2, "status": "abstained", "request_id": "f2364869-52ec-41de-9547-eb8c417b0f5d", "audit_count": 3}}, "restored_documents": 3, "sqlite_integrity": "ok", "foreign_key_violations": 0}
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toHaveText(expected) failed
+
+Locator: locator('article.metric').filter({ hasText: 'Documents' }).locator('strong')
+Expected: "3"
+Error: strict mode violation: locator('article.metric').filter({ hasText: 'Documents' }).locator('strong') resolved to 2 elements:
+    1) <strong class="metric-number">3</strong> aka getByRole('article').filter({ hasText: 'Documents33 indexed � 0 with' }).getByRole('strong')
+    2) <strong class="metric-number">10</strong> aka getByText('10')
+
+Call log:
+  - Expect "toHaveText" locator('article.metric').filter({ hasText: 'Documents' }).locator('strong') with timeout 5000ms
+  - waiting for locator('article.metric').filter({ hasText: 'Documents' }).locator('strong')
+
+    at captureRawStack (<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\eduevidence-ai\frontend\node_modules\playwright-core\lib\coreBundle.js:9551:17)
+    at callMatcherAsStep (<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\eduevidence-ai\frontend\node_modules\playwright\lib\matchers\expect.js:13342:57)
+    at Object.toHaveText (<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\eduevidence-ai\frontend\node_modules\playwright\lib\matchers\expect.js:13334:23)
+    at <local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\browser-proof.mjs:28:8 {
+  matcherResult: {
+    name: 'toHaveText',
+    expected: '3',
+    message: 'expect(locator).toHaveText(expected) failed\n' +
+      '\n' +
+      "Locator: locator('article.metric').filter({ hasText: 'Documents' }).locator('strong')\n" +
+      'Expected: "3"\n' +
+      "Error: strict mode violation: locator('article.metric').filter({ hasText: 'Documents' }).locator('strong') resolved to 2 elements:\n" +
+      `    1) <strong class="metric-number">3</strong> aka getByRole('article').filter({ hasText: 'Documents33 indexed � 0 with' }).getByRole('strong')\n` +
+      `    2) <strong class="metric-number">10</strong> aka getByText('10')\n` +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toHaveText" locator('article.metric').filter({ hasText: 'Documents' }).locator('strong') with timeout 5000ms\n` +
+      "  - waiting for locator('article.metric').filter({ hasText: 'Documents' }).locator('strong')\n",
+    pass: false,
+    actual: undefined,
+    log: [
+      `  - Expect "toHaveText" locator('article.metric').filter({ hasText: 'Documents' }).locator('strong') with timeout 5000ms`,
+      "  - waiting for locator('article.metric').filter({ hasText: 'Documents' }).locator('strong')"
+    ],
+    timeout: undefined,
+    ariaSnapshot: undefined
+  }
+}
+
+Node.js v26.13.0
+Traceback (most recent call last):
+  File "<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\startup-recheck.py", line 131, in <module>
+    main()
+  File "<local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\acceptance-clean-install\startup-recheck.py", line 127, in main
+    browser.check_returncode()
+  File "<local-profile>\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 502, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['node.exe', '<local-profile>\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-you\\work\\acceptance-clean-install\\browser-proof.mjs']' returned non-zero exit status 1.

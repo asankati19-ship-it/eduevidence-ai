@@ -1,0 +1,765 @@
+{
+  "mode": "live_openai",
+  "provider_configured": true,
+  "requested_model": "gpt-4.1-mini",
+  "ground_truth_sha256": "5af1c2e8ae71599674f36b23c8bca01a80744df45092366af5f96e0c5d45727f",
+  "configuration": {
+    "top_k": 5,
+    "chunk_words": 135,
+    "chunk_overlap": 24,
+    "min_score": 0.18,
+    "min_query_overlap": 1,
+    "min_query_terms": 2,
+    "sdk_timeout_seconds": 25,
+    "sdk_max_retries": 1
+  },
+  "sqlite_checks": {
+    "integrity": "ok",
+    "foreign_key_errors": []
+  },
+  "retrieval_metrics": {
+    "judged_questions": 2,
+    "unit": "distinct original PDF page",
+    "cutoffs": {
+      "1": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "mrr": 1.0,
+        "queries_with_full_recall": 0,
+        "returned_pages": 2,
+        "relevant_returned_pages": 2,
+        "precision_among_returned": 1.0
+      },
+      "3": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "queries_with_full_recall": 2,
+        "returned_pages": 5,
+        "relevant_returned_pages": 4,
+        "precision_among_returned": 0.8
+      },
+      "5": {
+        "precision": 0.4,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "queries_with_full_recall": 2,
+        "returned_pages": 7,
+        "relevant_returned_pages": 4,
+        "precision_among_returned": 0.5714285714285714
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "Q12",
+      "request": {
+        "question": "What share of the overall mark is the Python capstone worth, and what separate capstone outcome is required for completion?",
+        "document_id": 1
+      },
+      "http_status": 201,
+      "response": {
+        "id": 1,
+        "question_text": "What share of the overall mark is the Python capstone worth, and what separate capstone outcome is required for completion?",
+        "course_id": null,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "conversation_id": "eac89bdf-bba0-4a50-93c5-3bd1847f8c2c",
+        "status": "answered",
+        "request_id": "499be83f-b349-4cdf-98fb-b00bd32b0324",
+        "created_at": "2026-11-18T21:25:24.501Z",
+        "completed_at": "2026-11-18T21:25:33.742Z",
+        "answer": {
+          "id": 1,
+          "status": "answered",
+          "body": "The Python capstone project is worth 40% of the overall course mark. To complete the course, you must earn a Pass on the capstone project, which is evaluated separately from the overall mark.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 817,
+          "output_tokens": 170,
+          "latency_ms": 7984,
+          "provider_response_id": "resp_0a0086eb1891aa29016afe17c6046087d0899f8264056fdea6",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.40818305,
+            "rank": 1,
+            "document_key": "PY"
+          },
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+            "score": 0.28692541,
+            "rank": 2,
+            "document_key": "PY"
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+            "score": 0.28692541,
+            "rank": 2,
+            "evidence_quote": "Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.",
+            "position": 1,
+            "document_key": "PY"
+          },
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.40818305,
+            "rank": 1,
+            "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately.",
+            "position": 2,
+            "document_key": "PY"
+          }
+        ]
+      },
+      "provider_observation": {
+        "question_id": 1,
+        "question_status": "processing",
+        "stored_retrieval": [
+          4,
+          3
+        ],
+        "sent_retrieval": [
+          4,
+          3
+        ],
+        "answer_already_committed": false,
+        "raw_structured_output": "{\"status\":\"answered\",\"answer\":\"The Python capstone project is worth 40% of the overall course mark. To complete the course, you must earn a Pass on the capstone project, which is evaluated separately from the overall mark.\",\"citations\":[{\"chunk_id\":3,\"document_id\":1,\"page_number\":3,\"evidence_quote\":\"Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\"},{\"chunk_id\":4,\"document_id\":1,\"page_number\":4,\"evidence_quote\":\"To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately.\"}],\"abstention_reason\":null}",
+        "raw_verification_output": "{\"outcome\":\"supported\",\"reason\":\"Quotation 3 states the capstone project accounts for 40% of the overall course mark, confirming the percentage value. Quotation 4 states that to complete the course, one must earn a Pass on the capstone project, which is evaluated separately from the overall mark, confirming the separate capstone outcome required for completion. Both parts of the candidate answer are directly substantiated by the quotations.\"}",
+        "verification_response_id": "resp_0569ccbcfc1bd124016afe17ca0a3087d0afb2010ea3c9e77a"
+      },
+      "checks": {
+        "request_id_matches": true,
+        "database_lineage": true,
+        "one_new_question": true,
+        "scope_respected": true
+      },
+      "sqlite": {
+        "question": {
+          "id": 1,
+          "learner_id": 1,
+          "course_id": null,
+          "document_id": 1,
+          "conversation_id": "eac89bdf-bba0-4a50-93c5-3bd1847f8c2c",
+          "question_text": "What share of the overall mark is the Python capstone worth, and what separate capstone outcome is required for completion?",
+          "status": "answered",
+          "request_id": "499be83f-b349-4cdf-98fb-b00bd32b0324",
+          "created_at": "2026-11-18T21:25:24.501Z",
+          "completed_at": "2026-11-18T21:25:33.742Z"
+        },
+        "answer": {
+          "id": 1,
+          "question_id": 1,
+          "status": "answered",
+          "body": "The Python capstone project is worth 40% of the overall course mark. To complete the course, you must earn a Pass on the capstone project, which is evaluated separately from the overall mark.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "provider_response_id": "resp_0a0086eb1891aa29016afe17c6046087d0899f8264056fdea6",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": 0,
+          "input_tokens": 817,
+          "output_tokens": 170,
+          "latency_ms": 7984,
+          "created_at": "2026-11-18T21:25:33.742Z"
+        },
+        "ranked_sources": [
+          {
+            "question_id": 1,
+            "chunk_id": 4,
+            "rank": 1,
+            "score": 0.40818305,
+            "document_id": 1,
+            "page_number": 4,
+            "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+          },
+          {
+            "question_id": 1,
+            "chunk_id": 3,
+            "rank": 2,
+            "score": 0.28692541,
+            "document_id": 1,
+            "page_number": 3,
+            "content_hash": "f6950a9bb9e6ae6ffe88fc7871ab518b4c6e94696170a0faecfd87f5468b3e14"
+          }
+        ],
+        "citations": [
+          {
+            "answer_id": 1,
+            "question_id": 1,
+            "chunk_id": 3,
+            "document_id": 1,
+            "page_number": 3,
+            "evidence_quote": "Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.",
+            "position": 1,
+            "rank": 2,
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "sha256": "714d4f84f004df8073e084e99a62ebe003c1781e3444f73d3e6d3b6cf579f381"
+          },
+          {
+            "answer_id": 1,
+            "question_id": 1,
+            "chunk_id": 4,
+            "document_id": 1,
+            "page_number": 4,
+            "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately.",
+            "position": 2,
+            "rank": 1,
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "sha256": "714d4f84f004df8073e084e99a62ebe003c1781e3444f73d3e6d3b6cf579f381"
+          }
+        ],
+        "events": [
+          {
+            "id": 7,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": 1,
+            "request_id": "499be83f-b349-4cdf-98fb-b00bd32b0324",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T21:25:24.503Z"
+          },
+          {
+            "id": 8,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "499be83f-b349-4cdf-98fb-b00bd32b0324",
+            "event_type": "question.retrieve",
+            "outcome": "sufficient",
+            "detail": "2 passages",
+            "created_at": "2026-11-18T21:25:24.532Z"
+          },
+          {
+            "id": 9,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "499be83f-b349-4cdf-98fb-b00bd32b0324",
+            "event_type": "question.verify",
+            "outcome": "supported",
+            "detail": "{\"outcome\":\"supported\",\"model\":\"gpt-4.1-mini-2025-04-14\",\"response_id\":\"resp_0569ccbcfc1bd124016afe17ca0a3087d0afb2010ea3c9e77a\",\"input_tokens\":533,\"output_tokens\":89,\"latency_ms\":1206}",
+            "created_at": "2026-11-18T21:25:33.876Z"
+          },
+          {
+            "id": 10,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "499be83f-b349-4cdf-98fb-b00bd32b0324",
+            "event_type": "question.complete",
+            "outcome": "answered",
+            "detail": "completed",
+            "created_at": "2026-11-18T21:25:33.876Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q30",
+      "request": {
+        "question": "Compare capstone weighting for Python Programming and AI and Machine Learning."
+      },
+      "http_status": 201,
+      "response": {
+        "id": 2,
+        "question_text": "Compare capstone weighting for Python Programming and AI and Machine Learning.",
+        "course_id": null,
+        "document_id": null,
+        "document_title": null,
+        "conversation_id": "eac89bdf-bba0-4a50-93c5-3bd1847f8c2c",
+        "status": "answered",
+        "request_id": "8ff654b9-26d4-48c8-aa24-c7ad86c6a884",
+        "created_at": "2026-11-18T21:25:33.970Z",
+        "completed_at": "2026-11-18T21:25:37.708Z",
+        "answer": {
+          "id": 2,
+          "status": "answered",
+          "body": "The Python Programming course capstone project accounts for 40% of the course mark. The AI and Machine Learning course capstone report accounts for 45% of the final mark.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 1283,
+          "output_tokens": 157,
+          "latency_ms": 2507,
+          "provider_response_id": "resp_0fc41b7448b8ec08016afe17cb91c487d0ad688d570fcb6937",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 7,
+            "document_id": 2,
+            "document_title": "AI and Machine Learning Course Guide",
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "AI-201 / SYNTHETIC COURSE LIBRARY\n\nAI and Machine Learning Course Guide\n\nAssessment and capstone\n\nGrading and report contents\n\nThe AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%.\n\nThe capstone report must include the dataset description, a baseline model, validation results, and a discussion of limitations.\n\nSubmit the modeling notebook as an IPYNB file and the capstone report as a PDF in separate LMS Assessments slots.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+            "score": 0.31010864,
+            "rank": 1,
+            "document_key": "AI"
+          },
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+            "score": 0.20505455,
+            "rank": 2,
+            "document_key": "PY"
+          },
+          {
+            "chunk_id": 5,
+            "document_id": 2,
+            "document_title": "AI and Machine Learning Course Guide",
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "AI-201 / SYNTHETIC COURSE LIBRARY\n\nAI and Machine Learning Course Guide\n\nCourse overview\n\nLearning objectives and prerequisites\n\nAI and Machine Learning is an eight-week applied course. Learners prepare a small dataset, train baseline models, evaluate results, and explain limitations.\n\nBefore starting, learners should understand Python functions and basic descriptive statistics. The course provides starter notebooks and synthetic datasets.\n\nThe learning resources include a glossary, weekly notebook walkthroughs, and an evaluation checklist.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 3",
+            "score": 0.17845661,
+            "rank": 3,
+            "document_key": "AI"
+          },
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.153505,
+            "rank": 4,
+            "document_key": "PY"
+          },
+          {
+            "chunk_id": 6,
+            "document_id": 2,
+            "document_title": "AI and Machine Learning Course Guide",
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "page_number": 2,
+            "chunk_number": 2,
+            "revision": 1,
+            "content": "AI-201 / SYNTHETIC COURSE LIBRARY\n\nAI and Machine Learning Course Guide\n\nModules and workshops\n\nThe applied machine learning sequence\n\nModules cover dataset preparation, classification, regression, validation, and responsible model reporting.\n\nFor classification workshops, compare a logistic regression baseline with a decision tree. Report precision, recall, and the confusion matrix.\n\nUse the LMS workshop notebooks. Each notebook includes a runnable starter and a short reflection prompt.\n\nEduEvidence AI / Synthetic demonstration material Page 2 of 3",
+            "score": 0.14240163,
+            "rank": 5,
+            "document_key": "AI"
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+            "score": 0.20505455,
+            "rank": 2,
+            "evidence_quote": "Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.",
+            "position": 1,
+            "document_key": "PY"
+          },
+          {
+            "chunk_id": 7,
+            "document_id": 2,
+            "document_title": "AI and Machine Learning Course Guide",
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "AI-201 / SYNTHETIC COURSE LIBRARY\n\nAI and Machine Learning Course Guide\n\nAssessment and capstone\n\nGrading and report contents\n\nThe AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%.\n\nThe capstone report must include the dataset description, a baseline model, validation results, and a discussion of limitations.\n\nSubmit the modeling notebook as an IPYNB file and the capstone report as a PDF in separate LMS Assessments slots.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+            "score": 0.31010864,
+            "rank": 1,
+            "evidence_quote": "The AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%.",
+            "position": 2,
+            "document_key": "AI"
+          }
+        ]
+      },
+      "provider_observation": {
+        "question_id": 2,
+        "question_status": "processing",
+        "stored_retrieval": [
+          7,
+          3,
+          5,
+          4,
+          6
+        ],
+        "sent_retrieval": [
+          7,
+          3,
+          5,
+          4,
+          6
+        ],
+        "answer_already_committed": false,
+        "raw_structured_output": "{\"status\":\"answered\",\"answer\":\"The Python Programming course capstone project accounts for 40% of the course mark. The AI and Machine Learning course capstone report accounts for 45% of the final mark.\",\"citations\":[{\"chunk_id\":3,\"document_id\":1,\"page_number\":3,\"evidence_quote\":\"Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\"},{\"chunk_id\":7,\"document_id\":2,\"page_number\":3,\"evidence_quote\":\"The AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%.\"}],\"abstention_reason\":null}",
+        "raw_verification_output": "{\"outcome\":\"supported\",\"reason\":\"The Python Programming course capstone project is explicitly stated to account for 40% of the course mark. The AI and Machine Learning course capstone report is explicitly stated to account for 45% of the final mark. Both figures and their respective courses directly address the question's comparison.\"}",
+        "verification_response_id": "resp_01802d20e495232c016afe17ce16ec87d08e5a96eb570c0926"
+      },
+      "checks": {
+        "request_id_matches": true,
+        "database_lineage": true,
+        "one_new_question": true,
+        "scope_respected": true
+      },
+      "sqlite": {
+        "question": {
+          "id": 2,
+          "learner_id": 1,
+          "course_id": null,
+          "document_id": null,
+          "conversation_id": "eac89bdf-bba0-4a50-93c5-3bd1847f8c2c",
+          "question_text": "Compare capstone weighting for Python Programming and AI and Machine Learning.",
+          "status": "answered",
+          "request_id": "8ff654b9-26d4-48c8-aa24-c7ad86c6a884",
+          "created_at": "2026-11-18T21:25:33.970Z",
+          "completed_at": "2026-11-18T21:25:37.708Z"
+        },
+        "answer": {
+          "id": 2,
+          "question_id": 2,
+          "status": "answered",
+          "body": "The Python Programming course capstone project accounts for 40% of the course mark. The AI and Machine Learning course capstone report accounts for 45% of the final mark.",
+          "reason": null,
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "provider_response_id": "resp_0fc41b7448b8ec08016afe17cb91c487d0ad688d570fcb6937",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": 0,
+          "input_tokens": 1283,
+          "output_tokens": 157,
+          "latency_ms": 2507,
+          "created_at": "2026-11-18T21:25:37.708Z"
+        },
+        "ranked_sources": [
+          {
+            "question_id": 2,
+            "chunk_id": 7,
+            "rank": 1,
+            "score": 0.31010864,
+            "document_id": 2,
+            "page_number": 3,
+            "content_hash": "eb9e5dbdce37a99fe068c4cec93c6afa74148b37025c15a1f7675254a59b4580"
+          },
+          {
+            "question_id": 2,
+            "chunk_id": 3,
+            "rank": 2,
+            "score": 0.20505455,
+            "document_id": 1,
+            "page_number": 3,
+            "content_hash": "f6950a9bb9e6ae6ffe88fc7871ab518b4c6e94696170a0faecfd87f5468b3e14"
+          },
+          {
+            "question_id": 2,
+            "chunk_id": 5,
+            "rank": 3,
+            "score": 0.17845661,
+            "document_id": 2,
+            "page_number": 1,
+            "content_hash": "ebedf9158904ca34e4fece6944b09876b6b7e69d501ec6ade735b21dc8d5cf17"
+          },
+          {
+            "question_id": 2,
+            "chunk_id": 4,
+            "rank": 4,
+            "score": 0.153505,
+            "document_id": 1,
+            "page_number": 4,
+            "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+          },
+          {
+            "question_id": 2,
+            "chunk_id": 6,
+            "rank": 5,
+            "score": 0.14240163,
+            "document_id": 2,
+            "page_number": 2,
+            "content_hash": "5128770b7063a840694b3346a767d331bbd55d26e29023e0a2c4041f6dbebf75"
+          }
+        ],
+        "citations": [
+          {
+            "answer_id": 2,
+            "question_id": 2,
+            "chunk_id": 3,
+            "document_id": 1,
+            "page_number": 3,
+            "evidence_quote": "Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.",
+            "position": 1,
+            "rank": 2,
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "sha256": "714d4f84f004df8073e084e99a62ebe003c1781e3444f73d3e6d3b6cf579f381"
+          },
+          {
+            "answer_id": 2,
+            "question_id": 2,
+            "chunk_id": 7,
+            "document_id": 2,
+            "page_number": 3,
+            "evidence_quote": "The AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%.",
+            "position": 2,
+            "rank": 1,
+            "original_filename": "AI and Machine Learning Course Guide.pdf",
+            "sha256": "e45c699f48e06583bd5044d7f25748db74fc7da866e1d3f18623743c78f6a635"
+          }
+        ],
+        "events": [
+          {
+            "id": 11,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": null,
+            "request_id": "8ff654b9-26d4-48c8-aa24-c7ad86c6a884",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T21:25:33.970Z"
+          },
+          {
+            "id": 12,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": null,
+            "request_id": "8ff654b9-26d4-48c8-aa24-c7ad86c6a884",
+            "event_type": "question.retrieve",
+            "outcome": "sufficient",
+            "detail": "5 passages",
+            "created_at": "2026-11-18T21:25:34.034Z"
+          },
+          {
+            "id": 13,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": null,
+            "request_id": "8ff654b9-26d4-48c8-aa24-c7ad86c6a884",
+            "event_type": "question.verify",
+            "outcome": "supported",
+            "detail": "{\"outcome\":\"supported\",\"model\":\"gpt-4.1-mini-2025-04-14\",\"response_id\":\"resp_01802d20e495232c016afe17ce16ec87d08e5a96eb570c0926\",\"input_tokens\":511,\"output_tokens\":67,\"latency_ms\":1138}",
+            "created_at": "2026-11-18T21:25:37.712Z"
+          },
+          {
+            "id": 14,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": null,
+            "request_id": "8ff654b9-26d4-48c8-aa24-c7ad86c6a884",
+            "event_type": "question.complete",
+            "outcome": "answered",
+            "detail": "completed",
+            "created_at": "2026-11-18T21:25:37.712Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q37",
+      "request": {
+        "question": "Do the assessment review rules grant an automatic grade increase?",
+        "document_id": 3
+      },
+      "http_status": 201,
+      "response": {
+        "id": 3,
+        "question_text": "Do the assessment review rules grant an automatic grade increase?",
+        "course_id": null,
+        "document_id": 3,
+        "document_title": "LMS Assessment and Attendance Policy",
+        "conversation_id": "eac89bdf-bba0-4a50-93c5-3bd1847f8c2c",
+        "status": "abstained",
+        "request_id": "2fc5d82e-ddef-40a6-b65f-2fe30cb9ff28",
+        "created_at": "2026-11-18T21:25:37.770Z",
+        "completed_at": "2026-11-18T21:25:39.282Z",
+        "answer": {
+          "id": 3,
+          "status": "abstained",
+          "body": null,
+          "reason": "The retrieved materials do not establish an answer to that question.",
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": false,
+          "input_tokens": 634,
+          "output_tokens": 138,
+          "latency_ms": 1471,
+          "provider_response_id": "resp_09056b2df07f5a04016afe17cf4e4087d09c238544c5e24575",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 10,
+            "document_id": 3,
+            "document_title": "LMS Assessment and Attendance Policy",
+            "original_filename": "LMS Assessment and Attendance Policy.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "LMS-001 / SYNTHETIC COURSE LIBRARY\n\nLMS Assessment and Attendance Policy\n\nAssessment review and support\n\nHow to request a review\n\nRequest an assessment review in the LMS Support area within five working days after the grade is released.\n\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\n\nRequests for general learning support can be submitted in the same area using the Course Support category.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 3",
+            "score": 0.47956014,
+            "rank": 1,
+            "document_key": "LMS"
+          }
+        ],
+        "citations": []
+      },
+      "provider_observation": {
+        "question_id": 3,
+        "question_status": "processing",
+        "stored_retrieval": [
+          10
+        ],
+        "sent_retrieval": [
+          10
+        ],
+        "answer_already_committed": false,
+        "raw_structured_output": "{\"status\":\"answered\",\"answer\":\"No, the assessment review rules do not grant an automatic grade increase. The policy only describes the process to request a review, including submitting the assessment name, rubric criterion, and explanation within five working days, but does not mention any automatic grade changes.\",\"citations\":[{\"chunk_id\":10,\"document_id\":3,\"page_number\":3,\"evidence_quote\":\"Request an assessment review in the LMS Support area within five working days after the grade is released.\\n\\nInclude the assessment name, the rubric criterion, and a short explanation of the issue. The support team acknowledges the request in the LMS.\"}],\"abstention_reason\":null}"
+      },
+      "checks": {
+        "request_id_matches": true,
+        "database_lineage": true,
+        "one_new_question": true,
+        "scope_respected": true
+      },
+      "sqlite": {
+        "question": {
+          "id": 3,
+          "learner_id": 1,
+          "course_id": null,
+          "document_id": 3,
+          "conversation_id": "eac89bdf-bba0-4a50-93c5-3bd1847f8c2c",
+          "question_text": "Do the assessment review rules grant an automatic grade increase?",
+          "status": "abstained",
+          "request_id": "2fc5d82e-ddef-40a6-b65f-2fe30cb9ff28",
+          "created_at": "2026-11-18T21:25:37.770Z",
+          "completed_at": "2026-11-18T21:25:39.282Z"
+        },
+        "answer": {
+          "id": 3,
+          "question_id": 3,
+          "status": "abstained",
+          "body": null,
+          "reason": "The retrieved materials do not establish an answer to that question.",
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "provider_response_id": "resp_09056b2df07f5a04016afe17cf4e4087d09c238544c5e24575",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": 0,
+          "input_tokens": 634,
+          "output_tokens": 138,
+          "latency_ms": 1471,
+          "created_at": "2026-11-18T21:25:39.282Z"
+        },
+        "ranked_sources": [
+          {
+            "question_id": 3,
+            "chunk_id": 10,
+            "rank": 1,
+            "score": 0.47956014,
+            "document_id": 3,
+            "page_number": 3,
+            "content_hash": "6b6e6114a82b0504fd4bf49b3830ce2263c61ea3bb18f5a88e29837ae6b02dc4"
+          }
+        ],
+        "citations": [],
+        "events": [
+          {
+            "id": 15,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": 3,
+            "request_id": "2fc5d82e-ddef-40a6-b65f-2fe30cb9ff28",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T21:25:37.770Z"
+          },
+          {
+            "id": 16,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": null,
+            "request_id": "2fc5d82e-ddef-40a6-b65f-2fe30cb9ff28",
+            "event_type": "question.retrieve",
+            "outcome": "sufficient",
+            "detail": "1 passages",
+            "created_at": "2026-11-18T21:25:37.796Z"
+          },
+          {
+            "id": 17,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": null,
+            "request_id": "2fc5d82e-ddef-40a6-b65f-2fe30cb9ff28",
+            "event_type": "question.complete",
+            "outcome": "abstained",
+            "detail": "completed",
+            "created_at": "2026-11-18T21:25:39.286Z"
+          }
+        ]
+      }
+    }
+  ]
+}

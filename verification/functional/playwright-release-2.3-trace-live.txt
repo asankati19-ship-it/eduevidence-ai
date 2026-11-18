@@ -1,0 +1,54 @@
+npm notice run eduevidence-ai@1.0.0 npx
+npm notice run playwright test --grep functional trace|full journey
+[WebServer] INFO:     Started server process [24916]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8051 (Press CTRL+C to quit)
+[WebServer] npm notice run eduevidence-ai@1.0.0 dev
+[WebServer] npm notice run vite --port 5221
+[WebServer] (node:23916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:40144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\accuracy-trace.spec.ts:26:1 › functional trace matches React, FastAPI, and one SQLite workspace for each outcome (9.7s)
+(node:37928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 e2e\ui-journey.spec.ts:8:1 › full journey uploads a PDF, answers from its page, saves feedback and verifies SQLite metrics after refresh (8.1s)
+
+
+  1) e2e\accuracy-trace.spec.ts:26:1 › functional trace matches React, FastAPI, and one SQLite workspace for each outcome 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "abstained"
+    Received: "validation_error"
+
+      68 |     await page.getByLabel('Document', { exact: true }).selectOption(String(policy!.id));
+      69 |     const missingPolicy = await ask(page, UNSTATED_POLICY);
+    > 70 |     expect(missingPolicy.status, missingPolicy.answer?.body ?? '').toBe('abstained');
+         |                                                                    ^
+      71 |     expect(missingPolicy.answer?.provider_response_id).toMatch(/^resp_/);
+      72 |     expect(missingPolicy.answer?.body).toBeNull();
+      73 |     expect(missingPolicy.citations).toHaveLength(0);
+        at <local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\eduevidence-ai\frontend\e2e\accuracy-trace.spec.ts:70:68
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\live-trace\accuracy-trace-functional--da30c--workspace-for-each-outcome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\live-trace\accuracy-trace-functional--da30c--workspace-for-each-outcome\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\live-trace\accuracy-trace-functional--da30c--workspace-for-each-outcome\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\live-trace\accuracy-trace-functional--da30c--workspace-for-each-outcome\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e\accuracy-trace.spec.ts:26:1 › functional trace matches React, FastAPI, and one SQLite workspace for each outcome 
+  1 passed (29.0s)

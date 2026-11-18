@@ -1,0 +1,467 @@
+{
+  "mode": "fixture",
+  "integrity": "ok",
+  "foreign_key_errors": [],
+  "cases": [
+    {
+      "browser_trace": {
+        "id": 1,
+        "question_text": "For the course audit, what are the Python Programming course completion requirements?",
+        "course_id": 1,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "conversation_id": "a064d96a-d1b0-4e55-92da-f7fb1c0f5785",
+        "status": "answered",
+        "request_id": "1c217e29-7d9b-43f6-8bc0-09c420650c30",
+        "created_at": "2026-11-18T21:09:27.551Z",
+        "completed_at": "2026-11-18T21:09:27.571Z",
+        "answer": {
+          "id": 1,
+          "status": "answered",
+          "body": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.",
+          "reason": null,
+          "provider": "offline_fixture",
+          "model": "offline-citation-fixture-v1",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": true,
+          "input_tokens": 33,
+          "output_tokens": 14,
+          "latency_ms": 1,
+          "provider_response_id": "offline-fixture-response",
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.44229547,
+            "rank": 1
+          },
+          {
+            "chunk_id": 1,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+            "score": 0.22109195,
+            "rank": 2
+          },
+          {
+            "chunk_id": 3,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 3,
+            "chunk_number": 3,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+            "score": 0.12268193,
+            "rank": 3
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.44229547,
+            "rank": 1,
+            "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.",
+            "position": 1
+          }
+        ]
+      },
+      "sqlite_trace": {
+        "question": {
+          "id": 1,
+          "learner_id": 1,
+          "course_id": 1,
+          "document_id": 1,
+          "conversation_id": "a064d96a-d1b0-4e55-92da-f7fb1c0f5785",
+          "question_text": "For the course audit, what are the Python Programming course completion requirements?",
+          "status": "answered",
+          "request_id": "1c217e29-7d9b-43f6-8bc0-09c420650c30",
+          "created_at": "2026-11-18T21:09:27.551Z",
+          "completed_at": "2026-11-18T21:09:27.571Z"
+        },
+        "answer": {
+          "id": 1,
+          "question_id": 1,
+          "status": "answered",
+          "body": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.",
+          "reason": null,
+          "provider": "offline_fixture",
+          "model": "offline-citation-fixture-v1",
+          "provider_response_id": "offline-fixture-response",
+          "prompt_version": "2.4.0",
+          "api_outcome": "completed",
+          "error_code": null,
+          "retryable": 0,
+          "input_tokens": 33,
+          "output_tokens": 14,
+          "latency_ms": 1,
+          "created_at": "2026-11-18T21:09:27.571Z"
+        },
+        "ranked_sources": [
+          {
+            "question_id": 1,
+            "chunk_id": 4,
+            "rank": 1,
+            "score": 0.44229547,
+            "document_id": 1,
+            "page_number": 4,
+            "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+          },
+          {
+            "question_id": 1,
+            "chunk_id": 1,
+            "rank": 2,
+            "score": 0.22109195,
+            "document_id": 1,
+            "page_number": 1,
+            "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+          },
+          {
+            "question_id": 1,
+            "chunk_id": 3,
+            "rank": 3,
+            "score": 0.12268193,
+            "document_id": 1,
+            "page_number": 3,
+            "content_hash": "f6950a9bb9e6ae6ffe88fc7871ab518b4c6e94696170a0faecfd87f5468b3e14"
+          }
+        ],
+        "citations": [
+          {
+            "answer_id": 1,
+            "question_id": 1,
+            "chunk_id": 4,
+            "document_id": 1,
+            "page_number": 4,
+            "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.",
+            "position": 1,
+            "rank": 1,
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "sha256": "714d4f84f004df8073e084e99a62ebe003c1781e3444f73d3e6d3b6cf579f381"
+          }
+        ],
+        "events": [
+          {
+            "id": 7,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": 1,
+            "request_id": "1c217e29-7d9b-43f6-8bc0-09c420650c30",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T21:09:27.551Z"
+          },
+          {
+            "id": 8,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "1c217e29-7d9b-43f6-8bc0-09c420650c30",
+            "event_type": "question.retrieve",
+            "outcome": "sufficient",
+            "detail": "3 passages",
+            "created_at": "2026-11-18T21:09:27.566Z"
+          },
+          {
+            "id": 9,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "1c217e29-7d9b-43f6-8bc0-09c420650c30",
+            "event_type": "question.verify",
+            "outcome": "supported",
+            "detail": "{\"outcome\":\"supported\",\"model\":\"offline-citation-fixture-v1\",\"response_id\":\"offline-verification-fixture\",\"input_tokens\":27,\"output_tokens\":6,\"latency_ms\":1}",
+            "created_at": "2026-11-18T21:09:27.572Z"
+          },
+          {
+            "id": 10,
+            "learner_id": 1,
+            "question_id": 1,
+            "document_id": null,
+            "request_id": "1c217e29-7d9b-43f6-8bc0-09c420650c30",
+            "event_type": "question.complete",
+            "outcome": "answered",
+            "detail": "completed",
+            "created_at": "2026-11-18T21:09:27.572Z"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "browser_trace": {
+        "id": 2,
+        "question_text": "What is the cafeteria menu on Tuesday?",
+        "course_id": 1,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "conversation_id": "a064d96a-d1b0-4e55-92da-f7fb1c0f5785",
+        "status": "abstained",
+        "request_id": "b47b2b60-f1f8-4812-a30e-92b51cbb2cfa",
+        "created_at": "2026-11-18T21:09:28.090Z",
+        "completed_at": "2026-11-18T21:09:28.108Z",
+        "answer": {
+          "id": 2,
+          "status": "abstained",
+          "body": null,
+          "reason": "The selected documents do not contain enough matching evidence for this question.",
+          "provider": "offline_fixture",
+          "model": "offline-citation-fixture-v1",
+          "prompt_version": "2.4.0",
+          "api_outcome": "skipped",
+          "error_code": null,
+          "retryable": false,
+          "verification_passed": false,
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_ms": null,
+          "provider_response_id": null,
+          "rating": null
+        },
+        "sources": [],
+        "citations": []
+      },
+      "sqlite_trace": {
+        "question": {
+          "id": 2,
+          "learner_id": 1,
+          "course_id": 1,
+          "document_id": 1,
+          "conversation_id": "a064d96a-d1b0-4e55-92da-f7fb1c0f5785",
+          "question_text": "What is the cafeteria menu on Tuesday?",
+          "status": "abstained",
+          "request_id": "b47b2b60-f1f8-4812-a30e-92b51cbb2cfa",
+          "created_at": "2026-11-18T21:09:28.090Z",
+          "completed_at": "2026-11-18T21:09:28.108Z"
+        },
+        "answer": {
+          "id": 2,
+          "question_id": 2,
+          "status": "abstained",
+          "body": null,
+          "reason": "The selected documents do not contain enough matching evidence for this question.",
+          "provider": "offline_fixture",
+          "model": "offline-citation-fixture-v1",
+          "provider_response_id": null,
+          "prompt_version": "2.4.0",
+          "api_outcome": "skipped",
+          "error_code": null,
+          "retryable": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_ms": null,
+          "created_at": "2026-11-18T21:09:28.108Z"
+        },
+        "ranked_sources": [],
+        "citations": [],
+        "events": [
+          {
+            "id": 11,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": 1,
+            "request_id": "b47b2b60-f1f8-4812-a30e-92b51cbb2cfa",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T21:09:28.090Z"
+          },
+          {
+            "id": 12,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": null,
+            "request_id": "b47b2b60-f1f8-4812-a30e-92b51cbb2cfa",
+            "event_type": "question.retrieve",
+            "outcome": "insufficient",
+            "detail": "0 passages",
+            "created_at": "2026-11-18T21:09:28.102Z"
+          },
+          {
+            "id": 13,
+            "learner_id": 1,
+            "question_id": 2,
+            "document_id": null,
+            "request_id": "b47b2b60-f1f8-4812-a30e-92b51cbb2cfa",
+            "event_type": "question.complete",
+            "outcome": "abstained",
+            "detail": "skipped",
+            "created_at": "2026-11-18T21:09:28.113Z"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "browser_trace": {
+        "id": 3,
+        "question_text": "What are the Python Programming course completion requirements for learners in the handbook?",
+        "course_id": 1,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "conversation_id": "a064d96a-d1b0-4e55-92da-f7fb1c0f5785",
+        "status": "provider_error",
+        "request_id": "d592f712-8fa8-47ec-853f-ceb7bf0acc25",
+        "created_at": "2026-11-18T21:09:28.346Z",
+        "completed_at": "2026-11-18T21:09:28.364Z",
+        "answer": {
+          "id": 3,
+          "status": "provider_error",
+          "body": null,
+          "reason": "The offline provider simulated a timeout. Try again.",
+          "provider": "offline_fixture",
+          "model": "offline-citation-fixture-v1",
+          "prompt_version": "2.4.0",
+          "api_outcome": "failed",
+          "error_code": "timeout",
+          "retryable": true,
+          "verification_passed": false,
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_ms": 0,
+          "provider_response_id": null,
+          "rating": null
+        },
+        "sources": [
+          {
+            "chunk_id": 4,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 4,
+            "chunk_number": 4,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+            "score": 0.40103133,
+            "rank": 1
+          },
+          {
+            "chunk_id": 1,
+            "document_id": 1,
+            "document_title": "Python Programming Course Handbook",
+            "original_filename": "Python Programming Course Handbook.pdf",
+            "page_number": 1,
+            "chunk_number": 1,
+            "revision": 1,
+            "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+            "score": 0.24960006,
+            "rank": 2
+          }
+        ],
+        "citations": []
+      },
+      "sqlite_trace": {
+        "question": {
+          "id": 3,
+          "learner_id": 1,
+          "course_id": 1,
+          "document_id": 1,
+          "conversation_id": "a064d96a-d1b0-4e55-92da-f7fb1c0f5785",
+          "question_text": "What are the Python Programming course completion requirements for learners in the handbook?",
+          "status": "provider_error",
+          "request_id": "d592f712-8fa8-47ec-853f-ceb7bf0acc25",
+          "created_at": "2026-11-18T21:09:28.346Z",
+          "completed_at": "2026-11-18T21:09:28.364Z"
+        },
+        "answer": {
+          "id": 3,
+          "question_id": 3,
+          "status": "provider_error",
+          "body": null,
+          "reason": "The offline provider simulated a timeout. Try again.",
+          "provider": "offline_fixture",
+          "model": "offline-citation-fixture-v1",
+          "provider_response_id": null,
+          "prompt_version": "2.4.0",
+          "api_outcome": "failed",
+          "error_code": "timeout",
+          "retryable": 1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_ms": 0,
+          "created_at": "2026-11-18T21:09:28.364Z"
+        },
+        "ranked_sources": [
+          {
+            "question_id": 3,
+            "chunk_id": 4,
+            "rank": 1,
+            "score": 0.40103133,
+            "document_id": 1,
+            "page_number": 4,
+            "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+          },
+          {
+            "question_id": 3,
+            "chunk_id": 1,
+            "rank": 2,
+            "score": 0.24960006,
+            "document_id": 1,
+            "page_number": 1,
+            "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+          }
+        ],
+        "citations": [],
+        "events": [
+          {
+            "id": 14,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": 1,
+            "request_id": "d592f712-8fa8-47ec-853f-ceb7bf0acc25",
+            "event_type": "question.submit",
+            "outcome": "accepted",
+            "detail": null,
+            "created_at": "2026-11-18T21:09:28.346Z"
+          },
+          {
+            "id": 15,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": null,
+            "request_id": "d592f712-8fa8-47ec-853f-ceb7bf0acc25",
+            "event_type": "question.retrieve",
+            "outcome": "sufficient",
+            "detail": "2 passages",
+            "created_at": "2026-11-18T21:09:28.356Z"
+          },
+          {
+            "id": 16,
+            "learner_id": 1,
+            "question_id": 3,
+            "document_id": null,
+            "request_id": "d592f712-8fa8-47ec-853f-ceb7bf0acc25",
+            "event_type": "question.complete",
+            "outcome": "provider_error",
+            "detail": "timeout",
+            "created_at": "2026-11-18T21:09:28.368Z"
+          }
+        ]
+      },
+      "passed": true
+    }
+  ]
+}

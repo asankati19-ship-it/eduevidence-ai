@@ -1,0 +1,134 @@
+{
+  "mode": "real_openai_via_browser",
+  "health": {
+    "status": "ok",
+    "database": "reachable"
+  },
+  "trace": {
+    "id": 1,
+    "question_text": "What are the Python Programming course completion requirements?",
+    "course_id": 1,
+    "document_id": 1,
+    "document_title": "Python Programming Course Handbook",
+    "conversation_id": "7f115a1a-41a5-4cab-a8d1-60bc09e48f85",
+    "status": "answered",
+    "request_id": "fc52de52-2268-45ff-91c2-336059da7a95",
+    "created_at": "2026-11-18T19:29:08.905Z",
+    "completed_at": "2026-11-18T19:29:12.687Z",
+    "answer": {
+      "id": 1,
+      "status": "answered",
+      "body": "To complete the Python Programming course, you must submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and the capstone Pass are evaluated separately. If needed, you have one opportunity to resubmit the capstone project after receiving written feedback. Once these conditions are verified by the course coordinator, your completion record will appear in the LMS Results area.",
+      "reason": null,
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "prompt_version": "1.0.0",
+      "api_outcome": "completed",
+      "error_code": null,
+      "retryable": false,
+      "input_tokens": 1028,
+      "output_tokens": 197,
+      "latency_ms": 3749,
+      "provider_response_id": "resp_0727658782b13872016afdfc84531087d0a54c1a8c96150fdc",
+      "rating": "helpful"
+    },
+    "sources": [
+      {
+        "chunk_id": 4,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "original_filename": "Python Programming Course Handbook.pdf",
+        "page_number": 4,
+        "chunk_number": 4,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Completion requirements The conditions for course completion To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions. EduEvidence AI / Synthetic demonstration material Page 4 of 4",
+        "score": 0.43647726,
+        "rank": 1
+      },
+      {
+        "chunk_id": 1,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "original_filename": "Python Programming Course Handbook.pdf",
+        "page_number": 1,
+        "chunk_number": 1,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Course overview Purpose and learning outcomes Python Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files. By the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review. The course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises. EduEvidence AI / Synthetic demonstration material Page 1 of 4",
+        "score": 0.16227842,
+        "rank": 2
+      },
+      {
+        "chunk_id": 3,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "original_filename": "Python Programming Course Handbook.pdf",
+        "page_number": 3,
+        "chunk_number": 3,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Assessment and submission What to upload and where Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark. Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt. Upload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project. EduEvidence AI / Synthetic demonstration material Page 3 of 4",
+        "score": 0.12800525,
+        "rank": 3
+      },
+      {
+        "chunk_id": 2,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "original_filename": "Python Programming Course Handbook.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Modules and weekly practice A six-week learning sequence Weeks 1 and 2 cover variables, control flow, strings, lists, dictionaries, and the interactive Python shell. Weeks 3 and 4 cover functions, modules, files, exceptions, and debugging. Week 5 introduces unit tests and code review. Week 6 is the capstone workshop. Learners bring a working prototype and receive feedback on testing and readability. EduEvidence AI / Synthetic demonstration material Page 2 of 4",
+        "score": 0.10071941,
+        "rank": 4
+      }
+    ],
+    "citations": [
+      {
+        "chunk_id": 4,
+        "document_id": 1,
+        "document_title": "Python Programming Course Handbook",
+        "original_filename": "Python Programming Course Handbook.pdf",
+        "page_number": 4,
+        "chunk_number": 4,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY Python Programming Course Handbook Completion requirements The conditions for course completion To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions. EduEvidence AI / Synthetic demonstration material Page 4 of 4",
+        "score": 0.43647726,
+        "rank": 1,
+        "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions.",
+        "position": 1
+      }
+    ]
+  },
+  "audit": [
+    {
+      "id": 9,
+      "event_type": "question.complete",
+      "outcome": "answered",
+      "detail": "completed",
+      "request_id": "fc52de52-2268-45ff-91c2-336059da7a95",
+      "question_id": 1,
+      "document_id": null,
+      "created_at": "2026-11-18T19:29:12.693Z"
+    },
+    {
+      "id": 8,
+      "event_type": "question.retrieve",
+      "outcome": "sufficient",
+      "detail": "4 passages",
+      "request_id": "fc52de52-2268-45ff-91c2-336059da7a95",
+      "question_id": 1,
+      "document_id": null,
+      "created_at": "2026-11-18T19:29:08.934Z"
+    },
+    {
+      "id": 7,
+      "event_type": "question.submit",
+      "outcome": "accepted",
+      "detail": null,
+      "request_id": "fc52de52-2268-45ff-91c2-336059da7a95",
+      "question_id": 1,
+      "document_id": 1,
+      "created_at": "2026-11-18T19:29:08.905Z"
+    }
+  ]
+}

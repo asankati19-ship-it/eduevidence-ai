@@ -1,0 +1,75 @@
+[
+  {
+    "course_id": 1,
+    "question": "What are the Python Programming course completion requirements?",
+    "document": "Python Programming Course Handbook",
+    "page": 4,
+    "required_facts": [
+      "submit all four graded labs",
+      "at least 70% overall",
+      "Pass on the capstone project"
+    ]
+  },
+  {
+    "course_id": 1,
+    "question": "Where do I submit a graded Python lab, and what should it include?",
+    "document": "Python Programming Course Handbook",
+    "page": 3,
+    "required_facts": [
+      "LMS Assessments area",
+      "ZIP archive",
+      "Python source files",
+      "README"
+    ]
+  },
+  {
+    "course_id": 2,
+    "question": "What must the AI and Machine Learning capstone report include?",
+    "document": "AI and Machine Learning Course Guide",
+    "page": 3,
+    "required_facts": [
+      "dataset description",
+      "baseline model",
+      "validation results",
+      "discussion of limitations"
+    ]
+  },
+  {
+    "course_id": 3,
+    "question": "What is the minimum live-session attendance requirement?",
+    "document": "LMS Assessment and Attendance Policy",
+    "page": 2,
+    "required_facts": [
+      "at least 75% of scheduled live sessions"
+    ]
+  },
+  {
+    "course_id": 3,
+    "question": "How late can I submit eligible work and what is the penalty?",
+    "document": "LMS Assessment and Attendance Policy",
+    "page": 1,
+    "required_facts": [
+      "48 hours after the deadline",
+      "10 percentage points per 24-hour period"
+    ]
+  },
+  {
+    "course_id": 3,
+    "question": "What is the assessment review deadline?",
+    "document": "LMS Assessment and Attendance Policy",
+    "page": 3,
+    "required_facts": [
+      "within five working days"
+    ]
+  },
+  {
+    "course_id": 1,
+    "question": "What is the cafeteria menu on Tuesday?",
+    "status": "abstained"
+  },
+  {
+    "course_id": 2,
+    "question": "Requirements?",
+    "status": "abstained"
+  }
+]

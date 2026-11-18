@@ -1,0 +1,52 @@
+npm notice run eduevidence-ai@1.0.0 test:e2e
+npm notice run playwright test --grep full journey
+[WebServer] INFO:     Started server process [18116]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8099 (Press CTRL+C to quit)
+[WebServer] npm notice run eduevidence-ai@1.0.0 dev
+[WebServer] npm notice run vite --port 5289
+[WebServer] (node:11484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:35132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\ui-journey.spec.ts:8:1 › full journey uploads a PDF, answers from its page, saves feedback and verifies SQLite metrics after refresh (6.2s)
+
+
+  1) e2e\ui-journey.spec.ts:8:1 › full journey uploads a PDF, answers from its page, saves feedback and verifies SQLite metrics after refresh 
+
+    Error: History outcome at 1440 pixels
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      90 |       return text.getClientRects().length;
+      91 |     });
+    > 92 |     expect(textLines, 'History outcome at ' + viewport.width + ' pixels').toBe(1);
+         |                                                                           ^
+      93 |   }
+      94 |   await page.setViewportSize({ width: 1440, height: 900 });
+      95 |   await page.getByRole('button', { name: 'View trace for ' + question }).click();
+        at <local-profile>\Documents\Codex\2026-11-18\files-pasted-by-the-user-you\work\eduevidence-ai\frontend\e2e\ui-journey.spec.ts:92:75
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\fixture\ui-journey-full-journey-up-be9b3-QLite-metrics-after-refresh\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\fixture\ui-journey-full-journey-up-be9b3-QLite-metrics-after-refresh\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\fixture\ui-journey-full-journey-up-be9b3-QLite-metrics-after-refresh\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\fixture\ui-journey-full-journey-up-be9b3-QLite-metrics-after-refresh\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e\ui-journey.spec.ts:8:1 › full journey uploads a PDF, answers from its page, saves feedback and verifies SQLite metrics after refresh 

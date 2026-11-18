@@ -1,0 +1,275 @@
+{
+  "source_checksums_verified": 3,
+  "pdf_pages_read": 10,
+  "tests_labeled": 43,
+  "evidence_checks": [
+    {
+      "id": "Q01",
+      "document": "PY",
+      "page": 4,
+      "excerpt": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project."
+    },
+    {
+      "id": "Q02",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "Graded labs account for 60% of the course mark."
+    },
+    {
+      "id": "Q02",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "The capstone project accounts for 40% of the course mark."
+    },
+    {
+      "id": "Q03",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README."
+    },
+    {
+      "id": "Q04",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "Upload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project."
+    },
+    {
+      "id": "Q05",
+      "document": "PY",
+      "page": 1,
+      "excerpt": "Python Programming is a six-week foundation course for new programmers."
+    },
+    {
+      "id": "Q06",
+      "document": "PY",
+      "page": 1,
+      "excerpt": "Learners write and debug small command-line programs, organize code into reusable functions, and read structured files."
+    },
+    {
+      "id": "Q07",
+      "document": "PY",
+      "page": 2,
+      "excerpt": "Weeks 3 and 4 cover functions, modules, files, exceptions, and debugging."
+    },
+    {
+      "id": "Q08",
+      "document": "PY",
+      "page": 2,
+      "excerpt": "Week 5 introduces unit tests and code review."
+    },
+    {
+      "id": "Q09",
+      "document": "PY",
+      "page": 4,
+      "excerpt": "A capstone resubmission is available once after written feedback."
+    },
+    {
+      "id": "Q10",
+      "document": "PY",
+      "page": 4,
+      "excerpt": "The completion record appears in the LMS Results area after the course coordinator verifies the conditions."
+    },
+    {
+      "id": "Q11",
+      "document": "PY",
+      "page": 4,
+      "excerpt": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project."
+    },
+    {
+      "id": "Q12",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "The capstone project accounts for 40% of the course mark."
+    },
+    {
+      "id": "Q12",
+      "document": "PY",
+      "page": 4,
+      "excerpt": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project."
+    },
+    {
+      "id": "Q13",
+      "document": "AI",
+      "page": 3,
+      "excerpt": "The AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%."
+    },
+    {
+      "id": "Q14",
+      "document": "AI",
+      "page": 3,
+      "excerpt": "The capstone report must include the dataset description, a baseline model, validation results, and a discussion of limitations."
+    },
+    {
+      "id": "Q15",
+      "document": "AI",
+      "page": 3,
+      "excerpt": "Submit the modeling notebook as an IPYNB file and the capstone report as a PDF in separate LMS Assessments slots."
+    },
+    {
+      "id": "Q16",
+      "document": "AI",
+      "page": 1,
+      "excerpt": "Before starting, learners should understand Python functions and basic descriptive statistics."
+    },
+    {
+      "id": "Q17",
+      "document": "AI",
+      "page": 1,
+      "excerpt": "AI and Machine Learning is an eight-week applied course."
+    },
+    {
+      "id": "Q18",
+      "document": "AI",
+      "page": 2,
+      "excerpt": "For classification workshops, compare a logistic regression baseline with a decision tree. Report precision, recall, and the confusion matrix."
+    },
+    {
+      "id": "Q19",
+      "document": "AI",
+      "page": 2,
+      "excerpt": "Modules cover dataset preparation, classification, regression, validation, and responsible model reporting."
+    },
+    {
+      "id": "Q20",
+      "document": "AI",
+      "page": 1,
+      "excerpt": "The learning resources include a glossary, weekly notebook walkthroughs, and an evaluation checklist."
+    },
+    {
+      "id": "Q21",
+      "document": "LMS",
+      "page": 1,
+      "excerpt": "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof."
+    },
+    {
+      "id": "Q22",
+      "document": "LMS",
+      "page": 2,
+      "excerpt": "Watching a recording does not count toward live attendance."
+    },
+    {
+      "id": "Q23",
+      "document": "LMS",
+      "page": 2,
+      "excerpt": "Learners must attend at least 75% of scheduled live sessions. A live session counts when the learner is present for at least half of its scheduled duration."
+    },
+    {
+      "id": "Q24",
+      "document": "LMS",
+      "page": 2,
+      "excerpt": "Attendance records appear in the LMS Attendance area within two working days of a session."
+    },
+    {
+      "id": "Q25",
+      "document": "LMS",
+      "page": 3,
+      "excerpt": "Request an assessment review in the LMS Support area within five working days after the grade is released."
+    },
+    {
+      "id": "Q26",
+      "document": "LMS",
+      "page": 3,
+      "excerpt": "Include the assessment name, the rubric criterion, and a short explanation of the issue."
+    },
+    {
+      "id": "Q27",
+      "document": "LMS",
+      "page": 1,
+      "excerpt": "If the LMS is unavailable, contact course support and include the error details before the deadline where possible."
+    },
+    {
+      "id": "Q28",
+      "document": "LMS",
+      "page": 1,
+      "excerpt": "Keep the timestamped submission receipt as proof of delivery."
+    },
+    {
+      "id": "Q29",
+      "document": "LMS",
+      "page": 3,
+      "excerpt": "Request an assessment review in the LMS Support area within five working days after the grade is released."
+    },
+    {
+      "id": "Q29",
+      "document": "LMS",
+      "page": 3,
+      "excerpt": "Requests for general learning support can be submitted in the same area using the Course Support category."
+    },
+    {
+      "id": "Q30",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "The capstone project accounts for 40% of the course mark."
+    },
+    {
+      "id": "Q30",
+      "document": "AI",
+      "page": 3,
+      "excerpt": "The AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%."
+    },
+    {
+      "id": "Q31",
+      "document": "PY",
+      "page": 1,
+      "excerpt": "Python Programming is a six-week foundation course for new programmers."
+    },
+    {
+      "id": "Q31",
+      "document": "AI",
+      "page": 1,
+      "excerpt": "AI and Machine Learning is an eight-week applied course."
+    },
+    {
+      "id": "Q32",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "Submit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README."
+    },
+    {
+      "id": "Q32",
+      "document": "LMS",
+      "page": 2,
+      "excerpt": "Attendance records appear in the LMS Attendance area within two working days of a session."
+    },
+    {
+      "id": "Q42",
+      "document": "LMS",
+      "page": 1,
+      "excerpt": "For assignments marked eligible for late submission, a learner may submit up to 48 hours after the deadline. The penalty is 10 percentage points per 24-hour period or part thereof."
+    },
+    {
+      "id": "Q43",
+      "document": "LMS",
+      "page": 3,
+      "excerpt": "Request an assessment review in the LMS Support area within five working days after the grade is released."
+    }
+  ],
+  "ground_truth_sha256": "5af1c2e8ae71599674f36b23c8bca01a80744df45092366af5f96e0c5d45727f",
+  "checked_capture_sha256": "296b34db8e78cc51082dae63078ee7ee75cbde9b0ec93ff3cede4e98fbb0a5b4",
+  "displayed_evidence_checks": [
+    {
+      "id": "Q12",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark."
+    },
+    {
+      "id": "Q12",
+      "document": "PY",
+      "page": 4,
+      "excerpt": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately."
+    },
+    {
+      "id": "Q30",
+      "document": "PY",
+      "page": 3,
+      "excerpt": "Graded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark."
+    },
+    {
+      "id": "Q30",
+      "document": "AI",
+      "page": 3,
+      "excerpt": "The AI and Machine Learning final mark consists of two quizzes worth 20% combined, a modeling notebook worth 35%, and a capstone report worth 45%."
+    }
+  ]
+}

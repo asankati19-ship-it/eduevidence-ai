@@ -1,0 +1,306 @@
+{
+  "rubric": "Compare every displayed answer clause with the original PDF and the quoted source. Require the labeled material facts and scope, preserve units and qualifications, and grade exact expected citation pages. Additional details are acceptable when the citation itself supports them. Use saved lineage assertions and expected HTTP, outcome, and error codes. Model verification is observed behavior and does not supply benchmark truth.",
+  "baseline": {
+    "snapshot": "live-baseline.json",
+    "sha256": "be8dd644d4894f2ef5b1441d69000bb2e2eadd6aeead59c543982a9fad4a64cf",
+    "reviewed_answers": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q16",
+      "Q17",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q23",
+      "Q24",
+      "Q25",
+      "Q26",
+      "Q27",
+      "Q28",
+      "Q30",
+      "Q31",
+      "Q32",
+      "Q43"
+    ],
+    "failures": {
+      "Q03": "The app added an instruction to include any required instructions in the lab ZIP. The cited lab requirement lists Python source and a short README. Instructions for running the project apply to the separate capstone.",
+      "Q05": "The course duration is stated on PY page 1. The additional course-sequence citation on page 2 corroborates Week 6 but lies outside the locked direct-source page set.",
+      "Q06": "The candidate answered the core question, then added unquoted claims about the graded lab and capstone prototype submission. The app saved a validation error instead of a supported response.",
+      "Q11": "The proposed answer correctly inferred that a Pass alone was insufficient. The completion excerpt expressly lists the separate requirements.",
+      "Q15": "The proposed answer gave the exact two file formats and reasonably inferred that separate slots prohibit submitting together.",
+      "Q18": "The model added an instruction to use LMS workshop notebooks without quoting the supporting line. The app withheld the response.",
+      "Q22": "The candidate assembled nonconsecutive sentences into a single quote. The valid recording rule was available in LMS page 2.",
+      "Q29": "The candidate quoted only the phrase with 'the same area'. The named LMS Support area appeared earlier on LMS page 3.",
+      "Q37": "The candidate inferred that assessment reviews cannot lead to an automatic increase from a document that describes only the request procedure. The app saved a validation error. The expected behavior was abstention.",
+      "Q42": "The candidate added a late penalty while quoting only the separate eligibility sentence. The quoted eligibility rule alone supports the expected answer without the penalty detail."
+    }
+  },
+  "final": {
+    "snapshot": "live-acceptance-2.4.json",
+    "sha256": "bc8ae400ba0725d0f4cd8486cfb46bba019f0b0afc7da604d8470560c4e71a3b",
+    "reviewed_answers": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25",
+      "Q26",
+      "Q27",
+      "Q28",
+      "Q29",
+      "Q30",
+      "Q31",
+      "Q32",
+      "Q42",
+      "Q43"
+    ],
+    "failures": {},
+    "observations": {
+      "Q01": "All three rules are present. The added resubmission and publication details appear in the displayed PY4 quote.",
+      "Q03": "Lists only the required lab files. The added receipt detail is explicitly quoted.",
+      "Q11": "The negative inference follows from the separate requirements. No unquoted weighting claim.",
+      "Q15": "The separate-slot inference follows directly from the AI3 excerpt.",
+      "Q21": "Keeps the assignment eligibility, 48-hour upper bound, percentage-point unit, and partial periods.",
+      "Q22": "The direct negation is exact and the response supplies no unquoted duration.",
+      "Q23": "The 75% minimum and half-duration requirement are associated with the correct rules.",
+      "Q29": "The quote includes the named LMS Support area before the relative reference.",
+      "Q30": "Both weights were attached to their own capstone and course, with both required pages.",
+      "Q37": "No answer body or citations were stored despite a related page and a real generation response.",
+      "Q42": "The answer explicitly limits late submission to work marked eligible."
+    }
+  },
+  "defects": [
+    {
+      "id": "D01",
+      "tests": [
+        "Q03",
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R08"
+      ],
+      "root_cause": "A lexical overlap gate accepted facts or quantities that a real citation did not support, including reversed bounds and negation, switched values, omitted eligibility, and answers to a different question.",
+      "fix": "Check full quote boundaries, relevant question terms, value-to-clause association, units, bounds and explicit negation. Require a separate structured evidence verdict before storing a new answer."
+    },
+    {
+      "id": "D02",
+      "tests": [
+        "Q05",
+        "Q06",
+        "Q11",
+        "Q15",
+        "Q18",
+        "Q22",
+        "Q42"
+      ],
+      "root_cause": "Generation produced extra details or overly broad citations, and the original lexical gate sometimes rejected sound inferences from stated policy.",
+      "fix": "Request concise answers and the smallest set of complete, consecutive quotes. Allow logical exclusion supported by stated conditions. Keep exact quote matching."
+    },
+    {
+      "id": "D03",
+      "tests": [
+        "Q30"
+      ],
+      "root_cause": "Repeated course headings inflated weak pages and the two grading passages used different weighting vocabulary.",
+      "fix": "Ignore repeated synthetic headers in ranking, normalize grading-weight terms, and prune weak results with a lower cutoff for secondary evidence."
+    },
+    {
+      "id": "D04",
+      "tests": [
+        "Q22",
+        "Q29"
+      ],
+      "root_cause": "Flattened extraction obscured paragraph boundaries and a relative reference in a legitimate citation omitted its antecedent.",
+      "fix": "Preserve layout boundaries and extend a relative reference to the named antecedent within the same retrieved chunk."
+    },
+    {
+      "id": "D05",
+      "tests": [
+        "Q37",
+        "R07"
+      ],
+      "root_cause": "The generation and verification calls both treated a policy omission as a conclusive yes-or-no answer.",
+      "fix": "Abstain when the proposed conclusion relies on stated absence or the cited excerpts omit too much of the focused question topic."
+    },
+    {
+      "id": "D06",
+      "tests": [
+        "Q22"
+      ],
+      "root_cause": "Distinct complete quotes for the same retrieved chunk were rejected by the one-citation-per-chunk guard.",
+      "fix": "Validate each submitted citation and merge overlapping or separated same-chunk quotes into one contiguous excerpt from the original page. Reject a wrong document or page even on repeated citations."
+    },
+    {
+      "id": "D07",
+      "tests": [
+        "Q11",
+        "Q22",
+        "Q23",
+        "R10",
+        "V06"
+      ],
+      "root_cause": "Sentence-level numeric matching confused two independent clauses, did not recognize simple fractions, and the verifier could rely on passages the reader did not see cited.",
+      "fix": "Validate numeric claims by clause, recognize half and quarter bounds, and send only the validated, displayed quotations to the verification call."
+    },
+    {
+      "id": "D08",
+      "tests": [
+        "Q11",
+        "Q21",
+        "Q30",
+        "Q37",
+        "Q42",
+        "R06",
+        "R11",
+        "V01",
+        "V05",
+        "V06"
+      ],
+      "root_cause": "The verifier alone approved three negative controls. Course names biased the local numeric match in a comparison, and an invalid model quote masked insufficient policy evidence as a validation error.",
+      "fix": "Preserve explicit eligibility and screen unsupported parenthetical details locally. Compare the measured item separately from named course context. Check the full returned passages for insufficient yes-or-no topic evidence before processing individual quotes."
+    }
+  ],
+  "failed_probes": {
+    "R01": "The baseline published a maximum of 70% where the source set a minimum.",
+    "R02": "The baseline reversed a recorded-attendance prohibition.",
+    "R03": "The baseline accepted a truncated eligibility quote.",
+    "R04": "The baseline swapped the marks attached to labs and capstone.",
+    "R05": "The baseline returned the resubmission rule for a question about completion.",
+    "R06": "The baseline omitted assignment eligibility and published a blanket late submission rule.",
+    "R07": "In version 2.1.0 the two direct positive and negative candidates were both saved as answered. The explicit-absence wording alone triggered abstention.",
+    "R10": "In version 2.2.1 a duration assertion was accepted although the displayed quotation addressed recordings only.",
+    "R11": "Version 2.3.0 accepted an extra parenthetical detail about grade composition without a quotation that established it."
+  },
+  "probe_expected_status": {
+    "E12": "abstained",
+    "E13": "rejected",
+    "E14": "error",
+    "E15": "rejected",
+    "E16": "validation_error",
+    "E17": "validation_error",
+    "E19": "provider_error",
+    "E20": "provider_error",
+    "E21": "provider_error",
+    "E22": "abstained",
+    "E24": "processing_error",
+    "E26": "provider_error",
+    "E27": "validation_error",
+    "R01": "validation_error",
+    "R02": "validation_error",
+    "R03": "validation_error",
+    "R04": "validation_error",
+    "R05": "validation_error",
+    "R06": "validation_error",
+    "R07": "abstained",
+    "R08": "validation_error",
+    "R10": "validation_error",
+    "R11": "validation_error"
+  },
+  "benchmark_edges": {
+    "E01": {
+      "cases": [
+        "Q01"
+      ],
+      "expected": "Return the three Python completion conditions from page 4."
+    },
+    "E02": {
+      "cases": [
+        "Q12"
+      ],
+      "expected": "Cite both Python pages for weight and the separate Pass requirement."
+    },
+    "E04": {
+      "cases": [
+        "Q22",
+        "Q43"
+      ],
+      "expected": "Resolve the replay and grade-dispute paraphrases against the correct page."
+    },
+    "E05": {
+      "cases": [
+        "Q30",
+        "Q32"
+      ],
+      "expected": "Preserve the course or policy associated with each fact in multi-document search."
+    },
+    "E06": {
+      "cases": [
+        "Q02",
+        "Q13"
+      ],
+      "expected": "Distinguish Python lab and capstone mark shares from AI quizzes, notebook and capstone shares."
+    },
+    "E07": {
+      "cases": [
+        "Q38"
+      ],
+      "expected": "Reject a blank question before retrieval."
+    },
+    "E08": {
+      "cases": [
+        "Q39"
+      ],
+      "expected": "Reject a whitespace-only question before retrieval."
+    },
+    "E09": {
+      "cases": [
+        "Q40"
+      ],
+      "expected": "Reject a missing document with HTTP 404 and no new question."
+    },
+    "E10": {
+      "cases": [
+        "Q33",
+        "Q37"
+      ],
+      "expected": "Abstain when a related page does not establish the requested refund or grade increase."
+    },
+    "E11": {
+      "cases": [
+        "Q34",
+        "Q36"
+      ],
+      "expected": "Skip provider generation when no passage supports the topic within scope."
+    },
+    "E23": {
+      "cases": [
+        "Q41"
+      ],
+      "expected": "Reject a course/document mismatch with HTTP 422."
+    }
+  }
+}
+

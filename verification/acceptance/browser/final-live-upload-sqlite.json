@@ -1,0 +1,150 @@
+{
+  "trace": {
+    "id": 4,
+    "learner_id": 1,
+    "course_id": 1,
+    "document_id": 4,
+    "conversation_id": "3c1e8b90-e85f-4ebe-a05e-39ae31ad2aa4",
+    "question_text": "For this uploaded Python Programming handbook, what are the course completion requirements?",
+    "status": "answered",
+    "request_id": "bcc8a6fc-bc44-4da1-91f6-60cf8ae6d64c",
+    "created_at": "2026-11-18T21:36:15.019Z",
+    "completed_at": "2026-11-18T21:36:18.329Z",
+    "document_title": "Full Journey Python Handbook",
+    "answer": {
+      "id": 4,
+      "question_id": 4,
+      "status": "answered",
+      "body": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. Completion appears in the LMS Results area after verification by the course coordinator.",
+      "reason": null,
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "provider_response_id": "resp_0b7cbff1130da520016afe1a4c89b887d0b7c7e8c090a7928f",
+      "prompt_version": "2.4.0",
+      "api_outcome": "completed",
+      "error_code": null,
+      "retryable": 0,
+      "input_tokens": 971,
+      "output_tokens": 185,
+      "latency_ms": 2024,
+      "created_at": "2026-11-18T21:36:18.329Z",
+      "rating": "helpful",
+      "verification_passed": 1
+    },
+    "sources": [
+      {
+        "rank": 1,
+        "score": 0.45655892,
+        "chunk_id": 14,
+        "document_id": 4,
+        "page_number": 4,
+        "chunk_number": 4,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "course_id": 1
+      },
+      {
+        "rank": 2,
+        "score": 0.18118934,
+        "chunk_id": 11,
+        "document_id": 4,
+        "page_number": 1,
+        "chunk_number": 1,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCourse overview\n\nPurpose and learning outcomes\n\nPython Programming is a six-week foundation course for new programmers. Learners write and debug small command-line programs, organize code into reusable functions, and read structured files.\n\nBy the end of the course, learners can test functions, handle exceptions, and explain their design decisions in a code review.\n\nThe course uses the Python standard library and the LMS practice workspace. The course notebook contains examples and extension exercises.\n\nEduEvidence AI / Synthetic demonstration material Page 1 of 4",
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "course_id": 1
+      },
+      {
+        "rank": 3,
+        "score": 0.14409312,
+        "chunk_id": 13,
+        "document_id": 4,
+        "page_number": 3,
+        "chunk_number": 3,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nAssessment and submission\n\nWhat to upload and where\n\nGraded labs account for 60% of the course mark. The capstone project accounts for 40% of the course mark.\n\nSubmit each lab through the LMS Assessments area as a ZIP archive containing Python source files and a short README. A successful submission generates an LMS receipt.\n\nUpload the capstone to the Capstone submission slot. Include your Python source, test files, and instructions for running the project.\n\nEduEvidence AI / Synthetic demonstration material Page 3 of 4",
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "course_id": 1
+      }
+    ],
+    "citations": [
+      {
+        "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project. The overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback. The completion record appears in the LMS Results area after the course coordinator verifies the conditions.",
+        "position": 1,
+        "rank": 1,
+        "score": 0.45655892,
+        "chunk_id": 14,
+        "document_id": 4,
+        "page_number": 4,
+        "chunk_number": 4,
+        "revision": 1,
+        "content": "PY-101 / SYNTHETIC COURSE LIBRARY\n\nPython Programming Course Handbook\n\nCompletion requirements\n\nThe conditions for course completion\n\nTo complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.\n\nThe overall mark and capstone Pass are evaluated separately. A capstone resubmission is available once after written feedback.\n\nThe completion record appears in the LMS Results area after the course coordinator verifies the conditions.\n\nEduEvidence AI / Synthetic demonstration material Page 4 of 4",
+        "document_title": "Full Journey Python Handbook",
+        "original_filename": "full-journey-course-handbook.pdf",
+        "course_id": 1
+      }
+    ]
+  },
+  "audit": [
+    {
+      "id": 19,
+      "learner_id": 1,
+      "question_id": 4,
+      "document_id": 4,
+      "request_id": "bcc8a6fc-bc44-4da1-91f6-60cf8ae6d64c",
+      "event_type": "question.submit",
+      "outcome": "accepted",
+      "detail": null,
+      "created_at": "2026-11-18T21:36:15.019Z"
+    },
+    {
+      "id": 20,
+      "learner_id": 1,
+      "question_id": 4,
+      "document_id": null,
+      "request_id": "bcc8a6fc-bc44-4da1-91f6-60cf8ae6d64c",
+      "event_type": "question.retrieve",
+      "outcome": "sufficient",
+      "detail": "3 passages",
+      "created_at": "2026-11-18T21:36:15.063Z"
+    },
+    {
+      "id": 21,
+      "learner_id": 1,
+      "question_id": 4,
+      "document_id": null,
+      "request_id": "bcc8a6fc-bc44-4da1-91f6-60cf8ae6d64c",
+      "event_type": "question.verify",
+      "outcome": "supported",
+      "detail": "{\"outcome\":\"supported\",\"model\":\"gpt-4.1-mini-2025-04-14\",\"response_id\":\"resp_0494d892829d05da016afe1a4e8e7887d0be2d8989f80e36ff\",\"input_tokens\":517,\"output_tokens\":70,\"latency_ms\":1234}",
+      "created_at": "2026-11-18T21:36:18.332Z"
+    },
+    {
+      "id": 22,
+      "learner_id": 1,
+      "question_id": 4,
+      "document_id": null,
+      "request_id": "bcc8a6fc-bc44-4da1-91f6-60cf8ae6d64c",
+      "event_type": "question.complete",
+      "outcome": "answered",
+      "detail": "completed",
+      "created_at": "2026-11-18T21:36:18.332Z"
+    },
+    {
+      "id": 23,
+      "learner_id": 1,
+      "question_id": 4,
+      "document_id": null,
+      "request_id": "5f46d437-515a-4131-9925-3c898e87373b",
+      "event_type": "answer.feedback",
+      "outcome": "helpful",
+      "detail": null,
+      "created_at": "2026-11-18T21:36:20.284Z"
+    }
+  ]
+}

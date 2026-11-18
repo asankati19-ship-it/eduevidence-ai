@@ -1,0 +1,204 @@
+{
+  "passed": true,
+  "integrity": "ok",
+  "failed": {
+    "question": {
+      "id": 1,
+      "learner_id": 1,
+      "course_id": 1,
+      "document_id": 1,
+      "conversation_id": "3d96a92a-58cc-4e3f-9f81-fe88594f0f63",
+      "question_text": "What are the Python Programming course completion requirements for learners in the handbook?",
+      "status": "provider_error",
+      "request_id": "3374963a-1a55-449a-ac48-bc9a56c72118",
+      "created_at": "2026-11-18T21:26:22.855Z",
+      "completed_at": "2026-11-18T21:26:22.887Z"
+    },
+    "answer": {
+      "id": 1,
+      "question_id": 1,
+      "status": "provider_error",
+      "body": null,
+      "reason": "The offline provider simulated a timeout. Try again.",
+      "provider": "offline_fixture",
+      "model": "offline-citation-fixture-v1",
+      "provider_response_id": null,
+      "prompt_version": "2.4.0",
+      "api_outcome": "failed",
+      "error_code": "timeout",
+      "retryable": 1,
+      "input_tokens": null,
+      "output_tokens": null,
+      "latency_ms": 0,
+      "created_at": "2026-11-18T21:26:22.887Z"
+    },
+    "ranked_sources": [
+      {
+        "question_id": 1,
+        "chunk_id": 4,
+        "rank": 1,
+        "score": 0.40103133,
+        "document_id": 1,
+        "page_number": 4,
+        "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+      },
+      {
+        "question_id": 1,
+        "chunk_id": 1,
+        "rank": 2,
+        "score": 0.24960006,
+        "document_id": 1,
+        "page_number": 1,
+        "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+      }
+    ],
+    "citations": [],
+    "events": [
+      {
+        "id": 7,
+        "learner_id": 1,
+        "question_id": 1,
+        "document_id": 1,
+        "request_id": "3374963a-1a55-449a-ac48-bc9a56c72118",
+        "event_type": "question.submit",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T21:26:22.855Z"
+      },
+      {
+        "id": 8,
+        "learner_id": 1,
+        "question_id": 1,
+        "document_id": null,
+        "request_id": "3374963a-1a55-449a-ac48-bc9a56c72118",
+        "event_type": "question.retrieve",
+        "outcome": "sufficient",
+        "detail": "2 passages",
+        "created_at": "2026-11-18T21:26:22.882Z"
+      },
+      {
+        "id": 9,
+        "learner_id": 1,
+        "question_id": 1,
+        "document_id": null,
+        "request_id": "3374963a-1a55-449a-ac48-bc9a56c72118",
+        "event_type": "question.complete",
+        "outcome": "provider_error",
+        "detail": "timeout",
+        "created_at": "2026-11-18T21:26:22.892Z"
+      }
+    ]
+  },
+  "retried": {
+    "question": {
+      "id": 2,
+      "learner_id": 1,
+      "course_id": 1,
+      "document_id": 1,
+      "conversation_id": "3d96a92a-58cc-4e3f-9f81-fe88594f0f63",
+      "question_text": "What are the Python Programming course completion requirements for learners in the handbook?",
+      "status": "answered",
+      "request_id": "cc10727a-636a-49f9-abcf-d018770e4cb5",
+      "created_at": "2026-11-18T21:26:23.007Z",
+      "completed_at": "2026-11-18T21:26:23.041Z"
+    },
+    "answer": {
+      "id": 2,
+      "question_id": 2,
+      "status": "answered",
+      "body": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.",
+      "reason": null,
+      "provider": "offline_fixture",
+      "model": "offline-citation-fixture-v1",
+      "provider_response_id": "offline-fixture-response",
+      "prompt_version": "2.4.0",
+      "api_outcome": "completed",
+      "error_code": null,
+      "retryable": 0,
+      "input_tokens": 33,
+      "output_tokens": 14,
+      "latency_ms": 1,
+      "created_at": "2026-11-18T21:26:23.041Z"
+    },
+    "ranked_sources": [
+      {
+        "question_id": 2,
+        "chunk_id": 4,
+        "rank": 1,
+        "score": 0.40103133,
+        "document_id": 1,
+        "page_number": 4,
+        "content_hash": "4858d982e5dbd0bb07827c79bf896af0137ebffcb64a2042a97f9e3dd4f3c53a"
+      },
+      {
+        "question_id": 2,
+        "chunk_id": 1,
+        "rank": 2,
+        "score": 0.24960006,
+        "document_id": 1,
+        "page_number": 1,
+        "content_hash": "eb95b9396e977f44da9b58ccaa497c92b74c08b667091a492f133f38250ed185"
+      }
+    ],
+    "citations": [
+      {
+        "answer_id": 2,
+        "question_id": 2,
+        "chunk_id": 4,
+        "document_id": 1,
+        "page_number": 4,
+        "evidence_quote": "To complete the Python Programming course, submit all four graded labs, achieve at least 70% overall, and earn a Pass on the capstone project.",
+        "position": 1,
+        "rank": 1,
+        "original_filename": "Python Programming Course Handbook.pdf",
+        "sha256": "714d4f84f004df8073e084e99a62ebe003c1781e3444f73d3e6d3b6cf579f381"
+      }
+    ],
+    "events": [
+      {
+        "id": 10,
+        "learner_id": 1,
+        "question_id": 2,
+        "document_id": 1,
+        "request_id": "cc10727a-636a-49f9-abcf-d018770e4cb5",
+        "event_type": "question.submit",
+        "outcome": "accepted",
+        "detail": null,
+        "created_at": "2026-11-18T21:26:23.007Z"
+      },
+      {
+        "id": 11,
+        "learner_id": 1,
+        "question_id": 2,
+        "document_id": null,
+        "request_id": "cc10727a-636a-49f9-abcf-d018770e4cb5",
+        "event_type": "question.retrieve",
+        "outcome": "sufficient",
+        "detail": "2 passages",
+        "created_at": "2026-11-18T21:26:23.034Z"
+      },
+      {
+        "id": 12,
+        "learner_id": 1,
+        "question_id": 2,
+        "document_id": null,
+        "request_id": "cc10727a-636a-49f9-abcf-d018770e4cb5",
+        "event_type": "question.verify",
+        "outcome": "supported",
+        "detail": "{\"outcome\":\"supported\",\"model\":\"offline-citation-fixture-v1\",\"response_id\":\"offline-verification-fixture\",\"input_tokens\":27,\"output_tokens\":6,\"latency_ms\":1}",
+        "created_at": "2026-11-18T21:26:23.047Z"
+      },
+      {
+        "id": 13,
+        "learner_id": 1,
+        "question_id": 2,
+        "document_id": null,
+        "request_id": "cc10727a-636a-49f9-abcf-d018770e4cb5",
+        "event_type": "question.complete",
+        "outcome": "answered",
+        "detail": "completed",
+        "created_at": "2026-11-18T21:26:23.047Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "answered",
+        "abstained"
+      ]
+    },
+    "answer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "chunk_id": {
+            "type": "integer"
+          },
+          "document_id": {
+            "type": "integer"
+          },
+          "page_number": {
+            "type": "integer"
+          },
+          "evidence_quote": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "chunk_id",
+          "document_id",
+          "page_number",
+          "evidence_quote"
+        ]
+      }
+    },
+    "abstention_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "answer",
+    "citations",
+    "abstention_reason"
+  ]
+}
