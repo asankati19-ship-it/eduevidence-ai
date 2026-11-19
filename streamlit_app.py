@@ -93,7 +93,7 @@ def overview():
     stats(result)
     getting_started(result["documents"]["indexed"], result["questions"]["total"])
     st.subheader("Recent activity")
-    audit_table(result["activity"])
+    audit_table(result["activity"], get)
 
 
 def library():
@@ -262,7 +262,7 @@ def audit():
     offset = (page_number("audit_offset") - 1) * PAGE_SIZE
     result = get("/audit/events", request_id=request_id, limit=PAGE_SIZE, offset=offset)
     st.caption(f"{result['total']} matching events")
-    audit_table(result["items"])
+    audit_table(result["items"], get)
 
 
 def system_health():

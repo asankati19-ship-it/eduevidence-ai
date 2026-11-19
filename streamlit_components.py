@@ -50,7 +50,7 @@ def citation_chips(citations, answer_id, namespace, render_page):
             render_page(c["document_id"], c["page_number"])
 
 
-def audit_table(events):
+def audit_table(events, get_record):
     if not events:
         st.info("No matching audit events.")
         return
@@ -62,7 +62,21 @@ def audit_table(events):
     }
     rows = []
     palette = {}
+    # A running Cloud session can retain the previous API response shape during rollout.
+    records = {}
+    def lookup(path):
+        if path not in records:
+            records[path] = get_record(path)
+        return records[path]
+
     for e in events:
+        question = {}
+        if "question_text" not in e and e["question_id"]:
+            question = lookup(f"/questions/{e['question_id']}")
+        filename = e.get("document_filename")
+        doc_id = e["document_id"] or question.get("document_id")
+        if "document_filename" not in e and doc_id:
+            filename = lookup(f"/documents/{doc_id}")["original_filename"]
         outcome = e["outcome"]
         status = outcome.replace("_", " ").capitalize()
         if e["event_type"] in {"document.upload", "document.reindex"} and outcome == "accepted":
@@ -71,8 +85,8 @@ def audit_table(events):
         palette[status] = colors.get(outcome, "gray")
         rows.append({
             "Time (UTC)": e["created_at"], "Action": e["event_type"].replace(".", " ").capitalize(),
-            "Request": e["question_text"] or e["document_filename"] or e["event_type"].replace(".", " "),
-            "Status": [status], "Document": e["document_filename"], "Detail": e["detail"],
+            "Request": e.get("question_text") or question.get("question_text") or filename or e["event_type"].replace(".", " "),
+            "Status": [status], "Document": filename, "Detail": e["detail"],
             "Request ID": e["request_id"], "Document ID": e["document_id"], "Question ID": e["question_id"],
         })
     st.dataframe(rows, hide_index=True, column_config={
