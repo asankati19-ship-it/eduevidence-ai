@@ -1,6 +1,14 @@
 from backend.app.db.database import Database
 
 
+AUDIT_SELECT = """
+    SELECT e.*, q.question_text, d.original_filename AS document_filename
+    FROM audit_events e
+    LEFT JOIN questions q ON q.id=e.question_id
+    LEFT JOIN documents d ON d.id=COALESCE(e.document_id,q.document_id)
+"""
+
+
 def overview(database: Database):
     with database.connection() as con:
         con.execute("BEGIN")
@@ -31,7 +39,7 @@ def overview(database: Database):
             SELECT count(*) AS total, count(*) FILTER(WHERE rating='helpful') AS helpful,
                    count(*) FILTER(WHERE rating='not_helpful') AS not_helpful FROM feedback
         """).fetchone())
-        recent = [dict(row) for row in con.execute("SELECT * FROM audit_events ORDER BY id DESC LIMIT 8")]
+        recent = [dict(row) for row in con.execute(AUDIT_SELECT + " ORDER BY e.id DESC LIMIT 8")]
         trend = [dict(row) for row in con.execute("""
             WITH RECURSIVE days(day) AS (
                 SELECT date('now', '-6 days') UNION ALL
@@ -49,14 +57,14 @@ def audit_page(database, event_type, request_id, limit, offset):
     params = []
     for name, value in (("event_type", event_type), ("request_id", request_id)):
         if value:
-            filters.append(f"{name}=?")
+            filters.append(f"e.{name}=?")
             params.append(value)
     where = " WHERE " + " AND ".join(filters) if filters else ""
     with database.connection() as con:
         con.execute("BEGIN")
-        total = con.execute("SELECT count(*) FROM audit_events" + where, params).fetchone()[0]
+        total = con.execute("SELECT count(*) FROM audit_events e" + where, params).fetchone()[0]
         items = [dict(row) for row in con.execute(
-            "SELECT * FROM audit_events" + where + " ORDER BY id DESC LIMIT ? OFFSET ?", (*params, limit, offset),
+            AUDIT_SELECT + where + " ORDER BY e.id DESC LIMIT ? OFFSET ?", (*params, limit, offset),
         )]
         return {"items": items, "total": total, "limit": limit, "offset": offset}
 

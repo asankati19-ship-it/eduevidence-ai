@@ -6,6 +6,7 @@ import httpx
 from pydantic import SecretStr
 import streamlit as st
 
+from streamlit_components import audit_table, citation_chips, document_table, getting_started
 from backend.app.core.config import Settings
 from backend.app.streamlit_workspace import Workspace
 
@@ -87,23 +88,10 @@ def stats(result):
         column.metric(label, value)
 
 
-def audit_table(events):
-    if not events:
-        st.info("No matching audit events.")
-        return
-    st.dataframe(
-        [{
-            "Time (UTC)": event["created_at"], "Event": event["event_type"], "Outcome": event["outcome"],
-            "Question ID": event["question_id"], "Document ID": event["document_id"],
-            "Request ID": event["request_id"],
-        } for event in events],
-        hide_index=True,
-    )
-
-
 def overview():
     result = get("/analytics/overview")
     stats(result)
+    getting_started(result["documents"]["indexed"], result["questions"]["total"])
     st.subheader("Recent activity")
     audit_table(result["activity"])
 
@@ -143,6 +131,7 @@ def library():
     if not documents:
         st.info("No matching documents.")
         return
+    document_table(documents)
     doc_id = document_select(documents, key="library_document")
     doc = get(f"/documents/{doc_id}")
     st.text(doc["original_filename"])
@@ -165,7 +154,7 @@ def library():
     with actions[1].expander("Retire document"):
         st.write("Retirement removes this PDF from new searches. Existing citations remain available.")
         confirm = st.checkbox("Confirm retirement", key=f"confirm_retire_{doc_id}")
-        if st.button("Retire PDF", key=f"retire_{doc_id}", disabled=not confirm):
+        if st.button("Retire PDF", key=f"retire_{doc_id}", disabled=not confirm or doc["status"] == "processing"):
             request(f"/documents/{doc_id}", "DELETE")
             flash("PDF retired.")
     if doc["page_count"]:
@@ -182,16 +171,7 @@ def show_answer(question, *, namespace=""):
     st.caption(f"{LABELS.get(question['status'], question['status'])} · Request ID {question['request_id']}")
     if answer["body"] and answer["verification_passed"]:
         st.text(answer["body"])
-        for citation in question["citations"]:
-            index = citation["position"]
-            page = citation["page_number"]
-            with st.expander(f"Source {index} · Page {page}"):
-                st.text(citation["original_filename"])
-                st.caption(f"Chunk {citation['chunk_number']} · Revision {citation['revision']}")
-                st.text(citation["evidence_quote"])
-                key = f"{namespace}_citation_{answer['id']}_{index}"
-                if st.checkbox("Show original PDF page", key=key):
-                    render_page(citation["document_id"], page)
+        citation_chips(question["citations"], answer["id"], namespace, render_page)
     elif answer["reason"]:
         st.text(answer["reason"])
     elif answer["body"]:
@@ -314,7 +294,7 @@ def main():
     st.set_page_config(page_title="EduEvidence AI", page_icon="📚", layout="wide")
     st.sidebar.title("EduEvidence AI")
     st.sidebar.caption("Synthetic course workspace")
-    page = st.sidebar.radio("Workspace page", PAGES)
+    page = st.sidebar.radio("Workspace page", PAGES, key="workspace_page")
     st.sidebar.caption("Uploads and history are temporary and belong to this browser session.")
     st.title(page)
     if "workspace" not in st.session_state:

@@ -134,6 +134,8 @@ class PageOut[T](BaseModel):
 
 
 class AuditOut(BaseModel):
+    question_text: str | None
+    document_filename: str | None
     id: int
     event_type: str
     outcome: str
