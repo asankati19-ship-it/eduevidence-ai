@@ -85,7 +85,7 @@ def stats(result):
         ("Indexed documents", "Questions asked", "Verified answers", "Helpful ratings"),
         (documents["indexed"], questions["total"], questions["verified"], feedback["helpful"]),
     ):
-        column.metric(label, value)
+        column.metric(label, value, border=True)
 
 
 def overview():
@@ -168,19 +168,32 @@ def show_answer(question, *, namespace=""):
     if not answer:
         st.info("This question is still processing.")
         return
-    st.caption(f"{LABELS.get(question['status'], question['status'])} · Request ID {question['request_id']}")
-    if answer["body"] and answer["verification_passed"]:
+    status = question["status"]
+    verified = status == "answered" and answer["verification_passed"]
+    label = "Verified answer" if verified else LABELS.get(status, status)
+    color = "green" if verified else "red" if status.endswith("_error") else "gray"
+    st.badge(label, color=color)
+    if verified and answer["body"]:
         st.text(answer["body"])
         citation_chips(question["citations"], answer["id"], namespace, render_page)
     elif answer["reason"]:
-        st.text(answer["reason"])
+        if status.endswith("_error"):
+            st.error(answer["reason"])
+        else:
+            st.info(answer["reason"])
     elif answer["body"]:
         st.info("This earlier answer has no verification record.")
+    with st.expander("Answer details"):
+        st.json({key: answer[key] for key in (
+            "provider", "model", "api_outcome", "provider_response_id", "verification_passed", "error_code"
+        )} | {"request_id": question["request_id"], "question_id": question["id"], "answer_id": answer["id"]})
     if namespace == "assistant" and answer["retryable"]:
         if st.button("Retry question", key=f"retry_{question['id']}"):
             submit_question(question["question_text"], question["course_id"], question["document_id"])
             st.rerun()
     if question["status"] == "answered" and answer["verification_passed"]:
+        if answer["rating"]:
+            st.caption("Your feedback: " + answer["rating"].replace("_", " ").capitalize())
         left, right = st.columns(2)
         for column, rating, label in ((left, "helpful", "Helpful"), (right, "not_helpful", "Not helpful")):
             if column.button(label, key=f"{namespace}_{answer['id']}_{rating}", disabled=answer["rating"] == rating):
@@ -202,12 +215,15 @@ def assistant():
     if st.button("New conversation"):
         st.session_state.conversation_id = str(uuid.uuid4())
         st.rerun()
-    course_id = course_select(get("/courses"), key="ask_course", all_courses=True)
-    documents = get("/documents", course_id=course_id, status="indexed", limit=100)["items"]
-    doc_id = document_select(documents, key="ask_doc", all_documents=True)
+    scope = st.columns(2)
+    with scope[0]:
+        course_id = course_select(get("/courses"), key="ask_course", all_courses=True)
+    with scope[1]:
+        documents = get("/documents", course_id=course_id, status="indexed", limit=100)["items"]
+        doc_id = document_select(documents, key="ask_doc", all_documents=True)
     with st.form("ask_question", clear_on_submit=True):
         text = st.text_area("Your question", max_chars=QUESTION_LIMIT)
-        ask = st.form_submit_button("Ask")
+        ask = st.form_submit_button("Ask", type="primary")
     if ask:
         if len(text.strip()) < 3 or not any(char.isalnum() for char in text):
             st.warning("Enter a question with at least three characters and a letter or number.")
@@ -216,7 +232,7 @@ def assistant():
     history = get("/questions/history", conversation_id=st.session_state.conversation_id, limit=PAGE_SIZE)
     if history["total"] > PAGE_SIZE:
         st.caption(f"Latest {PAGE_SIZE} turns. Earlier questions are in Question History.")
-    for item in history["items"]:
+    for item in reversed(history["items"]):
         with st.chat_message("user"):
             st.text(item["question_text"])
         with st.chat_message("assistant"):
@@ -294,7 +310,8 @@ def main():
     st.set_page_config(page_title="EduEvidence AI", page_icon="📚", layout="wide")
     st.sidebar.title("EduEvidence AI")
     st.sidebar.caption("Synthetic course workspace")
-    page = st.sidebar.radio("Workspace page", PAGES, key="workspace_page")
+    page = st.sidebar.radio("Workspace page", PAGES, key="workspace_page",
+                            help="Browse course PDFs, ask questions, or review saved activity.")
     st.sidebar.caption("Uploads and history are temporary and belong to this browser session.")
     st.title(page)
     if "workspace" not in st.session_state:
