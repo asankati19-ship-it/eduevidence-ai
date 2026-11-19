@@ -1,5 +1,8 @@
 # EduEvidence AI final readiness report
 
+**Current release decision — FAIL.** See the [November 19 hosted submission review](cloud_submission_review.md) for application revision `1ef04f9`, live browser outcomes, and test logs. The results below are archived from the earlier evaluation.
+
+
 **READY FOR SUBMISSION**
 
 Project 022 · LMS Document Q&A with Source Evidence · Career Lab Consulting · Review date November 18, 2026 · Submission deadline November 24, 2026

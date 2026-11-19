@@ -1,5 +1,8 @@
 # EduEvidence AI functional accuracy audit
 
+**Current release decision — FAIL.** See the [November 19 hosted submission review](cloud_submission_review.md) for application revision `1ef04f9`, live browser outcomes, and test logs. The results below are archived from the earlier evaluation.
+
+
 November 18, 2026 · Project 022 · Windows · Prompt and grounding version 2.4.0
 
 The original application saved all six deliberately incorrect candidate answers as successful. The updated application blocked all six, preserved their failed outcomes, and now requires both source validation and a separate verification verdict before showing a new answer as verified. The product continues to use its FastAPI, SQLite, React, and OpenAI integration. [Original probe failures](../verification/functional/accuracy-probes-baseline.txt) · [Final named regressions](../verification/functional/accuracy-regressions-2.4.txt)

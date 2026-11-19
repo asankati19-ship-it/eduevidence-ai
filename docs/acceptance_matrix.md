@@ -1,5 +1,8 @@
 # Project 022 acceptance matrix
 
+**Current release decision — FAIL.** See the [November 19 hosted submission review](cloud_submission_review.md) for application revision `1ef04f9`, live browser outcomes, and test logs. The results below are archived from the earlier evaluation.
+
+
 This matrix uses the original Career Lab Consulting brief and the final acceptance request. PASS means the implementation was exercised or the deliverable was directly inspected. The prior 43-case live benchmark is identified separately from the final sample rerun. [Final readiness report](final_readiness_report.md)
 
 | ID | Requirement | Implementation | Verification method | Actual evidence | Status | Required correction |

@@ -1,5 +1,8 @@
 # Testing report
 
+**Current release decision — FAIL.** See the [November 19 hosted submission review](cloud_submission_review.md) for application revision `1ef04f9`, live browser outcomes, and test logs. The results below are archived from the earlier evaluation.
+
+
 This report preserves the original implementation test run. The [final readiness report](final_readiness_report.md) records the final acceptance results.
 
 **Run date:** November 18, 2026  
