@@ -50,7 +50,7 @@ def download_rows(rows, filename):
 
 def getting_started(indexed, questions):
     destination = "Knowledge Assistant" if indexed else "Document Library"
-    with st.container(key="start_card"):
+    with st.container(key="start_card", border=True):
         copy, illustration = st.columns([3, 2], vertical_alignment="center")
         with copy:
             st.subheader("Ask your course library." if indexed else "Start your course library.")

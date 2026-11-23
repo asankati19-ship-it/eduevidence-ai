@@ -5,16 +5,47 @@
     --ee-edge: color-mix(in srgb, currentColor 18%, transparent);
     --ee-wash: color-mix(in srgb, currentColor 3%, transparent);
     --ee-shadow: 0 3px 16px rgb(15 35 48 / 7%);
+    --ee-accent: #17695d;
+    --ee-accent-hover: #10574d;
+    --ee-accent-wash: color-mix(in srgb, #76ad9b 10%, transparent);
 }
 h1, h2, h3 { letter-spacing: -.035em; }
 .st-key-start_card {
     padding: clamp(1.1rem, 2.6vw, 2.15rem);
     border: 1px solid var(--ee-edge);
-    border-radius: 1.1rem;
-    background: var(--ee-wash);
+    border-radius: 1rem;
+    background: var(--ee-accent-wash);
+    box-shadow: var(--ee-shadow);
 }
 .st-key-start_card h3 { font-size: clamp(1.7rem, 3.1vw, 2.65rem); line-height: 1.1; }
 .st-key-start_card p { max-width: 46ch; }
+[data-testid="stMain"] :is(.stButton, .stFormSubmitButton, .stDownloadButton) button {
+    min-height: 44px;
+    padding: .55rem 1rem;
+    border: 1px solid var(--ee-edge);
+    border-radius: 8px;
+    font-weight: 650;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+[data-testid="stMain"] :is(.stButton, .stFormSubmitButton, .stDownloadButton) button:enabled:hover {
+    border-color: var(--ee-accent);
+    background-color: var(--ee-accent-wash);
+    color: inherit;
+}
+[data-testid="stMain"] :is(.stButton, .stFormSubmitButton, .stDownloadButton) button[kind^="primary"] {
+    color: white;
+    background-color: var(--ee-accent);
+    border-color: var(--ee-accent);
+}
+[data-testid="stMain"] :is(.stButton, .stFormSubmitButton, .stDownloadButton) button[kind^="primary"]:enabled:hover {
+    color: white;
+    background-color: var(--ee-accent-hover);
+    border-color: var(--ee-accent-hover);
+}
+[data-testid="stMain"] :is(.stButton, .stFormSubmitButton, .stDownloadButton) button:focus-visible {
+    outline: 3px solid #56998b;
+    outline-offset: 3px;
+}
 .ee-illustration {
     position: relative;
     width: min(100%, 19rem);
@@ -69,21 +100,29 @@ h1, h2, h3 { letter-spacing: -.035em; }
 [class*="st-key-shelf_card_"] [data-testid="stElementContainer"]:has(.stButton) { margin-top: auto; }
 .ee-stats {
     display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin: 0; padding: .85rem 0;
+    margin: 0; padding: 0;
     border: 1px solid var(--ee-edge); border-radius: 1rem;
+    background: var(--ee-wash);
 }
-.ee-stats > div { padding: .2rem clamp(.75rem, 2vw, 1.6rem); }
+.ee-stats > div { min-width: 0; padding: 1rem clamp(.85rem, 2vw, 1.5rem); }
 .ee-stats > div + div { border-inline-start: 1px solid var(--ee-edge); }
-.ee-stats dt { font-weight: 550; font-size: .875rem; }
-.ee-stats dd { margin: .25rem 0 0; font: 750 1.85rem/1.15 Manrope, sans-serif; font-variant-numeric: tabular-nums; }
+.ee-stats dt { font: 600 .875rem/1.35 Manrope, sans-serif; }
+.ee-stats dd {
+    margin: .35rem 0 0;
+    font: 750 clamp(1.65rem, 2.5vw, 2.15rem)/1.1 Manrope, sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.035em;
+}
 [data-testid="stChatMessage"] pre { white-space: pre-wrap; overflow-wrap: anywhere; font-family: inherit; }
 @media (max-width: 700px) {
     [data-testid="stMainBlockContainer"] { padding-top: 2.75rem; }
     .st-key-start_card [data-testid="stColumn"]:has(.ee-illustration) { display: none; }
-    .ee-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem 0; }
+    .ee-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .ee-stats > div:nth-child(3) { border-inline-start: 0; }
+    .ee-stats > div:nth-child(n + 3) { border-block-start: 1px solid var(--ee-edge); }
 }
 @media (prefers-reduced-motion: reduce) {
-    [class*="st-key-shelf_card_"] { transition: none; }
+    [class*="st-key-shelf_card_"],
+    [data-testid="stMain"] :is(.stButton, .stFormSubmitButton, .stDownloadButton) button { transition: none; }
 }
 
