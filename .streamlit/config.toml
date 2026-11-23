@@ -1,12 +1,24 @@
 [server]
 maxUploadSize = 20
+enableStaticServing = true
 
 [browser]
 gatherUsageStats = false
 
 [theme]
 base = "light"
-primaryColor = "#13756a"
-backgroundColor = "#ffffff"
-secondaryBackgroundColor = "#f1f6f9"
-textColor = "#17344b"
+primaryColor = "#116258"
+backgroundColor = "#fcfbf7"
+secondaryBackgroundColor = "#edf2ee"
+textColor = "#182f31"
+headingFont = "Manrope"
+headingFontWeights = [800, 740, 680]
+baseRadius = "0.7rem"
+borderColor = "#cbd7d2"
+showWidgetBorder = true
+
+[[theme.fontFaces]]
+family = "Manrope"
+url = "app/static/fonts/manrope.woff2"
+weight = "200 800"
+style = "normal"

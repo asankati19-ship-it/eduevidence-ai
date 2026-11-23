@@ -1,6 +1,7 @@
 """Streamlit Community Cloud frontend for the existing EduEvidence API."""
 
 import uuid
+from pathlib import Path
 
 import httpx
 from pydantic import SecretStr
@@ -90,8 +91,8 @@ def stats(result):
 
 def overview():
     result = get("/analytics/overview")
-    stats(result)
     getting_started(result["documents"]["indexed"], result["questions"]["total"])
+    stats(result)
     st.subheader("Recent activity")
     audit_table(result["activity"], get)
 
@@ -222,7 +223,8 @@ def assistant():
         documents = get("/documents", course_id=course_id, status="indexed", limit=100)["items"]
         doc_id = document_select(documents, key="ask_doc", all_documents=True)
     with st.form("ask_question", clear_on_submit=True):
-        text = st.text_area("Your question", max_chars=QUESTION_LIMIT)
+        text = st.text_area("Your question", max_chars=QUESTION_LIMIT,
+                            placeholder="What would you like to find in your course material?")
         ask = st.form_submit_button("Ask", type="primary")
     if ask:
         if len(text.strip()) < 3 or not any(char.isalnum() for char in text):
@@ -308,6 +310,7 @@ def create_workspace():
 
 def main():
     st.set_page_config(page_title="EduEvidence AI", page_icon="📚", layout="wide")
+    st.html(Path(__file__).with_name("workspace.css"))
     st.sidebar.title("EduEvidence AI")
     st.sidebar.caption("Synthetic course workspace")
     page = st.sidebar.radio("Workspace page", PAGES, key="workspace_page",

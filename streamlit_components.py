@@ -7,10 +7,10 @@ def getting_started(indexed, questions):
     if questions:
         return
     destination = "Knowledge Assistant" if indexed else "Document Library"
-    with st.container(border=True):
-        st.subheader("Getting started")
-        st.write("Choose a course document and ask your first question about it."
-                 if indexed else "Upload a searchable course PDF to ask your first question.")
+    with st.container(key="start_card"):
+        st.subheader("Ask your first question" if indexed else "Add your first course PDF")
+        st.write("Choose a course PDF, ask about its contents, and follow the citation to the original page."
+                 if indexed else "Upload a searchable PDF to make its pages available in the Knowledge Assistant.")
         st.button(f"Open {destination}", type="primary", on_click=_navigate, args=(destination,))
 
 

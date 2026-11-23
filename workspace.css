@@ -1,0 +1,66 @@
+/* Keep native controls, keyboard focus, and the mobile navigation drawer. */
+[data-testid="stMainBlockContainer"] {
+    max-width: 82rem;
+    padding-top: 3.8rem;
+}
+h1, h2, h3 { letter-spacing: -.035em; }
+[data-testid="stSidebar"] { border-inline-end: 1px solid #cbd7d2; }
+[data-testid="stSidebar"] h1 { font-size: 1.75rem; }
+[data-testid="stSidebar"] [role="radiogroup"] { gap: .25rem; }
+[data-testid="stSidebar"] [role="radiogroup"] label {
+    margin: 0;
+    padding: .55rem .75rem;
+    border-radius: .55rem;
+}
+[data-testid="stSidebar"] label:has(input:checked) {
+    background: #d6e7df;
+    box-shadow: inset 3px 0 #116258;
+}
+.st-key-start_card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: #f5faf4;
+    background: linear-gradient(115deg, #123b3c, #194f4d);
+    border-radius: 1.15rem;
+    padding: clamp(1.35rem, 4vw, 3.2rem);
+    margin-bottom: .45rem;
+}
+.st-key-start_card::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 28%;
+    height: 145%;
+    right: -4%;
+    top: -16%;
+    transform: rotate(18deg);
+    background: repeating-linear-gradient(90deg, transparent 0 13px, #82b3a338 13px 15px);
+    border-inline-start: 2px solid #b2cec276;
+    pointer-events: none;
+}
+.st-key-start_card h3 { color: #fff; font-size: clamp(1.65rem, 3.5vw, 2.65rem); }
+.st-key-start_card p { max-width: 43ch; }
+.st-key-start_card button {
+    background: #e0efbd;
+    color: #183c32;
+    border-color: #e0efbd;
+    font-weight: 650;
+}
+.st-key-start_card button:hover { background: #f0f8d9; color: #163d32; }
+[data-testid="stMetric"], [data-testid="stForm"], [data-testid="stChatMessage"] {
+    background-color: #fff;
+}
+[data-testid="stMetric"] { border-top: 3px solid #86ac9b; }
+[data-testid="stMetricValue"] { font-variant-numeric: tabular-nums; }
+[data-testid="stChatMessage"] { border: 1px solid #cbd7d2; }
+[data-testid="stChatMessage"] pre {
+    font-family: inherit;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.65;
+}
+@media (max-width: 700px) {
+    [data-testid="stMainBlockContainer"] { padding-top: 2.6rem; }
+    .st-key-start_card::after { width: 12%; }
+}
