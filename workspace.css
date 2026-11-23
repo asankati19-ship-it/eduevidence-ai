@@ -1,87 +1,114 @@
-/* Keep native controls, keyboard focus, and the mobile navigation drawer. */
+/* Mix surfaces with the active text color so light and dark themes keep their contrast. */
 [data-testid="stMainBlockContainer"] {
-    max-width: 82rem;
-    padding-top: 3.8rem;
+    max-width: 78rem;
+    padding-top: 3.5rem;
+    --ee-edge: color-mix(in srgb, currentColor 18%, transparent);
+    --ee-wash: color-mix(in srgb, currentColor 3%, transparent);
+    --ee-shadow: 0 3px 16px rgb(15 35 48 / 7%);
 }
 h1, h2, h3 { letter-spacing: -.035em; }
-[data-testid="stSidebar"] { border-inline-end: 1px solid #cbd7d2; }
-[data-testid="stSidebar"] h1 { font-size: 1.75rem; }
-[data-testid="stSidebar"] [role="radiogroup"] { gap: .25rem; }
-[data-testid="stSidebar"] [role="radiogroup"] label {
-    margin: 0;
-    padding: .55rem .75rem;
-    border-radius: .55rem;
-}
-[data-testid="stSidebar"] label:has(input:checked) {
-    background: #d6e7df;
-    box-shadow: inset 3px 0 #116258;
-}
-.st-key-start_card {
+[data-testid="stSidebar"] h1 { font-size: 1.65rem; }
+.st-key-workspace_page [role="radiogroup"] { gap: .35rem; }
+.st-key-workspace_page [role="radiogroup"] label {
     position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    color: #f5faf4;
-    background: radial-gradient(circle at 83% 28%, #ffcaa2 0 5.5%, transparent 5.7%),
-                linear-gradient(112deg, #172945 25%, #324e67 73%, #607e85);
-    border-radius: 1.15rem;
-    padding: clamp(1.35rem, 4vw, 3.2rem);
-    margin-bottom: .45rem;
+    width: 100%;
+    margin: 0;
+    padding: .58rem .85rem;
+    border-radius: .7rem;
+    cursor: pointer;
 }
-.st-key-start_card::after {
-    content: "";
+/* Hide only Base Web's painted radio circle. The input retains its native keyboard behavior. */
+.st-key-workspace_page label[data-baseweb="radio"] > div:first-of-type:not(:last-child) {
     position: absolute;
-    z-index: -1;
-    inset: 25% 0 0 47%;
-    background: repeating-linear-gradient(166deg, #88a9ab 0 1px, transparent 2px 9px), #446775;
-    clip-path: polygon(0 100%, 27% 48%, 41% 66%, 66% 19%, 76% 38%, 100% 0, 100% 100%);
-    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
 }
-.st-key-start_card h3 {
-    color: #fffaf0;
-    font: 500 clamp(2.2rem, 4.6vw, 4.4rem)/1.05 Georgia, serif;
-    max-width: 65%;
+.st-key-workspace_page label:hover { background: rgb(255 255 255 / 8%); }
+.st-key-workspace_page label:has(input:checked) {
+    background: #374e66;
+    color: #fff;
+    box-shadow: inset 3px 0 #b4e5cf;
 }
-.st-key-start_card p { max-width: min(43ch, 65%); }
-.st-key-start_card button p { max-width: none; }
-.st-key-start_card button {
-    background: #ffdec1;
-    color: #213049;
-    border-color: #ffdec1;
-    font-weight: 650;
+.st-key-workspace_page label:has(input:focus-visible) { outline: 2px solid currentColor; }
+.st-key-start_card {
+    padding: clamp(1.1rem, 2.6vw, 2.15rem);
+    border: 1px solid var(--ee-edge);
+    border-radius: 1.1rem;
+    background: var(--ee-wash);
 }
-.st-key-start_card button:hover { background: #f0f8d9; color: #163d32; }
-[data-testid="stMetric"], [data-testid="stForm"], [data-testid="stChatMessage"] {
-    background-color: #fff;
+.st-key-start_card h3 { font-size: clamp(1.7rem, 3.1vw, 2.65rem); line-height: 1.1; }
+.st-key-start_card p { max-width: 46ch; }
+.ee-illustration {
+    position: relative;
+    width: min(100%, 19rem);
+    height: 8.5rem;
+    margin: auto;
+    color: #527d73;
+    background: radial-gradient(ellipse, #a6d7c747, transparent 70%);
 }
-[data-testid="stMetric"] { border-top: 3px solid #86ac9b; }
-[data-testid="stMetricValue"] { font-variant-numeric: tabular-nums; }
-.book-cover {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1.2rem;
-    min-height: 9.5rem;
-    padding: 1rem 1.15rem 1.2rem 1.55rem;
-    color: #fff9ec;
-    border-radius: .25rem .7rem .7rem .25rem;
-    box-shadow: inset 6px 0 #ffffff18, inset 8px 0 #00000025;
-    background: linear-gradient(145deg, transparent 72%, #ffffff10 72%), #325769;
+.ee-paper {
+    position: absolute;
+    inset: 7% 25% 9% 25%;
+    padding: 1.1rem .85rem;
+    transform: rotate(-5deg);
+    border: 1px solid #9ab5ad;
+    border-radius: .45rem;
+    background: #fcfcf6;
+    box-shadow: 6px 5px #d6e4da, 7px 6px #98b2aa;
 }
-.st-key-shelf_1 .book-cover { background-color: #854c39; }
-.st-key-shelf_2 .book-cover { background-color: #455e49; }
-.book-cover span { font: 650 .78rem Manrope, sans-serif; letter-spacing: .11em; }
-.book-cover strong { font: 500 1.55rem/1.12 Georgia, serif; overflow-wrap: anywhere; }
-[data-testid="stSidebar"] label:has(input:checked) { background: #334862; box-shadow: inset 3px 0 #ffca9d; }
-[data-testid="stChatMessage"] { border: 1px solid #cbd7d2; }
-[data-testid="stChatMessage"] pre {
-    font-family: inherit;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    line-height: 1.65;
+.ee-paper i { display: block; height: .29rem; margin: .52rem 0; border-radius: 1rem; background: #c3d3cc; }
+.ee-paper i:first-child { width: 45%; background: #679887; }
+.ee-paper i:nth-child(3) { background: #e7c782; width: 83%; }
+.ee-lens {
+    position: absolute;
+    width: 3.25rem; height: 3.25rem;
+    top: 42%; left: 55%;
+    border: .27rem solid currentColor;
+    border-radius: 50%; background: #c9e7da77;
 }
+.ee-lens::after {
+    content: ""; position: absolute; width: 1.65rem; height: .35rem;
+    top: 100%; left: 80%; transform-origin: left; transform: rotate(45deg);
+    border-radius: 1rem; background: currentColor;
+}
+[class*="st-key-shelf_card_"] {
+    border-radius: 1rem;
+    box-shadow: var(--ee-shadow);
+    padding: 1.15rem;
+    transition: box-shadow .16s ease, border-color .16s ease;
+}
+[class*="st-key-shelf_card_"]:is(:hover, :focus-within) {
+    border-color: color-mix(in srgb, currentColor 36%, transparent);
+    box-shadow: 0 6px 18px rgb(15 35 48 / 13%);
+}
+.ee-course span {
+    display: inline-block; padding: .25rem .65rem;
+    border-radius: 99rem; background: #dceee5; color: #225443;
+    font: 700 .75rem/1.35 Manrope, sans-serif; letter-spacing: .04em;
+}
+.st-key-shelf_card_1 .ee-course span { background: #e4eafa; color: #384c79; }
+.st-key-shelf_card_2 .ee-course span { background: #fae8d9; color: #76492e; }
+.ee-course h3 { margin: .85rem 0 0; padding: 0; font-size: 1.22rem; line-height: 1.3; overflow-wrap: anywhere; }
+[class*="st-key-shelf_card_"] [data-testid="stElementContainer"]:has(.stButton) { margin-top: auto; }
+.ee-stats {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0; padding: .85rem 0;
+    border: 1px solid var(--ee-edge); border-radius: 1rem;
+}
+.ee-stats > div { padding: .2rem clamp(.75rem, 2vw, 1.6rem); }
+.ee-stats > div + div { border-inline-start: 1px solid var(--ee-edge); }
+.ee-stats dt { font-weight: 550; font-size: .875rem; }
+.ee-stats dd { margin: .25rem 0 0; font: 750 1.85rem/1.15 Manrope, sans-serif; font-variant-numeric: tabular-nums; }
+[data-testid="stChatMessage"] pre { white-space: pre-wrap; overflow-wrap: anywhere; font-family: inherit; }
 @media (max-width: 700px) {
-    [data-testid="stMainBlockContainer"] { padding-top: 2.6rem; }
-    .st-key-start_card::after { left: 72%; }
-    .st-key-start_card h3, .st-key-start_card p { max-width: 88%; }
-    .st-key-start_card button p { max-width: none; }
+    [data-testid="stMainBlockContainer"] { padding-top: 2.75rem; }
+    .st-key-start_card [data-testid="stColumn"]:has(.ee-illustration) { display: none; }
+    .ee-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem 0; }
+    .ee-stats > div:nth-child(3) { border-inline-start: 0; }
 }
+@media (prefers-reduced-motion: reduce) {
+    [class*="st-key-shelf_card_"] { transition: none; }
+}
+

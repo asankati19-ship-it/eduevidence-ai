@@ -1,19 +1,50 @@
 """Presentation components for one EduEvidence browser session."""
 
 from html import escape
+from pathlib import Path
 
 import streamlit as st
+
+
+def apply_workspace_styles():
+    css = Path(__file__).with_name("workspace.css").read_text(encoding="utf-8")
+    st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
+
+NAV_ICONS = {
+    "Overview": "space_dashboard", "Document Library": "library_books",
+    "Knowledge Assistant": "forum", "Question History": "history",
+    "Feedback & Analytics": "bar_chart", "Audit Logs": "list_alt",
+    "System Health": "monitor_heart",
+}
+
+
+def workspace_navigation(pages):
+    with st.sidebar:
+        st.title("EduEvidence AI")
+        st.caption("Course workspace")
+        page = st.radio("Workspace page", pages, key="workspace_page",
+                        label_visibility="collapsed",
+                        format_func=lambda name: f":material/{NAV_ICONS[name]}: {name}")
+        st.divider()
+        st.caption("Uploads and history are temporary and belong to this browser session.")
+    return page
 
 
 def getting_started(indexed, questions):
     destination = "Knowledge Assistant" if indexed else "Document Library"
     with st.container(key="start_card"):
-        st.subheader("Ask your course library." if indexed else "Start your course library.")
-        st.write("Find an answer in your course PDFs, then read the page that supports it."
-                 if indexed else "Add a searchable course PDF to start asking questions about its pages.")
-        label = "Continue in Knowledge Assistant" if indexed and questions else f"Open {destination}"
-        st.button(label, icon=":material/arrow_forward:", type="primary",
-                  on_click=_navigate, args=(destination,))
+        copy, illustration = st.columns([3, 2], vertical_alignment="center")
+        with copy:
+            st.subheader("Ask your course library." if indexed else "Start your course library.")
+            st.write("Ask a question about your course PDFs and follow its citation to the original page."
+                     if indexed else "Upload a searchable PDF to ask questions about your course.")
+            label = "Continue in Knowledge Assistant" if indexed and questions else f"Open {destination}"
+            st.button(label, icon=":material/arrow_forward:", type="primary",
+                      on_click=_navigate, args=(destination,))
+        with illustration:
+            st.html('<div class="ee-illustration" aria-hidden="true"><div class="ee-paper">'
+                    '<i></i><i></i><i></i><i></i></div><div class="ee-lens"></div></div>')
 
 
 def course_shelf(documents):
@@ -22,11 +53,11 @@ def course_shelf(documents):
     st.subheader("On your bookshelf")
     cols = st.columns(len(documents))
     for i, (column, doc) in enumerate(zip(cols, documents)):
-        with column, st.container(key=f"shelf_{i}", border=True):
-            st.html(f'<div class="book-cover"><span>{escape(doc["course_code"])}</span>'
-                    f'<strong>{escape(doc["title"])}</strong></div>')
+        with column, st.container(key=f"shelf_card_{i}", border=True, height="stretch"):
+            st.html(f'<div class="ee-course"><span>{escape(doc["course_code"])}</span>'
+                    f'<h3>{escape(doc["title"])}</h3></div>')
             st.caption(f'{doc["page_count"]} pages · {doc["chunk_count"]} indexed passages')
-            st.button("Ask about this PDF", icon=":material/chat_bubble_outline:",
+            st.button("Ask", icon=":material/chat_bubble_outline:", help=f'Ask about {doc["title"]}',
                       key=f'shelf_ask_{doc["id"]}', on_click=_open_document,
                       args=(doc["course_id"], doc["id"]))
 
@@ -39,6 +70,16 @@ def _open_document(course_id, document_id):
 
 def _navigate(destination):
     st.session_state.workspace_page = destination
+
+
+def stats(result):
+    metrics = (("Indexed documents", result["documents"]["indexed"]),
+               ("Questions asked", result["questions"]["total"]),
+               ("Verified answers", result["questions"]["verified"]),
+               ("Helpful ratings", result["feedback"]["helpful"]))
+    cells = "".join(f"<div><dt>{label}</dt><dd>{int(value):,}</dd></div>"
+                    for label, value in metrics)
+    st.html(f'<dl class="ee-stats">{cells}</dl>')
 
 
 def document_table(documents):

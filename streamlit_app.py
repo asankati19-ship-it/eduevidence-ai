@@ -1,13 +1,15 @@
 """Streamlit Community Cloud frontend for the existing EduEvidence API."""
 
 import uuid
-from pathlib import Path
 
 import httpx
 from pydantic import SecretStr
 import streamlit as st
 
-from streamlit_components import audit_table, citation_chips, course_shelf, document_table, getting_started
+from streamlit_components import (
+    apply_workspace_styles, audit_table, citation_chips, course_shelf, document_table,
+    getting_started, stats, workspace_navigation,
+)
 from backend.app.core.config import Settings
 from backend.app.streamlit_workspace import Workspace
 
@@ -77,16 +79,6 @@ def document_select(documents, *, key, all_documents=False):
 def render_page(document_id, page_number):
     image = request(f"/documents/{document_id}/pages/{page_number}").content
     st.image(image, caption=f"Original PDF · Page {page_number}")
-
-
-def stats(result):
-    documents, questions, feedback = (result[key] for key in ("documents", "questions", "feedback"))
-    for column, label, value in zip(
-        st.columns(4),
-        ("Indexed documents", "Questions asked", "Verified answers", "Helpful ratings"),
-        (documents["indexed"], questions["total"], questions["verified"], feedback["helpful"]),
-    ):
-        column.metric(label, value, border=True)
 
 
 def overview():
@@ -316,12 +308,8 @@ def create_workspace():
 
 def main():
     st.set_page_config(page_title="EduEvidence AI", page_icon="📚", layout="wide")
-    st.html(Path(__file__).with_name("workspace.css"))
-    st.sidebar.title("EduEvidence AI")
-    st.sidebar.caption("Course workspace")
-    page = st.sidebar.radio("Workspace page", PAGES, key="workspace_page",
-                            help="Browse course PDFs, ask questions, or review saved activity.")
-    st.sidebar.caption("Uploads and history are temporary and belong to this browser session.")
+    apply_workspace_styles()
+    page = workspace_navigation(PAGES)
     st.title(page)
     if "workspace" not in st.session_state:
         with st.spinner("Starting your course workspace…"):
