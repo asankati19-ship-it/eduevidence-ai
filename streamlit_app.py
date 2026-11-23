@@ -7,7 +7,7 @@ import httpx
 from pydantic import SecretStr
 import streamlit as st
 
-from streamlit_components import audit_table, citation_chips, document_table, getting_started
+from streamlit_components import audit_table, citation_chips, course_shelf, document_table, getting_started
 from backend.app.core.config import Settings
 from backend.app.streamlit_workspace import Workspace
 
@@ -92,9 +92,11 @@ def stats(result):
 def overview():
     result = get("/analytics/overview")
     getting_started(result["documents"]["indexed"], result["questions"]["total"])
+    course_shelf(get("/documents", status="indexed", limit=3)["items"])
+    st.subheader("Workspace activity")
     stats(result)
-    st.subheader("Recent activity")
-    audit_table(result["activity"], get)
+    with st.expander("Recent audit events"):
+        audit_table(result["activity"], get)
 
 
 def library():
@@ -213,9 +215,7 @@ def submit_question(text, course_id, doc_id):
 def assistant():
     if "conversation_id" not in st.session_state:
         st.session_state.conversation_id = str(uuid.uuid4())
-    if st.button("New conversation"):
-        st.session_state.conversation_id = str(uuid.uuid4())
-        st.rerun()
+    st.caption("Choose the sources to search. Open a citation under a verified answer to inspect its evidence.")
     scope = st.columns(2)
     with scope[0]:
         course_id = course_select(get("/courses"), key="ask_course", all_courses=True)
@@ -225,16 +225,22 @@ def assistant():
     with st.form("ask_question", clear_on_submit=True):
         text = st.text_area("Your question", max_chars=QUESTION_LIMIT,
                             placeholder="What would you like to find in your course material?")
-        ask = st.form_submit_button("Ask", type="primary")
+        ask = st.form_submit_button("Ask", icon=":material/arrow_upward:", type="primary")
     if ask:
         if len(text.strip()) < 3 or not any(char.isalnum() for char in text):
             st.warning("Enter a question with at least three characters and a letter or number.")
         else:
             submit_question(text, course_id, doc_id)
     history = get("/questions/history", conversation_id=st.session_state.conversation_id, limit=PAGE_SIZE)
+    if history["total"]:
+        heading, action = st.columns([3, 2])
+        heading.subheader("Latest questions")
+        if action.button("New conversation", icon=":material/add:"):
+            st.session_state.conversation_id = str(uuid.uuid4())
+            st.rerun()
     if history["total"] > PAGE_SIZE:
         st.caption(f"Latest {PAGE_SIZE} turns. Earlier questions are in Question History.")
-    for item in reversed(history["items"]):
+    for item in history["items"]:
         with st.chat_message("user"):
             st.text(item["question_text"])
         with st.chat_message("assistant"):
@@ -312,7 +318,7 @@ def main():
     st.set_page_config(page_title="EduEvidence AI", page_icon="📚", layout="wide")
     st.html(Path(__file__).with_name("workspace.css"))
     st.sidebar.title("EduEvidence AI")
-    st.sidebar.caption("Synthetic course workspace")
+    st.sidebar.caption("Course workspace")
     page = st.sidebar.radio("Workspace page", PAGES, key="workspace_page",
                             help="Browse course PDFs, ask questions, or review saved activity.")
     st.sidebar.caption("Uploads and history are temporary and belong to this browser session.")

@@ -1,17 +1,40 @@
 """Presentation components for one EduEvidence browser session."""
 
+from html import escape
+
 import streamlit as st
 
 
 def getting_started(indexed, questions):
-    if questions:
-        return
     destination = "Knowledge Assistant" if indexed else "Document Library"
     with st.container(key="start_card"):
-        st.subheader("Ask your first question" if indexed else "Add your first course PDF")
-        st.write("Choose a course PDF, ask about its contents, and follow the citation to the original page."
-                 if indexed else "Upload a searchable PDF to make its pages available in the Knowledge Assistant.")
-        st.button(f"Open {destination}", type="primary", on_click=_navigate, args=(destination,))
+        st.subheader("Ask your course library." if indexed else "Start your course library.")
+        st.write("Find an answer in your course PDFs, then read the page that supports it."
+                 if indexed else "Add a searchable course PDF to start asking questions about its pages.")
+        label = "Continue in Knowledge Assistant" if indexed and questions else f"Open {destination}"
+        st.button(label, icon=":material/arrow_forward:", type="primary",
+                  on_click=_navigate, args=(destination,))
+
+
+def course_shelf(documents):
+    if not documents:
+        return
+    st.subheader("On your bookshelf")
+    cols = st.columns(len(documents))
+    for i, (column, doc) in enumerate(zip(cols, documents)):
+        with column, st.container(key=f"shelf_{i}", border=True):
+            st.html(f'<div class="book-cover"><span>{escape(doc["course_code"])}</span>'
+                    f'<strong>{escape(doc["title"])}</strong></div>')
+            st.caption(f'{doc["page_count"]} pages · {doc["chunk_count"]} indexed passages')
+            st.button("Ask about this PDF", icon=":material/chat_bubble_outline:",
+                      key=f'shelf_ask_{doc["id"]}', on_click=_open_document,
+                      args=(doc["course_id"], doc["id"]))
+
+
+def _open_document(course_id, document_id):
+    st.session_state.ask_course = course_id
+    st.session_state.ask_doc = document_id
+    _navigate("Knowledge Assistant")
 
 
 def _navigate(destination):

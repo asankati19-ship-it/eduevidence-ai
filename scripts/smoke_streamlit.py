@@ -23,6 +23,13 @@ def run():
             refresh()
 
         refresh()
+        featured = workspace.request("GET", "/documents", params={"status": "indexed", "limit": 3}).json()["items"][0]
+        app.button(key=f"shelf_ask_{featured['id']}").click()
+        refresh()
+        assert app.title[0].value == "Knowledge Assistant"
+        assert app.selectbox(key="ask_course").value == featured["course_id"]
+        assert app.selectbox(key="ask_doc").value == featured["id"]
+        navigate("Overview")
         next(b for b in app.button if b.label == "Open Knowledge Assistant").click()
         refresh()
         assert app.title[0].value == "Knowledge Assistant"
