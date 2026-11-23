@@ -7,10 +7,12 @@ from streamlit.testing.v1 import AppTest
 from backend.app.core.config import ROOT, Settings
 from backend.app.streamlit_workspace import Workspace
 from backend.tests.fixtures import FixtureProvider, PYTHON_QUESTION, PYTHON_QUOTE
+from streamlit_components import PAGE_FILES
 
 
 def run():
-    with closing(Workspace(Settings(), provider=FixtureProvider())) as workspace:
+    provider = FixtureProvider()
+    with closing(Workspace(Settings(), provider=provider)) as workspace:
         app = AppTest.from_file(str(ROOT / "streamlit_app.py"), default_timeout=45)
         app.session_state["workspace"] = workspace
 
@@ -19,7 +21,7 @@ def run():
             assert not app.exception, [error.message for error in app.exception]
 
         def navigate(page):
-            app.radio(key="workspace_page").set_value(page)
+            app.switch_page(PAGE_FILES[page])
             refresh()
 
         refresh()
@@ -33,11 +35,19 @@ def run():
         next(b for b in app.button if b.label == "Open Knowledge Assistant").click()
         refresh()
         assert app.title[0].value == "Knowledge Assistant"
+        navigate("Knowledge Assistant")
         app.text_area[0].input(PYTHON_QUESTION)
         next(b for b in app.button if b.label == "Ask").click()
         refresh()
         trace = workspace.request("GET", "/questions/history").json()["items"][0]
         assert trace["answer"]["verification_passed"]
+        calls = len(provider.calls)
+        assert calls == 1
+        app.text_area[0].input(PYTHON_QUESTION)
+        next(b for b in app.button if b.label == "Ask").click()
+        refresh()
+        assert len(provider.calls) == calls
+        assert workspace.request("GET", "/questions/history").json()["total"] == 1
         citation, = trace["citations"]
         app.pills[0].set_value(citation["chunk_id"])
         refresh()
@@ -75,5 +85,35 @@ def run():
         print("Overview CTA, verified citation chip, PDF preview, library metadata and audit labels passed.")
 
 
+def public_visit():
+    app = AppTest.from_file(str(ROOT / "streamlit_app.py"), default_timeout=60)
+    app.secrets["OPENAI_API_KEY"] = ""
+    app.run()
+    assert not app.exception and app.title[0].value == "EduEvidence AI"
+    assert any("learners and instructors" in node.value for node in app.markdown)
+    app.button(key="run_example").click().run()
+    assert not app.exception
+    page_text = " ".join(" ".join(node.value.split()) for node in app.text)
+    assert all(part in page_text for part in ("four graded labs", "70% overall", "Pass on the capstone"))
+    assert any(b.label == "Download page 4" for b in app.get("download_button"))
+    for name, path in PAGE_FILES.items():
+        app.switch_page(path).run()
+        assert not app.exception, name
+    app.switch_page(PAGE_FILES["Document Library"]).run()
+    app.file_uploader[0].upload("broken.pdf", b"just text", "application/pdf")
+    next(b for b in app.button if b.label == "Upload and index").click().run()
+    assert not app.exception and any("valid PDF" in w.value for w in app.warning)
+    assert len(app.dataframe[0].value) == 3
+    app.switch_page(PAGE_FILES["Knowledge Assistant"]).run()
+    app.text_area[0].input(PYTHON_QUESTION)
+    next(b for b in app.button if b.label == "Ask").click().run()
+    assert not app.exception and sum("OPENAI_API_KEY" in msg.value for msg in app.info) == 1
+    app.switch_page(PAGE_FILES["Overview"]).run()
+    assert not app.exception and app.button(key="run_example")
+    app.session_state["workspace"].close()
+    print("All seven pages, first visit, free example, bad upload recovery and missing-secret handling passed.")
+
+
 if __name__ == "__main__":
     run()
+    public_visit()

@@ -7,31 +7,6 @@
     --ee-shadow: 0 3px 16px rgb(15 35 48 / 7%);
 }
 h1, h2, h3 { letter-spacing: -.035em; }
-[data-testid="stSidebar"] h1 { font-size: 1.65rem; }
-.st-key-workspace_page [role="radiogroup"] { gap: .35rem; }
-.st-key-workspace_page [role="radiogroup"] label {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: .58rem .85rem;
-    border-radius: .7rem;
-    cursor: pointer;
-}
-/* Hide only Base Web's painted radio circle. The input retains its native keyboard behavior. */
-.st-key-workspace_page label[data-baseweb="radio"] > div:first-of-type:not(:last-child) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-}
-.st-key-workspace_page label:hover { background: rgb(255 255 255 / 8%); }
-.st-key-workspace_page label:has(input:checked) {
-    background: #374e66;
-    color: #fff;
-    box-shadow: inset 3px 0 #b4e5cf;
-}
-.st-key-workspace_page label:has(input:focus-visible) { outline: 2px solid currentColor; }
 .st-key-start_card {
     padding: clamp(1.1rem, 2.6vw, 2.15rem);
     border: 1px solid var(--ee-edge);

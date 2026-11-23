@@ -1,6 +1,8 @@
 """Presentation components for one EduEvidence browser session."""
 
+import csv
 from html import escape
+from io import StringIO
 from pathlib import Path
 
 import streamlit as st
@@ -19,16 +21,31 @@ NAV_ICONS = {
 }
 
 
-def workspace_navigation(pages):
-    with st.sidebar:
-        st.title("EduEvidence AI")
-        st.caption("Course workspace")
-        page = st.radio("Workspace page", pages, key="workspace_page",
-                        label_visibility="collapsed",
-                        format_func=lambda name: f":material/{NAV_ICONS[name]}: {name}")
-        st.divider()
-        st.caption("Uploads and history are temporary and belong to this browser session.")
-    return page
+PAGE_FILES = {
+    "Overview": "pages/workspace/overview.py", "Document Library": "pages/workspace/library.py",
+    "Knowledge Assistant": "pages/workspace/assistant.py", "Question History": "pages/workspace/history.py",
+    "Feedback & Analytics": "pages/workspace/analytics.py", "Audit Logs": "pages/workspace/audit.py",
+    "System Health": "pages/workspace/health.py",
+}
+
+
+def download_rows(rows, filename):
+    if not rows:
+        return
+    output = StringIO()
+    writer = csv.DictWriter(output, fieldnames=rows[0])
+    writer.writeheader()
+    for row in rows:
+        fields = {}
+        for key, value in row.items():
+            if isinstance(value, list):
+                value = ", ".join(map(str, value))
+            if isinstance(value, str) and value.lstrip().startswith(("=", "+", "-", "@")):
+                value = "'" + value
+            fields[key] = value
+        writer.writerow(fields)
+    st.download_button("Download CSV", output.getvalue(), file_name=filename, mime="text/csv",
+                       key=f"export_{filename}", on_click="ignore")
 
 
 def getting_started(indexed, questions):
@@ -37,11 +54,12 @@ def getting_started(indexed, questions):
         copy, illustration = st.columns([3, 2], vertical_alignment="center")
         with copy:
             st.subheader("Ask your course library." if indexed else "Start your course library.")
-            st.write("Ask a question about your course PDFs and follow its citation to the original page."
-                     if indexed else "Upload a searchable PDF to ask questions about your course.")
+            st.markdown("**How to use**\n1. Choose a sample PDF or upload yours.\n2. Ask the Knowledge Assistant a question.\n3. Open the citation to check the page.")
             label = "Continue in Knowledge Assistant" if indexed and questions else f"Open {destination}"
             st.button(label, icon=":material/arrow_forward:", type="primary",
-                      on_click=_navigate, args=(destination,))
+                      on_click=_navigate, args=(destination,), width="stretch")
+            st.button("Try a free PDF example", key="run_example", width="stretch",
+                      on_click=lambda: st.session_state.update(show_example=True))
         with illustration:
             st.html('<div class="ee-illustration" aria-hidden="true"><div class="ee-paper">'
                     '<i></i><i></i><i></i><i></i></div><div class="ee-lens"></div></div>')
@@ -49,6 +67,7 @@ def getting_started(indexed, questions):
 
 def course_shelf(documents):
     if not documents:
+        st.info("Your bookshelf is empty. Upload a searchable PDF in Document Library.")
         return
     st.subheader("On your bookshelf")
     cols = st.columns(len(documents))
@@ -58,7 +77,7 @@ def course_shelf(documents):
                     f'<h3>{escape(doc["title"])}</h3></div>')
             st.caption(f'{doc["page_count"]} pages · {doc["chunk_count"]} indexed passages')
             st.button("Ask", icon=":material/chat_bubble_outline:", help=f'Ask about {doc["title"]}',
-                      key=f'shelf_ask_{doc["id"]}', on_click=_open_document,
+                      key=f'shelf_ask_{doc["id"]}', width="stretch", on_click=_open_document,
                       args=(doc["course_id"], doc["id"]))
 
 
@@ -69,7 +88,7 @@ def _open_document(course_id, document_id):
 
 
 def _navigate(destination):
-    st.session_state.workspace_page = destination
+    st.session_state.next_page = destination
 
 
 def stats(result):
@@ -80,14 +99,19 @@ def stats(result):
     cells = "".join(f"<div><dt>{label}</dt><dd>{int(value):,}</dd></div>"
                     for label, value in metrics)
     st.html(f'<dl class="ee-stats">{cells}</dl>')
+    latest = next(iter(result["activity"]), {})
+    st.caption(f'Source: this session’s SQLite records · Last activity: {latest.get("created_at", "none yet")} (UTC)')
+    download_rows([dict(metrics)], "workspace-activity.csv")
 
 
 def document_table(documents):
-    st.dataframe([{
+    rows = [{
         "Filename": d["original_filename"], "Title": d["title"], "Course": d["course_code"],
         "Chunks": d["chunk_count"], "Pages": d["page_count"], "Size (bytes)": d["size_bytes"],
-        "Uploaded (UTC)": d["created_at"], "Status": d["status"].capitalize(),
-    } for d in documents], hide_index=True)
+        "Uploaded (UTC)": d["created_at"], "Updated (UTC)": d["updated_at"], "Status": d["status"].capitalize(),
+    } for d in documents]
+    st.dataframe(rows, hide_index=True)
+    download_rows(rows, "documents.csv")
 
 
 def citation_chips(citations, answer_id, namespace, render_page):
@@ -111,7 +135,7 @@ def citation_chips(citations, answer_id, namespace, render_page):
         with st.expander("Full indexed chunk"):
             st.text(c["content"])
         if st.checkbox("Show original PDF page", key=f"{namespace}_page_{answer_id}_{chunk_id}"):
-            render_page(c["document_id"], c["page_number"])
+            render_page(c["document_id"], c["page_number"], key=f"{namespace}_{answer_id}_{chunk_id}")
 
 
 def audit_table(events, get_record):
@@ -156,3 +180,4 @@ def audit_table(events, get_record):
     st.dataframe(rows, hide_index=True, column_config={
         "Status": st.column_config.MultiselectColumn(options=list(palette), color=list(palette.values())),
     })
+    download_rows(rows, "audit.csv")

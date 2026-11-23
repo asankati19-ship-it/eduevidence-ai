@@ -12,7 +12,7 @@ py -3.12 -m venv .venv-streamlit
 .\.venv-streamlit\Scripts\python.exe -m streamlit run streamlit_app.py
 ```
 
-The backend reads `OPENAI_API_KEY` from the process environment or the ignored local `.env`. With a blank key the app still supports document browsing, retrieval, and pre-provider abstention. A supported question records a missing-credentials outcome.
+The backend reads `OPENAI_API_KEY` from the process environment or the ignored local `.env`. With a blank key the app still supports document browsing, retrieval, and pre-provider abstention. A supported question records a missing-credentials outcome and displays owner setup instructions. Overview's free example reads a bundled source page directly.
 
 ## Deploy on Streamlit Community Cloud
 
@@ -23,3 +23,15 @@ The backend reads `OPENAI_API_KEY` from the process environment or the ignored l
 5. Deploy. Verify that Overview reports three indexed PDFs. In Knowledge Assistant, select the Python Programming Course Handbook and ask “What are the Python Programming course completion requirements?” Confirm the answer contains four graded labs, at least 70% overall, and a capstone Pass. Open the page 4 citation and verify the quoted evidence and PDF page.
 
 [Deploy on Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy) · [Configure Cloud secrets](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management)
+
+## Public access check
+
+As the app owner, open **Share → Make this app public**, or open **App settings → Sharing → Who can view this app → This app is public and searchable**. In **App settings → Secrets**, enter the top-level TOML setting from the example with your real key and save. Use a fresh browser session after changing secrets.
+
+Open the URL in a signed-out private window and run **Try a free PDF example**. The expected result includes four graded labs, at least 70% overall and a capstone Pass on handbook page 4. To inspect anonymous redirects, use the following GET from a fresh shell:
+
+```powershell
+curl.exe -sS -L --max-redirs 8 -D - -o NUL "https://appapppy-dvhx9tgh8xq6jfj7ctdaev.streamlit.app/"
+```
+
+Check each Location header for a redirect to the Streamlit login endpoint. A successful final HTML response demonstrates shell delivery. The signed-out example additionally checks that Python ran. Cold starts, the Cloud shell, proxy cookies, analytics, zoom rules and domain settings are controlled by the host.

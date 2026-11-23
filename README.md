@@ -1,10 +1,14 @@
 # EduEvidence AI
 
-**Trusted Answers. Verified Sources.**
+EduEvidence AI helps learners and instructors ask questions about course PDFs and check the supporting passage on its original page.
 
-Local submission for Career Lab Consulting · Project 022 · LMS Document Q&A with Source Evidence.
+**First visit.** Open Overview and click **Try a free PDF example** to read the Python handbook's completion requirements directly from page 4. The preview uses the bundled PDF and works without an API key. For a generated answer, open Knowledge Assistant, select the document, and submit a question.
 
-EduEvidence indexes approved, searchable course PDFs and answers learner questions using retrieved passages. Every displayed citation links to a verified SQLite chunk and to the corresponding page of the original PDF. The included courses and learner are synthetic. Run the workspace on your Windows machine with VS Code.
+**What the Overview looks like.** A top navigation menu sits above the product name and three short instructions. The bookshelf lists indexed PDFs with course codes, and the activity bar shows counts from this browser session.
+
+**Streamlit quick start (Python 3.12).** In a fresh virtual environment, run `python -m pip install -r requirements.txt` and `python -m streamlit run streamlit_app.py`. For live answers, copy `.streamlit/secrets.toml.example` to the ignored `.streamlit/secrets.toml` and set `OPENAI_API_KEY`. The React and FastAPI setup is below.
+
+**Community Cloud.** Deploy `main` with entry point `streamlit_app.py`. Set visibility under **App settings → Sharing → Who can view this app → This app is public and searchable**. Add the provider key in **App settings → Secrets**. The single-process service can sleep between visits, has limited RAM (plan around 1 GB), and offers no availability guarantee. Each new session starts a new temporary SQLite workspace. The Streamlit limit is five live submissions per session, with up to two provider requests per submission and automatic retries disabled. New sessions receive a new allowance. Page previews, downloads and navigation do not use the paid provider.
 
 ## Windows quick start
 
