@@ -30,7 +30,7 @@ apply_workspace_styles()
 page = st.navigation([
     st.Page(path, title=name, icon=f":material/{NAV_ICONS[name]}:", default=name == "Overview")
     for name, path in PAGE_FILES.items()
-], position="top")
+], position="sidebar")
 destination = st.session_state.pop("next_page", None)
 if destination:
     st.switch_page(PAGE_FILES[destination])

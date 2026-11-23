@@ -4,7 +4,7 @@ EduEvidence AI helps learners and instructors ask questions about course PDFs an
 
 **First visit.** Open Overview and click **Try a free PDF example** to read the Python handbook's completion requirements directly from page 4. The preview uses the bundled PDF and works without an API key. For a generated answer, open Knowledge Assistant, select the document, and submit a question.
 
-**What the Overview looks like.** A top navigation menu sits above the product name and three short instructions. The bookshelf lists indexed PDFs with course codes, and the activity bar shows counts from this browser session.
+**What the Overview looks like.** The left sidebar links to all seven workspace pages. On smaller screens, open the sidebar with the menu control. Overview shows the product name, three short instructions, the indexed course PDFs, and activity counts for this browser session.
 
 **Streamlit quick start (Python 3.12).** In a fresh virtual environment, run `python -m pip install -r requirements.txt` and `python -m streamlit run streamlit_app.py`. For live answers, copy `.streamlit/secrets.toml.example` to the ignored `.streamlit/secrets.toml` and set `OPENAI_API_KEY`. The React and FastAPI setup is below.
 
